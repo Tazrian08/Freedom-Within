@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './adminpages/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './partials/navbar/navbar.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { LoginComponent } from './adminpages/login/login.component';
     AppComponent,
     RegisterComponent,
     LoginComponent,
+    HomeComponent,
+    NavbarComponent,
 
   ],
   imports: [
