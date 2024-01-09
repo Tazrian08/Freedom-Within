@@ -1,15 +1,10 @@
 <div class="container mt-4" >
 
     <div class="card">
-        <h1>Admin Registation</h1>
+        <h1>Admin Login</h1>
   
   <form>
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
-  
-    </div>
-  
+
     <div class="form-group">
         <label>Email</label>
         <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter email">
@@ -20,8 +15,7 @@
         <label>Password</label>
         <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
       </div>
-      <button type="submit" class="btn btn-primary mt-4" (click)="register()" >Register</button>
-      <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->
+      <button type="submit" class="btn btn-primary mt-4" (click)="login()" >Login</button>
   </form>
     </div>
   <div>
