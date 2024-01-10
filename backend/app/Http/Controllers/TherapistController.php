@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Therapist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreTherapistRequest;
 use App\Http\Requests\UpdateTherapistRequest;
 
@@ -15,7 +16,9 @@ class TherapistController extends Controller
      */
     public function index()
     {
-        //
+        $therapists = Therapist::all();
+
+        return response()->json($therapists);
     }
 
     /**
@@ -23,9 +26,11 @@ class TherapistController extends Controller
      */
     public function create(Request $request)
     {
+        $password="12345678";
         $therapist=Therapist::create([
             'name' => $request->input('name'),
-            'email' =>$request->input('email')
+            'email' =>$request->input('email'),
+            'password' => Hash::make($password)
         ]);
 
        foreach($request->input('contacts') as $cnt){

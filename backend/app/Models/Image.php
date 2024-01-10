@@ -11,6 +11,7 @@ class Image extends Model
 
     protected $fillable = [
         'path',
+        'user_id',
         'service_id',
         'event_id',
     ];

@@ -30,6 +30,7 @@ export class AppointmentComponent {
     .subscribe((resultData: any)=>
     {
       this.therapists=resultData
+      this.therapist_id=this.therapists[0].id
       console.log(this.therapists)
     });
   }
@@ -38,6 +39,12 @@ export class AppointmentComponent {
 
   services:any
   therapists:any
+  therapist_id=""
+
+
+  name=""
+  email=""
+  
 
 
 }

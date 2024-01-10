@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->longText("path");
+            $table->unsignedBigInteger('user_id')->default(NULL)->nullable();
+            $table->foreign('user_id')
+                ->references('id') 
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('service_id')->default(NULL)->nullable();
             $table->foreign('service_id')
                 ->references('id') 

@@ -5,6 +5,7 @@ import { LoginComponent } from './adminpages/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AddServiceComponent } from './adminpages/add-service/add-service.component';
 import { AddTherapistComponent } from './adminpages/add-therapist/add-therapist.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 const routes: Routes = [
   {path: "admin/register", component: RegisterComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "admin/add_service", component: AddServiceComponent},
   {path: "admin/add_therapist", component: AddTherapistComponent},
+  {path: "appointment", component: AppointmentComponent},
 ];
 
 @NgModule({

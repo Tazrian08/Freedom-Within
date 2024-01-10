@@ -1,7 +1,8 @@
+<img src="{{image}}" alt="">
 <div class="container mt-4" >
 
     <div class="card">
-        <h1>Admin Registation</h1>
+        <h1>User Registation</h1>
   
   <form>
     <div class="form-group">
@@ -19,6 +20,36 @@
       <div class="form-group">
         <label>Password</label>
         <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
+      </div>
+      <div class="mb-3">
+        <div class="form-group">
+            <label>Contact</label>
+            <input type="email" [(ngModel)]="contacts[0]" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Contact Number">
+      </div>
+          </div>
+      <div *ngFor="let contact of contacts; let i = index" class="mb-3">
+        <div class="form-group">
+          <label>Contact {{ i + 2 }}</label>
+          <input type="text" [(ngModel)]="contacts[i+1]" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Contact">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Therapist Status</label>
+        <select [(ngModel)]="therapist_status" [ngModelOptions]="{standalone: true}" class="form-control">
+          <option [value]=0 >No</option>
+          <option [value]=1 >Yes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Admin Access</label>
+        <select [(ngModel)]="admin_access" [ngModelOptions]="{standalone: true}" class="form-control">
+          <option [value]=0 >No</option>
+          <option [value]=1 >Yes</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Upload Image</label>
+        <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
       </div>
       <button type="submit" class="btn btn-primary mt-4" (click)="register()" >Register</button>
       <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->boolean("therapist_status");
+            $table->boolean("admin_access");
             $table->rememberToken();
             $table->timestamps();
         });

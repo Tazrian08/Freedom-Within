@@ -29,6 +29,7 @@ Route::get("/allservice",[ServiceController::class,"index"]);
 
 #THERAPIST ROUTES
 Route::post("/create/therapist", [TherapistController::class,"create"]);
+Route::get("/alltherapist",[TherapistController::class,"index"]);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'user']);
