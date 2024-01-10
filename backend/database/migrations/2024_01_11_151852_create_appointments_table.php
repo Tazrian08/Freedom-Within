@@ -16,8 +16,18 @@ return new class extends Migration
             $table->string("name");
             $table->string("email");
             $table->string("phone",15);
-            $table->date("date");
-            $table->time("time");
+            // $table->unsignedBigInteger('date_id');
+            // $table->foreign('date_id')
+            //     ->references('id') 
+            //     ->on('dates')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
+            $table->unsignedBigInteger('time_id');
+            $table->foreign('time_id')
+                ->references('id') 
+                ->on('times')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('therapist_id');
             $table->foreign('therapist_id')
                 ->references('id') 
