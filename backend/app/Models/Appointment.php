@@ -14,7 +14,7 @@ class Appointment extends Model
         'email',
         'phone',
         'date',
-        'time',
+        'time_id',
         'therapist_id',
         'service_id',
         'message',
