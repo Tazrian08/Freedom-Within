@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { AddServiceComponent } from './adminpages/add-service/add-service.component';
 import { AddTherapistComponent } from './adminpages/add-therapist/add-therapist.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AddTherapistComponent } from './adminpages/add-therapist/add-therapist.
     NavbarComponent,
     AddServiceComponent,
     AddTherapistComponent,
+    AppointmentComponent,
 
   ],
   imports: [

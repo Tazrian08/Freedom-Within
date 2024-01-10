@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->longText("address");
+            $table->longText("maplink");
             $table->string("contact",15);
             $table->timestamps();
         });

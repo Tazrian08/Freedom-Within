@@ -19,10 +19,7 @@ export class AddTherapistComponent {
   contacts: string[]=[]
   
 
-  addContactField() {
-    this.contacts.push("");
-
-  }
+ 
 
 
   therapist_sub() {
