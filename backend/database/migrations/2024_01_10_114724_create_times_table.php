@@ -20,7 +20,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->time("time");
-            $table->boolean("book_status");
+            $table->boolean("book_status")->default(0);
             $table->timestamps();
         });
     }

@@ -2,16 +2,16 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Time;
 use Illuminate\Database\Seeder;
 
 class TimeSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        //
+        // Clear existing data to avoid duplicates
+
+        // Use the TimeFactory to create and insert time slot data
+        \App\Models\Time::factory(15)->create();
     }
 }

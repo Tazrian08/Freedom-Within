@@ -14,7 +14,7 @@ class DateSeeder extends Seeder
         Date::withoutEvents(function () {
             // Generate and insert dates into the database
             $startDate = now();
-            $endDate = now()->addYears(50)->subDay(); // January 10th, 2074
+            $endDate = now()->addYears(5)->subDay(); // January 10th, 2029
 
             $dates = $this->generateDatesInRange($startDate, $endDate);
 

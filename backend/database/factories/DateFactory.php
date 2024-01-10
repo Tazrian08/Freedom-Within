@@ -15,7 +15,7 @@ class DateFactory extends Factory
     public function definition()
     {
         // Generate a date within the next 50 years
-        $date = $this->faker->dateTimeBetween('now', '+50 years')->format('Y-m-d');
+        $date = $this->faker->dateTimeBetween('now', '+5 years')->format('Y-m-d');
 
         return [
             'date' => $date,
