@@ -31,4 +31,9 @@ class Appointment extends Model
         return $this->belongsTo(Service::class);
         
     }
+
+    public function time(){
+        return $this->belongsTo(Time::class);
+        
+    }
 }

@@ -24,6 +24,7 @@ Route::post("/login",[UserController::class,"login"]);
 
 #SERVICE ROUTES
 Route::post("/create/service", [ServiceController::class,"create"]);
+Route::get("/allservice",[ServiceController::class,"index"]);
 
 
 #THERAPIST ROUTES

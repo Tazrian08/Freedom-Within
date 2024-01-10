@@ -13,4 +13,10 @@ class Time extends Model
         'time',
 
     ];
+
+
+    public function appointment(){
+        return $this->hasOne(Appointment::class);
+        
+    }
 }
