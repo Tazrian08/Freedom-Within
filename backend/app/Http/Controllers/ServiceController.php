@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Service;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 
@@ -19,10 +21,25 @@ class ServiceController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $service=Service::create([
+            'type' => $request->input('type'),
+            'description' =>$request->input('description')
+        ]);
+
+        $image = time() . '-' . $request->name . '.' . $request->file('image')->extension();
+
+        $request->file('image')->move(public_path('images'), $image);
+    
+        $img = Image::create([
+            'service_id' => $service->id,
+            'path' => asset('images/' . $image)
+        ]);
+        return response()->json($img->path);
+
     }
+
 
     /**
      * Store a newly created resource in storage.

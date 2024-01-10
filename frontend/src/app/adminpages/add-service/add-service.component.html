@@ -1,0 +1,31 @@
+<div class="photo-container">
+    <div class="container mt-4" >
+  
+      <div class="card">
+            <h1>Service Form</h1>
+      
+      <form>
+        <div class="mb-3">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" [(ngModel)]="type" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Type">
+          </div>
+        </div>
+          <div class="mb-3">
+          <div class="form-group">
+            <label>Description</label>
+            <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Description"></textarea>
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Upload Image</label>
+            <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
+          </div>
+        
+          <button type="submit" class="btn btn-primary mt-4" (click)="service_sub()" >Submit</button>
+        </form>
+      </div>
+    <div>
+  </div>
+    
+  

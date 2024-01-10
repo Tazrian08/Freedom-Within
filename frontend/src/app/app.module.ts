@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './adminpages/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
+import { AddServiceComponent } from './adminpages/add-service/add-service.component';
+import { AddTherapistComponent } from './adminpages/add-therapist/add-therapist.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { NavbarComponent } from './partials/navbar/navbar.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
+    AddServiceComponent,
+    AddTherapistComponent,
 
   ],
   imports: [

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Therapist;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreTherapistRequest;
 use App\Http\Requests\UpdateTherapistRequest;
 
@@ -19,9 +21,22 @@ class TherapistController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $therapist=Therapist::create([
+            'name' => $request->input('name'),
+            'email' =>$request->input('email')
+        ]);
+
+       foreach($request->input('contacts') as $cnt){
+        $contact=Contact::create([
+            'therapist_id' => $therapist->id,
+            'contact' =>$cnt
+        ]);
+       }
+    
+       return response()->json("Successful");
+
     }
 
     /**
