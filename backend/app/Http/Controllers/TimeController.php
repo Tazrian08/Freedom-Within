@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Time;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreTimeRequest;
 use App\Http\Requests\UpdateTimeRequest;
 
@@ -11,56 +12,23 @@ class TimeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreTimeRequest $request)
+    public function timeslots(Request $request)
     {
-        //
-    }
+        $user_id=$request->input('user_id');
+        $date=$request->input('date');
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Time $time)
-    {
-        //
-    }
+        $appointment=Appointment::where("user_id",$user_id)
+        ->where("date",$date)
+        ->get();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Time $time)
-    {
-        //
-    }
+        if ($appointment->isEmpty()) {
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateTimeRequest $request, Time $time)
-    {
-        //
-    }
+        } else {
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Time $time)
-    {
-        //
+        }
+
     }
+ 
 }

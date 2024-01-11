@@ -16,8 +16,10 @@ class TimeFactory extends Factory
      */
     public function definition(): array
     {
+        static $startTime = '10:00';
+
         return [
-            //
+            'time_slot' => $startTime,
         ];
     }
 }

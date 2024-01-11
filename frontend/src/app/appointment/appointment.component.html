@@ -1,0 +1,106 @@
+<div class="photo-container">
+    <div class="container mt-4" >
+    
+        <div class="card">
+            <h1>Appointment</h1>
+      
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+      
+        </div>
+      
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
+      
+          </div>
+          <div class="form-group">
+            <label>Contact</label>
+            <input type="text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Contact">
+        
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select [(ngModel)]="gender" [ngModelOptions]="{standalone: true}" class="form-control" id="destination">
+                <option  value="male" >Male</option>
+                <option  value="female" >Female</option>
+                <option  value="other" >Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+            <input type="text" [(ngModel)]="age" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Age">
+        
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <ngb-datepicker (click)="timeslot_retriever()"
+              [(ngModel)]="date"
+              [ngModelOptions]="{ standalone: true }"
+              [minDate]="minDate"
+              class="form-control"
+              id="name"
+            ></ngb-datepicker>
+          </div>
+          <div class="form-group">
+            <label>Service</label>
+            <select [(ngModel)]="service_id" [ngModelOptions]="{standalone: true}" class="form-control" id="destination">
+              <option *ngFor="let service of services" [value]="service.id" >{{service.type }}</option>
+            </select>
+          </div>
+          <div>
+            <label>Therapists</label>
+            <select [(ngModel)]="user_id" [ngModelOptions]="{standalone: true}" class="form-control" id="flight" placeholder="Select Service type">
+              <option *ngFor="let therapist of therapists" [value]="therapist.id" (click)="timeslot_retriever()" >{{therapist.name}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Appointment Type</label>
+            <select [(ngModel)]="apt_type" [ngModelOptions]="{standalone: true}" class="form-control" id="destination">
+              <option value="offline" >Offline</option>
+              <option value="online" >Online</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Reason of Appointment (in brief)</label>
+            <textarea type="text" [(ngModel)]="message" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter description"></textarea>
+          </div>
+          
+          <!-- <div class="form-group">
+            <label>Description</label>
+            <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Description"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Airline</label>
+            <select [(ngModel)]="airline_id" [ngModelOptions]="{standalone: true}" class="form-control" id="airline">
+              <option *ngFor="let airline of airlines" [value]="airline.id" (click)="getFlight(airline.id)">{{ airline.name }}</option>
+            </select>
+          </div>
+          <div *ngIf="airlineflag">
+          <label>Departure Flight</label>
+          <select [(ngModel)]="departure" [ngModelOptions]="{standalone: true}" class="form-control" id="flight">
+            <option *ngFor="let flight of flights" [value]="flight.id" >Time: {{flight.departure}}, Destination: {{flight.destination.country}}, {{flight.destination.city}}</option>
+          </select>
+        </div>
+        <div *ngIf="airlineflag">
+            <label>Return Flight</label>
+            <select [(ngModel)]="return" [ngModelOptions]="{standalone: true}" class="form-control" id="flight">
+                <option *ngFor="let flight of flights" [value]="flight.id" >Time: {{flight.departure}}, Destination: {{flight.destination.country}}, {{flight.destination.city}}</option>
+            </select>
+          </div> -->
+
+ 
+          
+        
+          <button type="submit" class="btn btn-primary mt-4" >Submit</button>
+          <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->
+      </form>
+        </div>
+      <div>
+    </div>
+      
+      
+      
+    

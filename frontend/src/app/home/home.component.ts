@@ -36,7 +36,6 @@ export class HomeComponent {
     Emitters.adminEmitter.subscribe(
       (data: any) => {
         this.admin= data;
-        console.log("This is working2");
       });
     Emitters.authEmitter.subscribe(
       (data: any) => {
@@ -47,5 +46,15 @@ export class HomeComponent {
         this.thera = data;
       });
 
+  }
+
+  logout(): void {
+    this.http.post('http://localhost:8000/api/logout', {}, {withCredentials: true})
+      .subscribe(() =>{
+        this.auth = false
+        this.admin=false
+        this.thera=false
+      } );
+      this.router.navigate(['/login'])
   }
 }

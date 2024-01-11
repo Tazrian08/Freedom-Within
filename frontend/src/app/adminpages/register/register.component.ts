@@ -56,6 +56,14 @@ export class RegisterComponent {
   {
 
     this.image=resultData
+    this.name=""
+    this.email=""
+    this.password=""
+    this.contacts=[]
+    this.therapist_status=0
+    this.admin_access=0
+    this.image=""
+    this.description=""
     // this.router.navigate(['admin/login']);
 
   });

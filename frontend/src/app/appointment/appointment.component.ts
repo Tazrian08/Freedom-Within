@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-appointment',
@@ -9,8 +10,12 @@ import { Router } from '@angular/router';
 })
 export class AppointmentComponent {
 
-  constructor(private http: HttpClient, private router: Router) 
+
+  constructor(private http: HttpClient, private router: Router, private calendar: NgbCalendar) 
   {
+
+    this.date = this.calendar.getToday();
+    this.minDate = this.calendar.getToday();
     { 
     
       this.http.get("http://localhost:8000/api/allservice")
@@ -30,7 +35,7 @@ export class AppointmentComponent {
     .subscribe((resultData: any)=>
     {
       this.therapists=resultData
-      this.therapist_id=this.therapists[0].id
+      this.user_id=this.therapists[0].id
       console.log(this.therapists)
     });
   }
@@ -39,12 +44,50 @@ export class AppointmentComponent {
 
   services:any
   therapists:any
-  therapist_id=""
+  timeslots: any
+  
+  
 
 
   name=""
   email=""
+  contact=""
+  gender=""
+  age=""
+  date: NgbDateStruct;
+  minDate: NgbDateStruct;
+  user_id=""
+  service_id=""
+  apt_type:number=0
+  time_id=""
+  message=""
+
+
+  timeslot_retriever() {
+    const formData = new FormData();
   
+    // Add other fields to FormData
+    formData.append('user_id', this.user_id);
+  
+    // Convert NgbDateStruct to a string in a specific format
+    const formattedDate = this.formatNgbDate(this.date);
+    formData.append('date', formattedDate);
+  
+    this.http.post("http://localhost:8000/api/timeslot", formData).subscribe((resultData: any) => {
+      this.timeslots = resultData;
+      // this.router.navigate(['admin/login']);
+    });
+  }
+  
+  // Helper function to format NgbDateStruct to a string
+  private formatNgbDate(date: NgbDateStruct): string {
+    if (date) {
+      // Format the date as needed (e.g., YYYY-MM-DD)
+      const formattedDate = `${date.year}-${date.month}-${date.day}`;
+      return formattedDate;
+    }
+    return "";
+  }
 
 
 }

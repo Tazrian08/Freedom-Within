@@ -39,7 +39,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->longText("message");
-            $table->boolean("appointment_type");
+            $table->string("appointment_type");
             $table->boolean("confirmation");
             $table->timestamps();
         });

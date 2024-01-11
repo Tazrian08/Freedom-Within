@@ -73,4 +73,11 @@ class UserController extends Controller
             'message' => 'Success'
         ])->withCookie($cookie);
     }
+
+    public function therapist_index()
+    {
+        $therapists=User::where("therapist_status",1)->get();
+        return response()->json($therapists);
+
+    }
 }
