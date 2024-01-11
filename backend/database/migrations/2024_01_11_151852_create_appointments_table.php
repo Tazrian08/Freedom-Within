@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("email");
-            $table->string("phone",15);
+            $table->unsignedBigInteger('patient_id');
+            $table->foreign('patient_id')
+                ->references('id') 
+                ->on('patients')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->date("date");
             $table->unsignedBigInteger('time_id');
             $table->foreign('time_id')
@@ -37,6 +40,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->longText("message");
             $table->boolean("appointment_type");
+            $table->boolean("confirmation");
             $table->timestamps();
         });
     }

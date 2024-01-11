@@ -25,11 +25,7 @@ export class AddServiceComponent {
   image: string=""
 
 service_sub(){
-  // let bodyData = {
-  //   "country" : this.country,
-  //   "city" : this.city,
-  //   "description" : this.description
-  // };
+  
   const formData = new FormData();
 
   // Append the existing form data
