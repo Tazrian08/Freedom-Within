@@ -16,6 +16,7 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
+            'description' => $request->input('description'),
             'therapist_status' => (int)$request->input('therapist_status'),
             'admin_access' => (int)$request->input('admin_access'),
             'password' => Hash::make($request->input('password'))

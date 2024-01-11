@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'therapist_status',
         'admin_access',
+        'description',
     ];
 
     /**

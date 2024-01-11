@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->boolean("therapist_status");
             $table->boolean("admin_access");
+            $table->longText("description");
             $table->rememberToken();
             $table->timestamps();
         });

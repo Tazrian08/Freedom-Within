@@ -47,6 +47,12 @@
         </select>
       </div>
       <div class="mb-3">
+        <div class="form-group">
+          <label>Description</label>
+          <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Description"></textarea>
+        </div>
+        </div>
+      <div class="mb-3">
         <label for="formFile" class="form-label">Upload Image</label>
         <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
       </div>

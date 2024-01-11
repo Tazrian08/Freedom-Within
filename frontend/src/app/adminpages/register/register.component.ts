@@ -27,7 +27,8 @@ export class RegisterComponent {
   contacts: string[]=[]
   therapist_status=0
   admin_access=0
-  image=""
+  image:string=""
+  description: string=""
 
 
   register()
@@ -39,6 +40,7 @@ export class RegisterComponent {
     formData.append('name', this.name);
     formData.append('email', this.email);
     formData.append('password', this.password);
+    formData.append('description', this.description);
     formData.append('therapist_status', this.therapist_status.toString());
     formData.append('admin_access', this.admin_access.toString());
 
