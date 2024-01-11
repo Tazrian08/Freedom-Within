@@ -75,6 +75,7 @@ export class AppointmentComponent {
   
     this.http.post("http://localhost:8000/api/timeslot", formData).subscribe((resultData: any) => {
       this.timeslots = resultData;
+      console.log(this.timeslots)
       // this.router.navigate(['admin/login']);
     });
   }

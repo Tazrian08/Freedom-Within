@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Time;
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTimeRequest;
 use App\Http\Requests\UpdateTimeRequest;
@@ -16,19 +18,62 @@ class TimeController extends Controller
 
     public function timeslots(Request $request)
     {
-        $user_id=$request->input('user_id');
-        $date=$request->input('date');
 
-        $appointment=Appointment::where("user_id",$user_id)
+        $date = $request->input('date');
+        $carbonDate = Carbon::parse($date);
+        $day = $carbonDate->dayOfWeek;
+
+
+        $user_id=$request->input('user_id');
+
+        $appointments=Appointment::where("user_id",$user_id)
         ->where("date",$date)
         ->get();
 
-        if ($appointment->isEmpty()) {
+        if ($appointments->isEmpty()) {
+            if ($day == Carbon::FRIDAY || $day == Carbon::SATURDAY){
+
+                $timeslots=Time::whereNot('time_slot','10:00')
+                ->whereNot('time_slot','19:00')
+                ->whereNot('time_slot','20:00')
+                ->get();
+
+
+
+            } else {
+
+                $timeslots=TIme::all();
+
+
+            }
 
         } else {
+            if ($day == Carbon::FRIDAY || $day == Carbon::SATURDAY){
+                $existingAppointments = Appointment::where("user_id", $user_id)
+                    ->where("date", $date)
+                    ->pluck('time_slot')
+                    ->toArray();
+        
+                $timeslots = Time::whereNotIn('time_slot', ['10:00', '19:00', '20:00'])
+                    ->whereNotIn('time_slot', $existingAppointments)
+                    ->get();
+            } else {
+
+                $existingAppointments = Appointment::where("user_id", $user_id)
+                    ->where("date", $date)
+                    ->pluck('time_slot')
+                    ->toArray();
+        
+                $timeslots = Time::whereNotIn('time_slot')
+                    ->whereNotIn('time_slot', $existingAppointments)
+                    ->get();
+
+                
+            }
 
         }
 
+        return response()->json($timeslots);
     }
  
 }

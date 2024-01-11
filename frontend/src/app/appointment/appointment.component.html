@@ -2,7 +2,7 @@
     <div class="container mt-4" >
     
         <div class="card">
-            <h1>Appointment</h1>
+            <h1>Appointment Form</h1>
       
       <form>
         <div class="form-group">
@@ -66,6 +66,12 @@
           <div class="form-group">
             <label>Reason of Appointment (in brief)</label>
             <textarea type="text" [(ngModel)]="message" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter description"></textarea>
+          </div>
+          <div>
+            <label>Timeslots</label>
+            <select [(ngModel)]="time_id" [ngModelOptions]="{standalone: true}" class="form-control" id="flight" placeholder="Select Service type">
+              <option *ngFor="let timeslot of timeslots" [value]="timeslot.id" (click)="timeslot_retriever()" >{{timeslot.time_slot}}</option>
+            </select>
           </div>
           
           <!-- <div class="form-group">

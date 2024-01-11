@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TimeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TherapistController;
@@ -31,7 +32,7 @@ Route::get("/allservice",[ServiceController::class,"index"]);
 Route::get("/alltherapist",[UserController::class,"therapist_index"]);
 
 #TIMESLOT ROUTES
-Route::get("/timeslot",[TimeController::class,"timeslots"]);
+Route::post("/timeslot",[TimeController::class,"timeslots"]);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'user']);
