@@ -51,7 +51,7 @@ class TimeController extends Controller
             if ($day == Carbon::FRIDAY || $day == Carbon::SATURDAY) {
                 $existingAppointments = Appointment::where("user_id", $user_id)
                     ->where("date", $date)
-                    ->where("confirmation", 0)
+                    ->where("confirmation", 1)
                     ->pluck('time_id') // Assuming time_id is the foreign key referencing the Time model
                     ->toArray();
         
@@ -61,7 +61,7 @@ class TimeController extends Controller
             } else {
                 $existingAppointments = Appointment::where("user_id", $user_id)
                     ->where("date", $date)
-                    ->where("confirmation", 0)
+                    ->where("confirmation", 1)
                     ->pluck('time_id') // Assuming time_id is the foreign key referencing the Time model
                     ->toArray();
         

@@ -42,6 +42,8 @@ export class AppointmentComponent {
 
   }
 
+  
+
   services:any
   therapists:any
   timeslots: any

@@ -71,31 +71,11 @@
             <label>Timeslots</label>
             <select [(ngModel)]="time_id" [ngModelOptions]="{standalone: true}" class="form-control" id="flight" placeholder="Select Service type">
               <option *ngFor="let timeslot of timeslots" [value]="timeslot.id" (click)="timeslot_retriever()" >{{timeslot.time_slot}}</option>
+              <option *ngIf="timeslots ==null">Select date first and therapist first</option>
             </select>
           </div>
           
-          <!-- <div class="form-group">
-            <label>Description</label>
-            <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Description"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Airline</label>
-            <select [(ngModel)]="airline_id" [ngModelOptions]="{standalone: true}" class="form-control" id="airline">
-              <option *ngFor="let airline of airlines" [value]="airline.id" (click)="getFlight(airline.id)">{{ airline.name }}</option>
-            </select>
-          </div>
-          <div *ngIf="airlineflag">
-          <label>Departure Flight</label>
-          <select [(ngModel)]="departure" [ngModelOptions]="{standalone: true}" class="form-control" id="flight">
-            <option *ngFor="let flight of flights" [value]="flight.id" >Time: {{flight.departure}}, Destination: {{flight.destination.country}}, {{flight.destination.city}}</option>
-          </select>
-        </div>
-        <div *ngIf="airlineflag">
-            <label>Return Flight</label>
-            <select [(ngModel)]="return" [ngModelOptions]="{standalone: true}" class="form-control" id="flight">
-                <option *ngFor="let flight of flights" [value]="flight.id" >Time: {{flight.departure}}, Destination: {{flight.destination.country}}, {{flight.destination.city}}</option>
-            </select>
-          </div> -->
+
 
  
           
