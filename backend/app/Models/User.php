@@ -44,4 +44,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function contact(){
+        return $this->hasMany(Contact::class);
+        
+    }
+
+    public function appointment(){
+        return $this->hasMany(Appointment::class);
+        
+    }
+
+    public function image(){
+        return $this->hasOne(Image::class);
+        
+    }
 }

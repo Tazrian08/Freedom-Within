@@ -11,7 +11,6 @@ import { LoginComponent } from './adminpages/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { AddServiceComponent } from './adminpages/add-service/add-service.component';
-import { AddTherapistComponent } from './adminpages/add-therapist/add-therapist.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 
 
@@ -23,7 +22,6 @@ import { AppointmentComponent } from './appointment/appointment.component';
     HomeComponent,
     NavbarComponent,
     AddServiceComponent,
-    AddTherapistComponent,
     AppointmentComponent,
 
   ],

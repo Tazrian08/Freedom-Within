@@ -23,10 +23,10 @@ return new class extends Migration
                 ->on('times')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('therapist_id');
-            $table->foreign('therapist_id')
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
                 ->references('id') 
-                ->on('therapists')
+                ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->unsignedBigInteger('service_id');

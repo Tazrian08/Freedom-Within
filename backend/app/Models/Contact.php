@@ -17,8 +17,8 @@ class Contact extends Model
     ];
 
 
-    public function therapist(){
-        return $this->belongsTo(Therapist::class);
+    public function user(){
+        return $this->belongsTo(User::class);
         
     }
 }
