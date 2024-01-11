@@ -71,7 +71,7 @@
             <label>Timeslots</label>
             <select [(ngModel)]="time_id" [ngModelOptions]="{standalone: true}" class="form-control" id="flight" placeholder="Select Service type">
               <option *ngFor="let timeslot of timeslots" [value]="timeslot.id" (click)="timeslot_retriever()" >{{timeslot.time_slot}}</option>
-              <option *ngIf="timeslots ==null">Select date first and therapist first</option>
+              <option *ngIf="timeslots ==null">Select Date and Therapist first</option>
             </select>
           </div>
           
