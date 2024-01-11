@@ -48,29 +48,26 @@ class TimeController extends Controller
             }
 
         } else {
-            if ($day == Carbon::FRIDAY || $day == Carbon::SATURDAY){
+            if ($day == Carbon::FRIDAY || $day == Carbon::SATURDAY) {
                 $existingAppointments = Appointment::where("user_id", $user_id)
                     ->where("date", $date)
-                    ->pluck('time_slot')
+                    ->where("confirmation", 0)
+                    ->pluck('time_id') // Assuming time_id is the foreign key referencing the Time model
                     ->toArray();
         
-                $timeslots = Time::whereNotIn('time_slot', ['10:00', '19:00', '20:00'])
-                    ->whereNotIn('time_slot', $existingAppointments)
+                $timeslots = Time::whereNotIn('id', $existingAppointments)
+                    ->whereNotIn('time_slot', ['10:00', '19:00', '20:00'])
                     ->get();
             } else {
-
                 $existingAppointments = Appointment::where("user_id", $user_id)
                     ->where("date", $date)
-                    ->pluck('time_slot')
+                    ->where("confirmation", 0)
+                    ->pluck('time_id') // Assuming time_id is the foreign key referencing the Time model
                     ->toArray();
         
-                $timeslots = Time::whereNotIn('time_slot')
-                    ->whereNotIn('time_slot', $existingAppointments)
+                $timeslots = Time::whereNotIn('id', $existingAppointments)
                     ->get();
-
-                
             }
-
         }
 
         return response()->json($timeslots);

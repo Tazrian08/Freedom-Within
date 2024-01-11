@@ -13,7 +13,7 @@ class Appointment extends Model
         'patient_id',
         'date',
         'time_id',
-        'therapist_id',
+        'user_id',
         'service_id',
         'message',
         'appointment_type',

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patient;
 use App\Models\Appointment;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreAppointmentRequest;
 use App\Http\Requests\UpdateAppointmentRequest;
 
@@ -19,9 +21,28 @@ class AppointmentController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $patient = Patient::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'contact' => $request->input('contact'),
+            'gender' => $request->input('gender'),
+            'age' => (int)$request->input('age'),
+        ]);
+
+        $appointment = Appointment::create([
+            'patient_id' => $patient->id,
+            'user_id' => $request->input('user_id'),
+            'service_id' => $request->input('service_id'),
+            'time_id' => $request->input('time_id'),
+            'appointment_type' => $request->input('apt_type'),
+            'message' => $request->input('message'),
+            'date' => $request->input('date'),
+            'confirmation' => 0,
+        ]);
+
+        return response()->json($appointment);
     }
 
     /**
