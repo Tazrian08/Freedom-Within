@@ -8,9 +8,9 @@ import { AppointmentComponent } from './appointment/appointment.component';
 
 const routes: Routes = [
   {path: "admin/register", component: RegisterComponent},
-  {path: "admin/login", component: LoginComponent},
+  {path: "login", component: LoginComponent},
   {path: "home", component: HomeComponent},
-  {path: "admin/add_service", component: AddServiceComponent},
+  {path: "admin/service", component: AddServiceComponent},
   {path: "appointment", component: AppointmentComponent},
 ];
 
