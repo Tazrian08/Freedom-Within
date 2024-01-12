@@ -7,6 +7,8 @@ import { AddServiceComponent } from './adminpages/add-service/add-service.compon
 import { AppointmentComponent } from './appointment/appointment.component';
 import { NewAppointmentComponent } from './new-appointment/new-appointment.component';
 import { AddEventsComponent } from './adminpages/add-events/add-events.component';
+import { ProfileComponent } from './profile/profile.component';
+
 
 const routes: Routes = [
   {path: "admin/register", component: RegisterComponent},
@@ -16,6 +18,7 @@ const routes: Routes = [
   {path: "appointment", component: AppointmentComponent},
   {path: "re_appointment", component: NewAppointmentComponent},
   {path: "admin/event", component: AddEventsComponent},
+  {path: "profile", component: ProfileComponent},
 ];
 
 @NgModule({

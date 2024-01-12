@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Patient;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
@@ -79,9 +80,17 @@ class AppointmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Appointment $appointment)
+    public function show($id)
     {
-        //
+        $user_id=$id;
+        $date = Carbon::now()->toDateString();
+        $appointments=Appointment::where("user_id",$user_id)
+        ->where('date',$date)
+        ->where('confirmation',1)
+        ->with('patient','user','time','service')
+        ->get();
+
+        return response()->json($appointments);
     }
 
     /**

@@ -1,0 +1,224 @@
+<div class="photo-container"> 
+    <!-- Sidebar Section-->
+    <aside>
+        <div class="toggle">
+            <div class="logo">
+                <!-- <img src="images/logo.png"> -->
+                <h2>Freedom Within</h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">
+                </span>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <a routerLink="/home">
+                <span class="material-icons-sharp">
+                    Home
+                </span>
+            </a>
+            <a *ngIf="admin" routerLink="/admin/register">
+              <span class="material-icons-sharp">
+                  User Registration
+              </span>
+          </a>
+            <a *ngIf="admin" routerLink="/admin/service">
+              <span class="material-icons-sharp">
+                  Add Service
+              </span>
+          </a>
+          <a *ngIf="admin" routerLink="/admin/event">
+            <span class="material-icons-sharp">
+                Add Event
+            </span>
+        </a>
+          <a *ngIf="admin" routerLink="/index/therapist">
+            <span class="material-icons-sharp">
+                Therapists Index
+            </span>
+        </a>
+        <a *ngIf="admin" routerLink="/index/patient">
+          <span class="material-icons-sharp">
+              Patients Index
+          </span>
+      </a>
+      <a *ngIf="admin" routerLink="/index/service">
+        <span class="material-icons-sharp">
+            Service Index
+        </span>
+    </a>
+    <a *ngIf="admin" routerLink="/index/service">
+      <span class="material-icons-sharp">
+          Event Index
+      </span>
+  </a>
+          
+            <a  [routerLink]="['/destination/index']">
+                <span class="material-icons-sharp">
+                    Link
+                </span>
+                
+            </a>
+            <a  [routerLink]="['/hotels']">
+                <span class="material-icons-sharp">
+                    Link
+                </span>
+              
+            </a>
+            <a  [routerLink]="['/flight']">
+                <span class="material-icons-sharp">
+                    Link
+                </span>
+            </a>
+            <!-- <a href="#">
+                <span class="material-icons-sharp">
+                    Attractions
+                </span>
+              
+            </a> -->
+            <a  [routerLink]="['/travel-packages']">
+                <span class="material-icons-sharp">
+                    Link
+                </span>
+                
+            </a>
+            <!-- <a href="#">
+                <span class="material-icons-sharp">
+                    Custom Packages
+                </span>
+                
+            </a> -->
+
+
+            
+            
+            
+            <a *ngIf="admin" routerLink="/admin/travel-package">
+                <span class="material-icons-sharp">
+                    Link
+                </span>
+               
+            </a>
+
+            <!-- <a *ngIf="admin" routerLink="/admin/hotel">
+                <span class="material-icons-sharp">
+                    Add Hotel
+                </span>
+               
+            </a> -->
+            
+            <a *ngIf="!admin" routerLink="/cart">
+                <span class="material-icons-sharp">
+                    Link
+                </span>
+               
+            </a>
+            <!-- <a  [routerLink]="['/register']">
+                <span class="material-icons-sharp">
+                    regiater
+                </span>
+            </a> -->
+            <!-- <a href="#">
+                <span class="material-icons-sharp">
+                    Logout
+                </span>
+            </a> -->
+        </div>
+    </aside> 
+    <div class="photo-container2">
+      <span >User Profile</span></div>
+
+      <div class="photo-container3" [ngClass]="{'admin-background': admin, 'user-background': !admin}">
+    </div>
+    
+    
+    <div class="photo-container4">
+        <div [ngClass]="{'admin-pic': admin, 'user-pic': !admin}" class="pic" [style.backgroundImage]="'url(' + image + ')'"></div>
+        <div class='info'>
+          <div *ngIf="admin">
+            <h2 class="welcome-header">Authorized Admin</h2>
+          </div>
+        
+          <div *ngIf="thera">
+            <h2 class="welcome-header">User Type: Therapist</h2>
+          </div>
+          <h4>User Information</h4>
+          <h2>Name: {{ user.name }} </h2>
+          <h2>Email: {{ user.email }}</h2>
+          <p>{{user.description}}</p>
+          <!-- <h2>Contact: {{ }}</h2> -->
+          <button (click)="logout()" class="logout-button">Logout</button>
+        </div>
+        <div class="profile-container" *ngIf="!auth">
+          <h2>You're not logged in</h2>
+        </div>
+      </div>
+      
+    <div class="photo-container5" style="justify-content: center; text-align: center;">
+      <button class="btn btn-dark" (click)="show()">Show Todays Schedule</button>
+      <div *ngIf="thera" class="container2">
+        <div *ngIf="show_schedule" class="attraction-container">
+        <h2 style="text-align: center;">Today's Schedule</h2><br>
+        <table *ngIf="t_app.length > 0" class="package-table">
+            <thead>
+              <tr>
+                <th>Patient Name</th>
+                <th>Patient Number</th>
+                <th>Service</th>
+                <th>Appointment Type</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+  
+              <ng-container *ngFor="let appointment of t_app">
+                <tr>
+                  <td>{{ appointment.patient.name }}</td>
+                  <td>{{ appointment.patient.contact }}</td>
+                  <td>{{ appointment.service.type}}</td>
+                  <td>{{ appointment.appointment_type}}</td>
+                  <td>{{ appointment.time.time_slot}}</td>
+
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+          <h2 *ngIf="t_app.length == 0">No appointment for today</h2>
+          </div>
+        </div>
+        <!-- <div *ngIf="admin" class="container2">
+            <div *ngIf="reviews" class="attraction-container">
+            <h2 style="text-align: center;">Package Reviews</h2><br>
+            <table *ngIf="reviews && reviews.length > 0" class="package-table">
+                <thead>
+                  <tr>
+                    <th>Package Name</th>
+                    <th>User</th>
+                    <th>Ratings</th>
+                  </tr>
+                </thead>
+                <tbody>
+   
+                  <ng-container *ngFor="let review of reviews">
+                    <tr>
+                      <td>{{ review.travel.name }}</td>
+                      <td>{{ review.user.name}}</td>
+                      <td>{{ review.ratings }}</td>
+
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+              </div>
+            </div>
+
+      </div>
+      
+    </div> -->
+    
+
+        <!-- <div class="semi-transparent-box">
+          <span class="step">Step 4</span>
+          <h1>Enjoy your favourite destination.</h1>
+        </div> -->

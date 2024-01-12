@@ -25,9 +25,8 @@ export class LoginComponent {
     this.http.post("http://localhost:8000/api/login",bodyData,{withCredentials: true}).subscribe((resultData: any)=>
     {   
 
-        this.router.navigate(['/home'])
+        this.router.navigate(['/profile'])
     });
-    console.log("This runs")
   
 }
 

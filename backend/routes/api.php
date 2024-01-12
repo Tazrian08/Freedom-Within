@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TimeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TherapistController;
 use App\Http\Controllers\AppointmentController;
@@ -40,9 +41,13 @@ Route::get("/alltherapist",[UserController::class,"therapist_index"]);
 #TIMESLOT ROUTES
 Route::post("/timeslot",[TimeController::class,"timeslots"]);
 
+
+
+
 #APPOINTMENT ROUTES
 Route::post("/appointment",[AppointmentController::class,"create"]);
 Route::post("/reappointment",[AppointmentController::class,"recreate"]);
+Route::get("/tappt/{id}", [AppointmentController::class, "show"]);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'user']);

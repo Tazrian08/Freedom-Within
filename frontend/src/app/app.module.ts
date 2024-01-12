@@ -14,6 +14,8 @@ import { AddServiceComponent } from './adminpages/add-service/add-service.compon
 import { AppointmentComponent } from './appointment/appointment.component';
 import { NewAppointmentComponent } from './new-appointment/new-appointment.component';
 import { AddEventsComponent } from './adminpages/add-events/add-events.component';
+import { ProfileComponent } from './profile/profile.component';
+
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { AddEventsComponent } from './adminpages/add-events/add-events.component
     AppointmentComponent,
     NewAppointmentComponent,
     AddEventsComponent,
+    ProfileComponent,
+
 
   ],
   imports: [

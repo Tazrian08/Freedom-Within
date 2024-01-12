@@ -61,8 +61,13 @@ class UserController extends Controller
     }
 
     public function user()
-    {  
-        return response()->json(Auth::user());
+    {   
+        
+        $user=Auth::user();
+        $contacts=Contact::where("user_id",$user->id)->get();
+        $images=image::where("user_id",$user->id)->get();
+        $image=$images[0];
+        return response()->json(["user" => $user,"contacts"=>$contacts,"image"=>$image->path]);
     }
 
     public function logout()
