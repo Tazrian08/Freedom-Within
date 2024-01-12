@@ -347,7 +347,7 @@ body, html {
   
   .package-table th:first-child,
   .package-table td:first-child {
-    width: 40%; 
+    width: 10%; 
   }
   
   .package-table th:nth-child(2),
