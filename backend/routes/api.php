@@ -48,6 +48,8 @@ Route::post("/timeslot",[TimeController::class,"timeslots"]);
 Route::post("/appointment",[AppointmentController::class,"create"]);
 Route::post("/reappointment",[AppointmentController::class,"recreate"]);
 Route::get("/tappt/{id}", [AppointmentController::class, "show"]);
+Route::get("/nappt/{id}", [AppointmentController::class, "show2"]);
+Route::put("/confirmation", [AppointmentController::class, "confirm"]);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'user']);

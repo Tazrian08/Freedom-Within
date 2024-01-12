@@ -93,6 +93,27 @@ class AppointmentController extends Controller
         return response()->json($appointments);
     }
 
+    public function show2($id)
+    {
+        $user_id=$id;
+        $date = Carbon::now()->toDateString();
+        $appointments=Appointment::where("user_id",$user_id)
+        ->where('date', '>=', $date)
+        ->where('confirmation',0)
+        ->with('patient','user','time','service')
+        ->get();
+
+        return response()->json($appointments);
+    }
+
+    public function confirm(Request $request)
+    {
+        $appointment=Appointment::find($request);
+        $appointment[0]->update(['confirmation' => 1]);
+
+        return response()->json("Success");
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

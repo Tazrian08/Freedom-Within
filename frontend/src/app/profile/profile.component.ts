@@ -55,9 +55,44 @@ export class ProfileComponent {
   image=""
   t_app:any
   show_schedule:boolean=false
+  show_app:boolean=false
+  new_appointments:any
+
 
 
   ngOnInit(): void {
+
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (res: any) => {
+        console.log(res)
+        this.user=res.user
+        this.id=res.user.id
+        this.contacts=res.contacts
+        this.image=res.image
+        if (res.user.admin_access==1){
+          Emitters.adminEmitter.emit(true);
+        }
+        if (res.user.therapist_status==1){
+          Emitters.therapistEmitter.emit(true);
+        }
+        Emitters.authEmitter.emit(true);
+      });
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+      });
+    Emitters.adminEmitter.subscribe(
+      (data: any) => {
+        this.admin= data;
+      });
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+      });
+    Emitters.therapistEmitter.subscribe(
+      (data: any) => {
+        this.thera = data;
+      });
     
 
   }
@@ -85,6 +120,36 @@ export class ProfileComponent {
     });
 
     this.show_schedule=true
+  }
+
+  show2(){
+
+    this.http.get(`http://localhost:8000/api/nappt/${this.user.id}`)
+  
+    .subscribe((resultData: any)=>
+    {
+      this.new_appointments=resultData
+      console.log(this.new_appointments)
+
+    });
+
+    this.show_app=true
+
+
+  }
+
+  confirm(id:string){
+
+    this.http.put('http://localhost:8000/api/confirmation',id)
+  
+    .subscribe((resultData: any)=>
+    {
+      console.log(resultData)
+      window.location.reload();
+
+    });
+    
+
   }
 
 }
