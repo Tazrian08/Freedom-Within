@@ -137,8 +137,8 @@
           <table *ngIf="new_appointments.length > 0" class="package-table">
               <thead>
                 <tr>
-                  <th>Patient Name</th>
-                  <th>Patient Number</th>
+                  <th>Name</th>
+                  <th>Number</th>
                   <th>Service</th>
                   <th>Appointment Type</th>
                   <th>Time</th>
@@ -156,7 +156,7 @@
                     <td>{{ appointment.appointment_type}}</td>
                     <td>{{ appointment.time.time_slot}}</td>
                     <td>{{ appointment.date}}</td>
-                    <td><button class="btn btn-dark" (click)="confirm(appointment.id)">Confirm Appointment</button></td>
+                    <td><button class="btn btn-dark" (click)="confirm(appointment.id)">Confirm</button></td>
   
                   </tr>
                 </ng-container>

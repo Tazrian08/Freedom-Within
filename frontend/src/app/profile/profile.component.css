@@ -362,7 +362,7 @@ body, html {
   
   .package-table th:nth-child(4),
   .package-table td:nth-child(4) {
-    width: 10%;
+    width: 15%;
   }
   
   .package-table th:nth-child(5),
@@ -372,7 +372,11 @@ body, html {
   
   .package-table th:nth-child(6),
   .package-table td:nth-child(6) {
-    width: 15%;
+    width: 10%;
+  }
+  .package-table th:nth-child(7),
+  .package-table td:nth-child(7) {
+    width: 10%;
   }
   
   /* Reduce font size for smaller columns if necessary */
