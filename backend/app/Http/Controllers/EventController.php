@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Image;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 
@@ -19,9 +21,25 @@ class EventController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $event=Event::create([
+            'name' => $request->input('name'),
+            'description' =>$request->input('description'),
+            'time' =>$request->input('time'),
+            'date' =>$request->input('date'),
+        ]);
+
+        $image = time() . '-' . $request->name . '.' . $request->file('image')->extension();
+
+        $request->file('image')->move(public_path('images'), $image);
+    
+        $img = Image::create([
+            'event_id' => $event->id,
+            'path' => asset('images/' . $image)
+        ]);
+        return response()->json($img->path);
+
     }
 
     /**

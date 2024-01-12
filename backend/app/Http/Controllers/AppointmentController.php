@@ -45,6 +45,29 @@ class AppointmentController extends Controller
         return response()->json($appointment);
     }
 
+
+    public function recreate(Request $request)
+    {
+        $patient = Patient::where('contact',$request->input('contact'))->get();
+
+        if($patient->isEmpty()){
+            return response()->json("Contact not found");
+        }
+
+        $appointment = Appointment::create([
+            'patient_id' => $patient[0]->id,
+            'user_id' => $request->input('user_id'),
+            'service_id' => $request->input('service_id'),
+            'time_id' => $request->input('time_id'),
+            'appointment_type' => $request->input('apt_type'),
+            'message' => $request->input('message'),
+            'date' => $request->input('date'),
+            'confirmation' => 0,
+        ]);
+
+        return response()->json($appointment);
+    }
+
     /**
      * Store a newly created resource in storage.
      */

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TimeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TherapistController;
 use App\Http\Controllers\AppointmentController;
@@ -29,6 +30,10 @@ Route::post("/create/service", [ServiceController::class,"create"]);
 Route::get("/allservice",[ServiceController::class,"index"]);
 
 
+#EBENT ROUTES
+Route::post("/create/event", [EventController::class,"create"]);
+
+
 #THERAPIST ROUTES
 Route::get("/alltherapist",[UserController::class,"therapist_index"]);
 
@@ -37,6 +42,7 @@ Route::post("/timeslot",[TimeController::class,"timeslots"]);
 
 #APPOINTMENT ROUTES
 Route::post("/appointment",[AppointmentController::class,"create"]);
+Route::post("/reappointment",[AppointmentController::class,"recreate"]);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'user']);

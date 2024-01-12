@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AddServiceComponent {
 
 
-  constructor(private http: HttpClient, private router: Router ){}
+  constructor(private http: HttpClient, private router: Router){}
 
 
   selectedFile: File | null = null;

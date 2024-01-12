@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { AddServiceComponent } from './adminpages/add-service/add-service.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { NewAppointmentComponent } from './new-appointment/new-appointment.component';
+import { AddEventsComponent } from './adminpages/add-events/add-events.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
     NavbarComponent,
     AddServiceComponent,
     AppointmentComponent,
+    NewAppointmentComponent,
+    AddEventsComponent,
 
   ],
   imports: [

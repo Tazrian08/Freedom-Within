@@ -1,0 +1,43 @@
+<div class="photo-container">
+    <div class="container mt-4" >
+  
+      <div class="card">
+            <h1>Event Form</h1>
+      
+      <form>
+        <div class="mb-3">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Name">
+          </div>
+        </div>
+          <div class="mb-3">
+          <div class="form-group">
+            <label>Description</label>
+            <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Description"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <ngb-datepicker
+              [(ngModel)]="date"
+              [ngModelOptions]="{ standalone: true }"
+              class="form-control"
+              id="name"
+            ></ngb-datepicker>
+          </div>
+          <div class="form-group">
+            <label>TIme</label>
+            <input type="text" [(ngModel)]="time" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Time of Event Ex. (5:00 pm, 10:45 am)">
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Upload Image</label>
+            <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
+          </div>
+        
+          <button type="submit" class="btn btn-primary mt-4" (click)="event_sub()" >Submit</button>
+        </form>
+      </div>
+    <div>
+  </div>
+  
