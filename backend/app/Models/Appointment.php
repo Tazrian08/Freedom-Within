@@ -18,6 +18,7 @@ class Appointment extends Model
         'message',
         'appointment_type',
         'confirmation',
+        'done',
         
     ];
 

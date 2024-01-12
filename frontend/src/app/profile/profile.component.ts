@@ -148,8 +148,23 @@ export class ProfileComponent {
       window.location.reload();
 
     });
+  }
+
+  done(id:string){
+
+    this.http.put('http://localhost:8000/api/done',id)
+  
+    .subscribe((resultData: any)=>
+    {
+      console.log(resultData)
+      window.location.reload();
+
+    });
+
+    
     
 
   }
+  
 
 }

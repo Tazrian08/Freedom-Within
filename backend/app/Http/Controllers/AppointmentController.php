@@ -41,6 +41,7 @@ class AppointmentController extends Controller
             'message' => $request->input('message'),
             'date' => $request->input('date'),
             'confirmation' => 0,
+            'done' => 0,
         ]);
 
         return response()->json($appointment);
@@ -64,6 +65,7 @@ class AppointmentController extends Controller
             'message' => $request->input('message'),
             'date' => $request->input('date'),
             'confirmation' => 0,
+            'done' => 0,
         ]);
 
         return response()->json($appointment);
@@ -110,6 +112,14 @@ class AppointmentController extends Controller
     {
         $appointment=Appointment::find($request);
         $appointment[0]->update(['confirmation' => 1]);
+
+        return response()->json("Success");
+    }
+
+    public function done(Request $request)
+    {
+        $appointment=Appointment::find($request);
+        $appointment[0]->update(['done' => 1]);
 
         return response()->json("Success");
     }

@@ -41,6 +41,7 @@ return new class extends Migration
             $table->longText("message");
             $table->string("appointment_type");
             $table->boolean("confirmation");
+            $table->boolean("done");
             $table->timestamps();
         });
     }
