@@ -129,7 +129,38 @@
     <div class="photo-container2">
       <span >User Profile</span></div>
 
-      <div class="photo-container3" [ngClass]="{'admin-background': admin, 'user-background': !admin}">
+      <div class="photo-container3">
+        <div *ngIf="thera" class="container2">
+          <div *ngIf="show_schedule" class="attraction-container">
+          <h2 style="text-align: center;">Incoming Appointments</h2><br>
+          <table *ngIf="t_app.length > 0" class="package-table">
+              <thead>
+                <tr>
+                  <th>Patient Name</th>
+                  <th>Patient Number</th>
+                  <th>Service</th>
+                  <th>Appointment Type</th>
+                  <th>Time</th>
+                  <th>Confirmation</th>
+                </tr>
+              </thead>
+              <tbody>
+    
+                <ng-container *ngFor="let appointment of t_app">
+                  <tr>
+                    <td>{{ appointment.patient.name }}</td>
+                    <td>{{ appointment.patient.contact }}</td>
+                    <td>{{ appointment.service.type}}</td>
+                    <td>{{ appointment.appointment_type}}</td>
+                    <td>{{ appointment.time.time_slot}}</td>
+  
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+            <h2 *ngIf="t_app.length == 0">No appointment for today</h2>
+            </div>
+          </div>
     </div>
     
     
