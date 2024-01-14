@@ -184,6 +184,7 @@
           <p>{{user.description}}</p>
           <!-- <h2>Contact: {{ }}</h2> -->
           <button (click)="logout()" class="logout-button">Logout</button>
+          <button routerLink="/change" class="logout-button">Change Profile Information</button>
         </div>
         <div class="profile-container" *ngIf="!auth">
           <h2>You're not logged in</h2>

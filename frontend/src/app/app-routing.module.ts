@@ -8,6 +8,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { NewAppointmentComponent } from './new-appointment/new-appointment.component';
 import { AddEventsComponent } from './adminpages/add-events/add-events.component';
 import { ProfileComponent } from './profile/profile.component';
+import { InfoChangeComponent } from './info-change/info-change.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,8 @@ const routes: Routes = [
   {path: "re_appointment", component: NewAppointmentComponent},
   {path: "admin/event", component: AddEventsComponent},
   {path: "profile", component: ProfileComponent},
+  {path: "change", component: InfoChangeComponent},
+
 ];
 
 @NgModule({

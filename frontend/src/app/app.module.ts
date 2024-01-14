@@ -15,6 +15,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { NewAppointmentComponent } from './new-appointment/new-appointment.component';
 import { AddEventsComponent } from './adminpages/add-events/add-events.component';
 import { ProfileComponent } from './profile/profile.component';
+import { InfoChangeComponent } from './info-change/info-change.component';
 
 
 
@@ -30,6 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
     NewAppointmentComponent,
     AddEventsComponent,
     ProfileComponent,
+    InfoChangeComponent,
 
 
   ],

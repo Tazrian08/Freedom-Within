@@ -160,11 +160,6 @@ export class ProfileComponent {
       window.location.reload();
 
     });
-
-    
-    
-
   }
-  
 
 }
