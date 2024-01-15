@@ -24,8 +24,9 @@ export class LoginComponent {
 
     this.http.post("http://localhost:8000/api/login",bodyData,{withCredentials: true}).subscribe((resultData: any)=>
     {   
-
+        if (resultData!="Login Failed"){
         this.router.navigate(['/profile'])
+      }
     });
   
 }
