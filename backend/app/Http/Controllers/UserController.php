@@ -141,4 +141,22 @@ class UserController extends Controller
 
     }
 
+    public function search($search)
+{
+    if (!empty($search)) {
+        $therapists = User::where('name', 'LIKE', '%' . $search . '%')
+            ->orWhere('email', 'LIKE', '%' . $search . '%')
+            ->orWhereHas('contact', function ($query) use ($search) {
+                $query->where('contact', 'LIKE', '%' . $search . '%');
+            })
+            ->with('contact')
+            ->get();
+    } else {
+        $therapists = User::with('contact')->get();
+    }
+
+    return response()->json($therapists);
+}
+
+
 }

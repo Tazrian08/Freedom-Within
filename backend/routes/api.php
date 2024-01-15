@@ -37,6 +37,7 @@ Route::post("/create/event", [EventController::class,"create"]);
 
 #THERAPIST ROUTES
 Route::get("/alltherapist",[UserController::class,"therapist_index"]);
+Route::get("/search/{searchTerm}",[UserController::class,"search"]);
 Route::put("/name_change", [UserController::class, "name"]);
 Route::put("/email_change", [UserController::class, "email"]);
 Route::put("/password_change", [UserController::class, "password"]);

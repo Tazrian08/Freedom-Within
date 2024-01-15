@@ -88,4 +88,22 @@ export class TherapistComponent {
   }
 
 
+  search(){
+
+    let apiUrl: string;
+  
+    // Check if the search string is empty
+    if (this.searchTerm !== "") {
+      apiUrl = `http://localhost:8000/api/search/${this.searchTerm}`;
+    } else {
+      apiUrl = 'http://localhost:8000/api/alltherapist';
+    }
+  
+    this.http.get(apiUrl).subscribe((resultData: any) => {
+      this.therapists = resultData;
+    });
+
+  }
+
+
 }
