@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Cookie;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -85,4 +86,44 @@ class UserController extends Controller
         return response()->json($therapists);
 
     }
+
+    public function name(Request $request)
+    {
+        $user=User::find($request->input('id'));
+        
+        $user->update(["name"=>$request->input('name')]);
+        return response()->json("Success");
+
+    }
+    public function email(Request $request)
+    {
+        $user=User::find($request->input('id'));
+        $user->update(["email"=>$request->input('email')]);
+        return response()->json("Success");
+
+    }
+
+    public function password(Request $request)
+    {
+        $user=User::find($request->input('id'));
+        $user->update(["password"=>Hash::make($request->input('password'))]);
+        return response()->json("Success");
+
+    }
+
+    public function desc(Request $request)
+    {
+        $user=User::find($request->input('id'));
+        $user->update(["description"=>$request->input('description')]);
+        return response()->json("Success");
+
+    }
+    public function contact_change(Request $request)
+    {
+        $contact=Contact::find($request->input('id'));
+        $contact->update(["contact"=>$request->input('contact')]);
+        return response()->json("Success");
+
+    }
+
 }

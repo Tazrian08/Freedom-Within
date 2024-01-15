@@ -23,6 +23,7 @@ export class InfoChangeComponent {
   name=""
   email=""
   password=""
+  password1=""
   description=""
 
 
@@ -61,8 +62,88 @@ export class InfoChangeComponent {
       (data: any) => {
         this.thera = data;
       });
-    
+  }
+
+
+  name_change(id:string){
+
+    let data={"name":this.name,"id":id}
+
+    this.http.put('http://localhost:8000/api/name_change',data)
+  
+    .subscribe((resultData: any)=>
+    {
+      console.log(resultData)
+
+    });
+
+
 
   }
+
+  email_change(id:string){
+    let data={"email":this.email,"id":id}
+
+    this.http.put('http://localhost:8000/api/email_change',data)
+  
+    .subscribe((resultData: any)=>
+    {
+      console.log(resultData)
+
+    });
+
+  }
+  password_change(id:string){
+
+    
+
+    if (this.password==this.password1){
+
+      let data={"password":this.password,"id":id}
+      this.http.put('http://localhost:8000/api/password_change',data)
+  
+    .subscribe((resultData: any)=>
+    {
+      console.log(resultData)
+
+    });
+    } else{
+      alert("Passwords doesn't match")
+    }
+
+
+
+  }
+
+  contact_change(id:string,contact:string){
+
+    let data={"contact":contact,"id":id}
+
+    this.http.put('http://localhost:8000/api/contact_change',data)
+  
+    .subscribe((resultData: any)=>
+    {
+      console.log(resultData)
+
+    });
+
+
+  }
+
+  description_change(id:string){
+
+    let data={"description":this.description,"id":id}
+
+    this.http.put('http://localhost:8000/api/desc_change',data)
+  
+    .subscribe((resultData: any)=>
+    {
+      console.log(resultData)
+
+    });
+
+
+  }
+
 
 }
