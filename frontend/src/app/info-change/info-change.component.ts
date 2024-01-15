@@ -97,7 +97,7 @@ export class InfoChangeComponent {
 
     
 
-    if (this.password==this.password1){
+    if (this.password==this.password1 && this.password !=""){
 
       let data={"password":this.password,"id":id}
       this.http.put('http://localhost:8000/api/password_change',data)

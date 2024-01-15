@@ -82,7 +82,9 @@ class UserController extends Controller
 
     public function therapist_index()
     {
-        $therapists=User::where("therapist_status",1)->get();
+        $therapists=User::where("therapist_status",1)
+        ->with("contact")
+        ->get();
         return response()->json($therapists);
 
     }
@@ -122,6 +124,19 @@ class UserController extends Controller
     {
         $contact=Contact::find($request->input('id'));
         $contact->update(["contact"=>$request->input('contact')]);
+        return response()->json("Success");
+
+    }
+
+    public function admin(Request $request)
+    {
+        $user=User::find($request);
+
+        if ($user[0]->admin_access==0){
+        $user[0]->update(["admin_access"=>1]);
+        } else{
+        $user[0]->update(["admin_access"=>0]);
+        }
         return response()->json("Success");
 
     }

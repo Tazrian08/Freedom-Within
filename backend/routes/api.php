@@ -42,6 +42,7 @@ Route::put("/email_change", [UserController::class, "email"]);
 Route::put("/password_change", [UserController::class, "password"]);
 Route::put("/desc_change", [UserController::class, "desc"]);
 Route::put("/contact_change", [UserController::class, "contact_change"]);
+Route::put("/tog_admin", [UserController::class, "admin"]);
 
 #TIMESLOT ROUTES
 Route::post("/timeslot",[TimeController::class,"timeslots"]);

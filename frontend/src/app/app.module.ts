@@ -16,6 +16,8 @@ import { NewAppointmentComponent } from './new-appointment/new-appointment.compo
 import { AddEventsComponent } from './adminpages/add-events/add-events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { InfoChangeComponent } from './info-change/info-change.component';
+import { TherapistComponent } from './index/therapist/therapist.component';
+import { PatientComponent } from './index/patient/patient.component';
 
 
 
@@ -32,6 +34,8 @@ import { InfoChangeComponent } from './info-change/info-change.component';
     AddEventsComponent,
     ProfileComponent,
     InfoChangeComponent,
+    TherapistComponent,
+    PatientComponent,
 
 
   ],

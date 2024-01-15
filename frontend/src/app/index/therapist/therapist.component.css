@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Viewport height */
+  }
+  
+  table {
+    border: 1px solid #000; /* Border color, adjust as needed */
+    width: 100%; /* Change this value to set the desired width */
+    height: 80%;
+    overflow: auto;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  input {
+    margin-bottom: 10px;
+  }
+  

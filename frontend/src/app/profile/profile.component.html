@@ -33,7 +33,7 @@
                 Add Event
             </span>
         </a>
-          <a *ngIf="admin" routerLink="/index/therapist">
+          <a *ngIf="admin || thera" routerLink="/index/therapists">
             <span class="material-icons-sharp">
                 Therapists Index
             </span>
@@ -54,76 +54,22 @@
       </span>
   </a>
           
-            <a  [routerLink]="['/destination/index']">
-                <span class="material-icons-sharp">
-                    Link
-                </span>
-                
-            </a>
-            <a  [routerLink]="['/hotels']">
-                <span class="material-icons-sharp">
-                    Link
-                </span>
-              
-            </a>
-            <a  [routerLink]="['/flight']">
-                <span class="material-icons-sharp">
-                    Link
-                </span>
-            </a>
-            <!-- <a href="#">
-                <span class="material-icons-sharp">
-                    Attractions
-                </span>
-              
-            </a> -->
-            <a  [routerLink]="['/travel-packages']">
-                <span class="material-icons-sharp">
-                    Link
-                </span>
-                
-            </a>
-            <!-- <a href="#">
-                <span class="material-icons-sharp">
-                    Custom Packages
-                </span>
-                
-            </a> -->
+  
+ 
+ 
+
+  
+ 
 
 
             
             
-            
-            <a *ngIf="admin" routerLink="/admin/travel-package">
-                <span class="material-icons-sharp">
-                    Link
-                </span>
-               
-            </a>
+ 
 
-            <!-- <a *ngIf="admin" routerLink="/admin/hotel">
-                <span class="material-icons-sharp">
-                    Add Hotel
-                </span>
-               
-            </a> -->
+
             
-            <a *ngIf="!admin" routerLink="/cart">
-                <span class="material-icons-sharp">
-                    Link
-                </span>
-               
-            </a>
-            <!-- <a  [routerLink]="['/register']">
-                <span class="material-icons-sharp">
-                    regiater
-                </span>
-            </a> -->
-            <!-- <a href="#">
-                <span class="material-icons-sharp">
-                    Logout
-                </span>
-            </a> -->
+ 
+
         </div>
     </aside> 
     <div class="photo-container2">
@@ -182,9 +128,12 @@
           <h2>Name: {{ user.name }} </h2>
           <h2>Email: {{ user.email }}</h2>
           <p>{{user.description}}</p>
+          <button routerLink="/change" class="logout-button">Change Profile Information</button><br>
           <!-- <h2>Contact: {{ }}</h2> -->
           <button (click)="logout()" class="logout-button">Logout</button>
-          <button routerLink="/change" class="logout-button">Change Profile Information</button>
+
+          
+
         </div>
         <div class="profile-container" *ngIf="!auth">
           <h2>You're not logged in</h2>
