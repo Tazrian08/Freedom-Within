@@ -18,6 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { InfoChangeComponent } from './info-change/info-change.component';
 import { TherapistComponent } from './index/therapist/therapist.component';
 import { PatientComponent } from './index/patient/patient.component';
+import { AppointmentsComponent } from './index/appointments/appointments.component';
 
 
 
@@ -36,6 +37,7 @@ import { PatientComponent } from './index/patient/patient.component';
     InfoChangeComponent,
     TherapistComponent,
     PatientComponent,
+    AppointmentsComponent,
 
 
   ],

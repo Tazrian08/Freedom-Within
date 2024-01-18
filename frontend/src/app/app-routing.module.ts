@@ -10,6 +10,7 @@ import { AddEventsComponent } from './adminpages/add-events/add-events.component
 import { ProfileComponent } from './profile/profile.component';
 import { InfoChangeComponent } from './info-change/info-change.component';
 import { TherapistComponent } from './index/therapist/therapist.component';
+import { AppointmentsComponent } from './index/appointments/appointments.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,8 @@ const routes: Routes = [
   {path: "profile", component: ProfileComponent},
   {path: "change", component: InfoChangeComponent},
   {path: "index/therapists", component: TherapistComponent},
+  {path: "index/appointment", component: TherapistComponent},
+  {path: "index/appointments/:id", component: AppointmentsComponent},
 
 ];
 

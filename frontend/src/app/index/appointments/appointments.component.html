@@ -1,0 +1,34 @@
+<div class="scrollable-container">
+    <div class="scrollable-box">
+        <div class="faded-box">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Service</th>
+                    <th>Session Type</th>
+                    <th>Session Status</th>
+                </tr>
+                <tr *ngFor="let appointment of appointments">
+                    <td>{{appointment.patient.name}}</td>
+                    <td>{{appointment.patient.age}}</td>
+                    <td>{{appointment.patient.gender}}</td>
+                    <td>{{appointment.patient.email}}</td>
+                    <td>{{appointment.patient.contact}}</td>
+                    <td>{{appointment.date}}</td>
+                    <td>{{appointment.time.time_slot}}</td>
+                    <td>{{appointment.service.type}}</td>
+                    <td>{{appointment.appointment_type}}</td>
+                    <td *ngIf="appointment.done==1">Completed</td>
+                    <td *ngIf="appointment.done==0">Incomplete</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </div>
+    </div>
+</div>

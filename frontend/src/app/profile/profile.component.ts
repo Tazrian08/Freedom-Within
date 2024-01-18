@@ -162,4 +162,9 @@ export class ProfileComponent {
     });
   }
 
+  goToappointment(): void {
+    this.router.navigate(['index/appointments', this.user.id]);
+
+  }
+
 }

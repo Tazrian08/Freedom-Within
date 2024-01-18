@@ -58,6 +58,7 @@ Route::get("/tappt/{id}", [AppointmentController::class, "show"]);
 Route::get("/nappt/{id}", [AppointmentController::class, "show2"]);
 Route::put("/confirmation", [AppointmentController::class, "confirm"]);
 Route::put("/done", [AppointmentController::class, "done"]);
+Route::get("/myappointments/{id}", [AppointmentController::class, "show3"]);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [UserController::class, 'user']);

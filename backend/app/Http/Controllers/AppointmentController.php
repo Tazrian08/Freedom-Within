@@ -108,6 +108,17 @@ class AppointmentController extends Controller
         return response()->json($appointments);
     }
 
+    public function show3($id)
+    {
+        $user_id=$id;
+        $appointments=Appointment::where("user_id",$user_id)
+        ->where('confirmation',1)
+        ->with('patient','user','time','service')
+        ->get();
+
+        return response()->json($appointments);
+    }
+
     public function confirm(Request $request)
     {
         $appointment=Appointment::find($request);

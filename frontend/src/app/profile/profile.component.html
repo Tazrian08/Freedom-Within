@@ -38,9 +38,9 @@
                 Therapists Index
             </span>
         </a>
-        <a *ngIf="admin" routerLink="/index/patient">
+        <a *ngIf="thera" (click)="goToappointment()">
           <span class="material-icons-sharp">
-              Patients Index
+              Appointment History
           </span>
       </a>
       <a *ngIf="admin" routerLink="/index/service">
