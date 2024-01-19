@@ -13,7 +13,9 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //
+        $patients=Patient::all();
+        return response()->json($patients);
+
     }
 
     /**
@@ -35,9 +37,13 @@ class PatientController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Patient $patient)
+    public function show( $id)
     {
-        //
+        $patient=Patient::where('id',$id)
+        ->with("appointment","appointment.user","appointment.service","appointment.time")
+        ->get();
+
+        return response()->json($patient[0]);
     }
 
     /**

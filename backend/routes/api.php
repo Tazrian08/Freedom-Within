@@ -6,6 +6,7 @@ use App\Http\Controllers\TimeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TherapistController;
 use App\Http\Controllers\AppointmentController;
@@ -47,6 +48,11 @@ Route::put("/tog_admin", [UserController::class, "admin"]);
 
 #TIMESLOT ROUTES
 Route::post("/timeslot",[TimeController::class,"timeslots"]);
+
+
+// PATIENT ROUTES 
+Route::get("/allpatient",[PatientController::class,"index"]);
+Route::get("/select/{id}", [PatientController::class, "show"]);
 
 
 

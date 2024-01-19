@@ -38,17 +38,22 @@
                 Therapists Index
             </span>
         </a>
-        <a *ngIf="thera" (click)="goToappointment()">
+        <a *ngIf="admin || thera" (click)="goToappointment()">
           <span class="material-icons-sharp">
               Appointment History
           </span>
       </a>
-      <a *ngIf="admin" routerLink="/index/service">
+      <a *ngIf="admin || thera" routerLink="/index/patients">
+        <span class="material-icons-sharp">
+            Patient History
+        </span>
+    </a>
+      <a *ngIf="admin || thera" routerLink="/index/service">
         <span class="material-icons-sharp">
             Service Index
         </span>
     </a>
-    <a *ngIf="admin" routerLink="/index/service">
+    <a *ngIf="admin || thera" routerLink="/index/service">
       <span class="material-icons-sharp">
           Event Index
       </span>
