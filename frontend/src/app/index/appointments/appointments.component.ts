@@ -74,4 +74,22 @@ export class AppointmentsComponent {
 
   }
 
+  search(){
+
+    let apiUrl: string;
+  
+    // Check if the search string is empty
+    if (this.searchTerm !== "") {
+      apiUrl = `http://localhost:8000/api/app_search/${this.searchTerm}`;
+    } else {
+      apiUrl = `http://localhost:8000/api/myappointments/${this.user.id}`;
+    }
+  
+    this.http.get(apiUrl).subscribe((resultData: any) => {
+      this.appointments = resultData;
+      console.log(this.appointments)
+    });
+
+  }
+
 }

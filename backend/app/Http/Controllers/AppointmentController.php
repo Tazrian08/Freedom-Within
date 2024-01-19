@@ -135,6 +135,28 @@ class AppointmentController extends Controller
         return response()->json("Success");
     }
 
+
+    public function search($search)
+{
+    if (!empty($search)) {
+        $appointments = Appointment::where('confirmation', 1)
+            ->where('date', 'LIKE', '%' . $search . '%')
+            ->orWhereHas('patient', function ($query) use ($search) {
+                $query->where(function ($subQuery) use ($search) {
+                    $subQuery->where('name', 'LIKE', '%' . $search . '%')
+                        ->orWhere('email', 'LIKE', '%' . $search . '%')
+                        ->orWhere('contact', 'LIKE', '%' . $search . '%');
+                });
+            })
+            ->with('patient', 'user', 'time', 'service')
+            ->get();
+    } else {
+        $appointments = Appointment::with('patient', 'user', 'time', 'service')->get();
+    }
+
+    return response()->json($appointments);
+}
+
     /**
      * Show the form for editing the specified resource.
      */

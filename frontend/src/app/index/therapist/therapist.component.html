@@ -12,36 +12,46 @@
     <input type="text" placeholder="Search..." [(ngModel)]="searchTerm">
     <button (click)="search()">Search</button>
 
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Contact</th>
-          <th>Admin Access</th>
-          <th *ngIf="user.admin_access==1">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Replace the following block with your actual data using *ngFor directive -->
-        <tr *ngFor="let therapist of therapists">
-        
-          <td>{{ therapist.name }}</td>
-          <td>{{ therapist.email }}</td>
-          <td><div *ngFor="let contact of therapist.contact">{{contact.contact}}</div></td>
-          <td *ngIf="therapist.admin_access==1">Enabled</td>
-          <td *ngIf="therapist.admin_access==0">Disabled</td>
-          <td *ngIf="user.admin_access==1 && therapist.id !=user.id">
-            <!-- Add actions here, e.g., buttons for edit, delete, etc. -->
-            <button (click)="tog_admin(therapist.id)">Toggle Admin</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="scrollable-container">
+      <div class="scrollable-box">
+          <div class="faded-box">
+              <table border="1">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Admin Access</th>
+              <th *ngIf="user.admin_access==1">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+    
+            <tr *ngFor="let therapist of therapists">
+            
+              <td>{{ therapist.name }}</td>
+              <td>{{ therapist.email }}</td>
+              <td><div *ngFor="let contact of therapist.contact">{{contact.contact}}</div></td>
+              <td *ngIf="therapist.admin_access==1">Enabled</td>
+              <td *ngIf="therapist.admin_access==0">Disabled</td>
+              <td *ngIf="user.admin_access==1 && therapist.id !=user.id">
+    
+                <button (click)="tog_admin(therapist.id)">Toggle Admin</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+          </div>
+      </div>
+    </div>
   </div>
 
 </body>
 </html>
+
+
+
+
 
 
 <!-- <tr *ngFor="let therapist of therapists | filter:searchTerm"></tr> -->
