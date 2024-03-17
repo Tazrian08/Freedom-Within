@@ -15,7 +15,12 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $today = now()->toDateString();
+    
+        $events1 = Event::whereDate('date', '<', $today)->with("image")->get();
+        $events2 = Event::whereDate('date', '>=', $today)->with("image")->get();
+    
+        return response()->json(['past_events' => $events1, 'future_events' => $events2]);
     }
 
     /**

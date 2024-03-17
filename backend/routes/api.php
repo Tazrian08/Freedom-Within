@@ -32,8 +32,11 @@ Route::post("/create/service", [ServiceController::class,"create"]);
 Route::get("/allservice",[ServiceController::class,"index"]);
 
 
-#EBENT ROUTES
+
+
+#EVENT ROUTES
 Route::post("/create/event", [EventController::class,"create"]);
+Route::get("/allevents",[EventController::class,"index"]);
 
 
 #THERAPIST ROUTES

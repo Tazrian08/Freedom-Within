@@ -19,6 +19,8 @@ import { InfoChangeComponent } from './info-change/info-change.component';
 import { TherapistComponent } from './index/therapist/therapist.component';
 import { PatientComponent } from './index/patient/patient.component';
 import { AppointmentsComponent } from './index/appointments/appointments.component';
+import { ServicesComponent } from './services/services.component';
+import { EventsComponent } from './events/events.component';
 
 
 
@@ -38,6 +40,8 @@ import { AppointmentsComponent } from './index/appointments/appointments.compone
     TherapistComponent,
     PatientComponent,
     AppointmentsComponent,
+    ServicesComponent,
+    EventsComponent,
 
 
   ],

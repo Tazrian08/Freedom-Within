@@ -12,6 +12,8 @@ import { InfoChangeComponent } from './info-change/info-change.component';
 import { TherapistComponent } from './index/therapist/therapist.component';
 import { AppointmentsComponent } from './index/appointments/appointments.component';
 import { PatientComponent } from './index/patient/patient.component';
+import { ServicesComponent } from './services/services.component';
+import { EventsComponent } from './events/events.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,8 @@ const routes: Routes = [
   {path: "index/appointment", component: TherapistComponent},
   {path: "index/appointments/:id", component: AppointmentsComponent},
   {path: "index/patients", component: PatientComponent},
+  {path: "services", component: ServicesComponent},
+  {path: "events", component: EventsComponent},
 
 ];
 
