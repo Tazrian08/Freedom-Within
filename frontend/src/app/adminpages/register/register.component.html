@@ -1,63 +1,86 @@
+
+
+
+
+
 <div class="container mt-4" >
 
-    <div class="card">
-        <h1>User Registation</h1>
-  
-  <form>
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
-  
-    </div>
-  
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter email">
-  
-      </div>
-  
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
-      </div>
-      <div class="mb-3">
-        <div class="form-group">
-            <label>Contact</label>
-            <input type="email" [(ngModel)]="contacts[0]" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Contact Number">
-      </div>
+    <div class="container">
+        <div class="toggle-container">
+            <form>
+              <h1>Registration</h1>
+                <div class="mb-3">  
+                  <label>Name</label>
+                  <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+            </div>
+
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter email">
           </div>
-      <div *ngFor="let contact of contacts; let i = index" class="mb-3">
-        <div class="form-group">
-          <label>Contact {{ i + 2 }}</label>
-          <input type="text" [(ngModel)]="contacts[i+1]" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Contact">
+
+          <div class="mb-3">
+              <label>Password</label>
+              <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
+          </div>
+
+          <div class="mb-3">
+              <label>Contact</label>
+              <input type="email" [(ngModel)]="contacts[0]" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Contact Number">
+          </div>
+
+          <div *ngFor="let contact of contacts; let i = index" class="mb-3">
+              <label>Contact {{ i + 2 }}</label>
+              <input type="text" [(ngModel)]="contacts[i+1]" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Contact">
+          </div>
+
+          <div class="mb-3">
+              <label>Therapist Status</label>
+              <select [(ngModel)]="therapist_status" [ngModelOptions]="{standalone: true}" class="mb-3">
+                  <option [value]=0>No</option>
+                  <option [value]=1>Yes</option>
+              </select>
+          </div>
+
+          <div class="mb-3">
+              <label>Admin Access</label>
+              <select [(ngModel)]="admin_access" [ngModelOptions]="{standalone: true}" class="mb-3">
+                  <option [value]=0>No</option>
+                  <option [value]=1>Yes</option>
+              </select>
+          </div>
+
+          <div class="mb-3">
+            <label>Description</label>
+            <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter Description"></textarea>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Therapist Status</label>
-        <select [(ngModel)]="therapist_status" [ngModelOptions]="{standalone: true}" class="form-control">
-          <option [value]=0 >No</option>
-          <option [value]=1 >Yes</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Admin Access</label>
-        <select [(ngModel)]="admin_access" [ngModelOptions]="{standalone: true}" class="form-control">
-          <option [value]=0 >No</option>
-          <option [value]=1 >Yes</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <div class="form-group">
-          <label>Description</label>
-          <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Description"></textarea>
+        
+
+          <div class="mb-3">
+              <label for="formFile" class="form-label">Upload Image</label>
+              <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-4" (click)="register()">Register</button>
+          <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p>-->
+      </form>
+  </div>
+  <div class="form-container sign-in">
+    <div class="toggle">
+        <div class="toggle-panel toggle-left">
+            <h1>Welcome Back!</h1>
+            <p>Enter your personal details to use all site features</p>
+            <button class="hidden" id="login">Sign In</button>
         </div>
-        </div>
-      <div class="mb-3">
-        <label for="formFile" class="form-label">Upload Image</label>
-        <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
-      </div>
-      <button type="submit" class="btn btn-primary mt-4" (click)="register()" >Register</button>
-      <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->
-  </form>
+        <div class="toggle-panel toggle-right">
+            <h1>Hello!</h1>
+            <p>Already a member? Sign-in</p>
+            <button class="hidden" id="register" [routerLink]="['/login']">Login</button>
+          </div>
     </div>
-  <div>
+</div>
+</div>
+
+<script src="path-to-angular.js"></script>
+<script src="script.js"></script>
+</div>
