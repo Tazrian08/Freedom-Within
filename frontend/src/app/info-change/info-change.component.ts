@@ -74,6 +74,7 @@ export class InfoChangeComponent {
     .subscribe((resultData: any)=>
     {
       console.log(resultData)
+      alert("Name changed successfully!")
 
     });
 
@@ -89,6 +90,7 @@ export class InfoChangeComponent {
     .subscribe((resultData: any)=>
     {
       console.log(resultData)
+      alert("Email changed successfully!")
 
     });
 
@@ -105,6 +107,7 @@ export class InfoChangeComponent {
     .subscribe((resultData: any)=>
     {
       console.log(resultData)
+      alert("Password changed successfully!")
 
     });
     } else{
@@ -124,6 +127,7 @@ export class InfoChangeComponent {
     .subscribe((resultData: any)=>
     {
       console.log(resultData)
+      alert("Contact changed successfully!")
 
     });
 
@@ -139,6 +143,7 @@ export class InfoChangeComponent {
     .subscribe((resultData: any)=>
     {
       console.log(resultData)
+      alert("Description changed successfully!")
 
     });
 

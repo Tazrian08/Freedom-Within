@@ -48,6 +48,7 @@ service_sub(){
 
   });
   console.log("This runs")
+  alert("Service added successfully!")
   
 }
 

@@ -1,48 +1,47 @@
 <div class="container mt-4" >
+  <div class="card">
+      <h1>Update your Information</h1>
 
-    <div class="card">
-        <h1>User Registation</h1>
-  
-  <form>
-    <div class="form-group">
-      <label>Change Name</label>
-      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
-      <button (click)="name_change(user.id)">Change Name</button>
-  
-    </div>
-  
-    <div class="form-group">
-        <label>Change Email</label>
-        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter email">
-        <button (click)="email_change(user.id)">Change Email</button>
-      </div>
-  
-      <div class="form-group">
-        <label>Change Password</label>
-        <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
-        <input type="password" [(ngModel)]="password1" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Re-enter password">
-        <button (click)="password_change(user.id)">Change Password</button>
-      </div>
-      <div class="mb-3">
-        <div class="form-group">
-          <label>Description</label>
-          <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Description"></textarea>
-          <button (click)="description_change(user.id)">Change Description</button>
-        </div>
-        </div>
-        <div  class="mb-3"></div>
-        <div *ngFor="let contact of contacts; let i = index" class="form-group">
-          <label>Change Contact number</label>
-          <input type="text" [(ngModel)]="contacts[i].contact" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
-          <button (click)="contact_change(contact.id, contacts[i].contact)">Change contact</button>
-        </div>
+      <form class="form-container">
+          <div class="left-section">
+              <!-- Left section content -->
+              <div class="form-group">
+                  <label>Change Name</label>
+                  <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+                  <button (click)="name_change(user.id)">Change Name</button>
+              </div>
 
-      <!-- <div class="mb-3">
-        <label for="formFile" class="form-label">Upload Image</label>
-        <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" accept="image/*">
-      </div>
-      <button type="submit" class="btn btn-primary mt-4" (click)="register()" >Register</button> -->
-      <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->
-  </form>
-    </div>
-  <div>
+              <div class="form-group">
+                  <label>Change Email</label>
+                  <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter email">
+                  <button (click)="email_change(user.id)">Change Email</button>
+              </div>
+
+              <div class="form-group">
+                  <label>Change Password</label>
+                  <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
+                  <input type="password" [(ngModel)]="password1" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Re-enter password">
+                  <button (click)="password_change(user.id)">Change Password</button>
+              </div>
+          </div>
+
+          <div class="right-section">
+              <!-- Right section content -->
+              <div class="form-group">
+                  <label>Description</label>
+                  <textarea type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Description"></textarea>
+                  <button (click)="description_change(user.id)">Change Description</button>
+              </div>
+
+              <div *ngFor="let contact of contacts; let i = index" class="form-group">
+                  <label>Change Contact number</label>
+                  <input type="text" [(ngModel)]="contacts[i].contact" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+                  <button (click)="contact_change(contact.id, contacts[i].contact)">Change contact</button>
+              </div>
+          </div>
+
+          <div class="clearfix"></div>
+          <!-- Add submit button here -->
+      </form>
+  </div>
+</div>

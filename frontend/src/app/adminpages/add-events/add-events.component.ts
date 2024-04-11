@@ -55,6 +55,7 @@ event_sub(){
       this.name=""
       this.description=""
       console.log(this.image)
+      alert("Event added successfully!")
 
       // this.router.navigate(['/login'])
 
