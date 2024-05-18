@@ -191,9 +191,40 @@ export class ProfileComponent {
       });
 
     }
+  }
 
+  in_search(){
+    let data={"id":this.user.id, "search":this.search1}
+  
+    // Check if the search string is empty
+    if (this.search1 !== "") {
+      this.http.post('http://localhost:8000/api/nappt/search',data).subscribe((resultData: any) => {
+        this.new_appointments=resultData
+        this.show_app=true
+        console.log("workfing 2")
+      });
 
+    } else {
+      let apiUrl = `http://localhost:8000/api/nappt/${this.user.id}`;
+      this.http.get(apiUrl).subscribe((resultData: any) => {
+        this.new_appointments=resultData
+        this.show_app=true
+        console.log("workfing 2")
+      });
 
+    }
+
+  }
+  cancel(id:string){
+
+    this.http.delete(`http://localhost:8000/api/cancel/${id}`)
+  
+    .subscribe((resultData: any)=>
+    {
+      console.log(resultData)
+      window.location.reload();
+
+    });
 
 
   }

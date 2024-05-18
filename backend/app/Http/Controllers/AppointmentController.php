@@ -158,6 +158,25 @@ class AppointmentController extends Controller
     return response()->json($appointments);
 }
 
+public function search1(Request $request){
+    $user_id=$request->input('id');
+    $search=$request->input('search');
+    $date = Carbon::now()->toDateString();
+    $appointments=Appointment::where("user_id",$user_id)
+    ->where('date', '>=', $date)
+    ->where('confirmation',0)
+    ->with('patient','user','time','service')
+    ->WhereHas('patient', function ($query) use ($search) {
+        $query->where('name', 'LIKE', '%' . $search . '%')
+            ->orWhere('contact', 'LIKE', '%' . $search . '%');
+    })
+    ->with('patient','user','time','service')
+    ->get();
+
+    return response()->json($appointments);
+
+}
+
 
 
     public function search2(Request $request){
@@ -179,6 +198,9 @@ class AppointmentController extends Controller
 
     }
 
+
+
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -198,8 +220,10 @@ class AppointmentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Appointment $appointment)
+    public function destroy($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        $appointment->delete();
+        
     }
 }

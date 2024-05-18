@@ -85,6 +85,9 @@
         <div *ngIf="thera" class="container2">
           <div *ngIf="show_app" class="attraction-container">
           <h2 style="text-align: center;">Incoming Appointments</h2><br>
+          <h4>Filter incoming appointments</h4>
+          <input type="text" placeholder="Patient's Name or Number" [(ngModel)]="search1">
+          <button (click)="in_search()">Search</button>
           <table *ngIf="new_appointments.length > 0" class="package-table">
               <thead>
                 <tr>
@@ -95,6 +98,7 @@
                   <th>Time</th>
                   <th>Date</th>
                   <th>Confirmation</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -108,6 +112,7 @@
                     <td>{{ appointment.time.time_slot}}</td>
                     <td>{{ appointment.date}}</td>
                     <td><button class="btn btn-dark" (click)="confirm(appointment.id)">Confirm</button></td>
+                    <td><button class="btn btn-dark" (click)="cancel(appointment.id)">Cancel</button></td>
   
                   </tr>
                 </ng-container>
@@ -152,7 +157,7 @@
           
         <h2 style="text-align: center;">Confirmed Appointments</h2><br>
         <h4>Filter confirmed appointments</h4>
-        <input type="text" placeholder="Search..." [(ngModel)]="search2">
+        <input type="text" placeholder="Patient's Name or Number" [(ngModel)]="search2">
         <button (click)="con_search()">Search</button>
         <table *ngIf="t_app.length > 0" class="package-table">
             <thead>
