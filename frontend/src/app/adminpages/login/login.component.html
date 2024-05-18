@@ -16,6 +16,10 @@
               </div>
 
               <button type="submit" class="btn btn-primary mt-3" (click)="login()">Login</button>
+              <div class="reg">
+                <p style="display: inline; margin-top: -50px;">Not a member?  </p>
+                <a [routerLink]="['/admin/register']" style="display: inline; color: rgb(89, 0, 255);">Register Now</a>
+            </div>
           </form>
       </div>
   </div>
