@@ -68,6 +68,9 @@ export class RegisterComponent {
     this.description=""
     // this.router.navigate(['admin/login']);
 
+    alert("User has been registered");
+      this.router.navigate(['/login']);
+
   });
   console.log("This runs")
   
