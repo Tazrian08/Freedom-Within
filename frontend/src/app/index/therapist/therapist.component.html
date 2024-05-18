@@ -36,7 +36,7 @@
               <td *ngIf="therapist.admin_access==0">Disabled</td>
               <td *ngIf="user.admin_access==1 && therapist.id !=user.id">
     
-                <button (click)="tog_admin(therapist.id)">Toggle Admin</button>
+                <button *ngIf="therapist.id!=1" (click)="tog_admin(therapist.id)">Toggle Admin</button>
               </td>
             </tr>
           </tbody>
