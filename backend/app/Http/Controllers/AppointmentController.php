@@ -87,8 +87,9 @@ class AppointmentController extends Controller
         $user_id=$id;
         $date = Carbon::now()->toDateString();
         $appointments=Appointment::where("user_id",$user_id)
-        ->where('date',$date)
+        ->where('date', '>=', $date)
         ->where('confirmation',1)
+        ->where('done',0)
         ->with('patient','user','time','service')
         ->get();
 

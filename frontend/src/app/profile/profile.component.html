@@ -146,10 +146,10 @@
       </div>
       
     <div class="photo-container5" >
-      <button class="btn btn-dark" (click)="show()">Show Todays Schedule</button>
+      <button class="btn btn-dark" (click)="show()">Show Confirmed Appointments</button>
       <div *ngIf="thera" class="container2">
         <div *ngIf="show_schedule" class="attraction-container">
-        <h2 style="text-align: center;">Today's Schedule</h2><br>
+        <h2 style="text-align: center;">Confirmed Appointments</h2><br>
         <table *ngIf="t_app.length > 0" class="package-table">
             <thead>
               <tr>
@@ -177,7 +177,7 @@
               </ng-container>
             </tbody>
           </table>
-          <h2 *ngIf="t_app.length == 0">No appointment for today</h2>
+          <h2 *ngIf="t_app.length == 0">No confirmed appointments</h2>
           </div>
         </div>
         <!-- <div *ngIf="admin" class="container2">
