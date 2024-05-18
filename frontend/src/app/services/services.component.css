@@ -21,6 +21,7 @@ html, body {
     overflow: hidden; /* Ensure no overflow */
     background-size: cover;
     background-position: center;
+    
 }
 
 .photo-container9 img {

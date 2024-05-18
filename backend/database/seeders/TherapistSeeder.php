@@ -37,7 +37,7 @@ class TherapistSeeder extends Seeder
         ]);
         Image::create([
             'user_id' => $user->id,
-            'path' => 'http://localhost:8000/images/nasima-jpg'
+            'path' => 'http://localhost:8000/images/nasima'
         ]);
     }
 

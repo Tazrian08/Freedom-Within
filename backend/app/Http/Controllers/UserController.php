@@ -177,7 +177,7 @@ public function img_change(Request $request){
     // Now proceed with uploading the new profile picture
     $user = User::find($user_id);
 
-    $image = time() . '-' . $user->name . '.' . $request->file('image')->extension();
+    $image = time() . '-' . $request->file('image')->extension();
     $request->file('image')->move(public_path('images'), $image);
     $path = asset('images/' . $image);
 
