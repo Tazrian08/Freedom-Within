@@ -15,9 +15,22 @@ export class HomeComponent {
   auth:boolean=false
   admin:boolean=false
   thera:boolean=false
+  services:any
 
 
   ngOnInit(): void {
+
+    this.http.get(`http://localhost:8000/api/allservice`)
+  
+    .subscribe((resultData: any)=>
+    {
+      this.services=resultData
+      console.log(this.services)
+
+    });
+
+
+
     this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
       (res: any) => {
         console.log(res)
