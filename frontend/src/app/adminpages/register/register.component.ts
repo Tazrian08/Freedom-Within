@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbCarouselConfig, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-register',
@@ -9,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-
-  constructor(private http: HttpClient, private router: Router ) {}
+  images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  constructor(private http: HttpClient, private router: Router, private config: NgbCarouselConfig ) {}
 
 
   selectedFile: File | null = null;

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './adminpages/register/register.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselConfig, NgbCarouselModule, NgbModal, NgbModalConfig, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './adminpages/login/login.component';
@@ -42,6 +42,7 @@ import { EventsComponent } from './events/events.component';
     AppointmentsComponent,
     ServicesComponent,
     EventsComponent,
+    
 
 
   ],
@@ -51,8 +52,9 @@ import { EventsComponent } from './events/events.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
+    NgbCarouselModule,
   ],
-  providers: [],
+  providers: [NgbCarouselConfig,NgbModalConfig, NgbModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

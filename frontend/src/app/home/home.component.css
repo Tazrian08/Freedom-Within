@@ -1,0 +1,544 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+    width: 100vw;
+    position: relative;
+}
+
+.photo-container1 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-color: #f2f2f2;
+    background-image: url('/assets/images/happy-woman-standing-writing-notebook.jpg');
+}
+
+.mini-container1 {
+    position: absolute;
+    width: 5vw;
+    height: 5vh;
+    /* Additional styling as needed */
+}
+
+.mini-container2 {
+   position: absolute;
+    top: 50%;
+    left: 30%; 
+    transform: translateY(-50%);
+    text-align: right;
+    color: black; /* Text color */
+    margin-right: 40px;
+}
+
+.mini-container2 p {
+    color: black; /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+    /* Additional styling as needed */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: rgba(51, 51, 51, 0.8); /* Adjust the opacity as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    z-index: 1000; /* Ensure the navbar appears above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-item {
+    margin-right: 10px;
+}
+
+.navbar-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px; /* Adjust padding as needed */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.navbar-item a:hover {
+    background-color: #555; /* Change hover background color as needed */
+}
+
+.big-text {
+    font-size: 100px; /* Adjust as needed */
+    font-family: "Arial", sans-serif; /* Replace with your preferred fancy font */
+    margin-bottom: 10px; /* Space between texts */
+    text-align: right;
+    top: 50%;
+    right: 10%; 
+    transform: translateY(-50%);
+    
+}
+.big-text1 {
+    font-size: 50px; /* Adjust as needed */
+    font-family: "Arial", sans-serif; /* Replace with your preferred fancy font */
+    margin-bottom: 10px; /* Space between texts */
+    text-align: right;
+    top: 50%;
+    right: 10%; 
+    transform: translateY(-50%);
+   
+    
+}
+
+.big-text2 {
+    font-size: 50px; /* Adjust as needed */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
+    margin-bottom: 10px; /* Space between texts */
+    text-align: center;
+    top: 50vh;
+    right: 10vw; 
+    transform: translateY(-50%);
+    color: #000;
+    font-weight: bold;
+   
+    
+}
+.small-text {
+    font-size: 18px; /* Adjust as needed */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
+    text-align: right;
+}
+.small-text1 {
+    font-size: 15px; /* Adjust as needed */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
+    text-align: center;
+    color: #000;
+    margin-right: 30px;
+}
+
+.photo-container2 {
+    width: 100vw;
+    height: 60vh;
+    background-color: rgb(255, 245, 226);
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    position: absolute; /* Change position to relative */
+    z-index: 2;
+    top: 100vh;
+
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.left,
+.right {
+    width: 50%;
+    padding: 20px; /* Adjust padding as needed */
+    color: black;
+}
+
+.right {
+    border-left: 2px solid #e99090; /* Add a border between left and right */
+    padding-left: 30px; /* Adjust padding as needed */
+}
+
+.left h1 {
+    font-size: 36px; /* Adjust as needed */
+    font-weight: bold; /* Font weight */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.left p {
+    font-size: 18px; /* Adjust as needed */
+    line-height: 1.5; /* Adjust line height for better readability */
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.photo-container3 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh; /* Adjust as needed */
+    z-index: 3;
+    top: 112vh;
+    box-sizing: border-box;
+}
+
+.partition {
+    position: absolute;
+    width: 50%; /* Each partition takes up half the width */
+    height: 100%; /* Each partition takes up full height */
+    box-sizing: border-box;
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.partition1 {
+    left: 0;
+    background-color: #e99090; /* Fallback color for partition 1 */
+}
+
+.partition2 {
+    left: 50%;
+    background-color: black; /* Background color for partition 2 */
+}
+
+.partition3 {
+    left: 0;
+    top: 50%;
+    background-color: blue; /* Background color for partition 3 */
+}
+
+.partition4 {
+    left: 50%;
+    top: 50%;
+    background-color: green; /* Background color for partition 4 */
+}
+.photo-container4 {
+    position: absolute;
+    width: 100vw; 
+    height: 70vh;
+    top: 160vh;
+    overflow: hidden; /* Ensure content does not overflow */
+}
+
+.photo-container4 img {
+    width: 100%; /* Make sure the image fits the container */
+    height: 100%; /* Ensure the image covers the container */
+    object-fit: cover; /* Ensure the image covers the container properly */
+}
+
+.photo-container4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    pointer-events: none; /* Ensure it doesn't interfere with text interaction */
+}
+
+.mini-container3 {
+    position: absolute;
+    top: 50%;
+    left: 30%; 
+    transform: translateY(-50%);
+    text-align: left;
+    color: whitesmoke; /* Text color */
+    margin-right: 10vw;
+    background-color: transparent; /* Ensure background is transparent */
+}
+
+.mini-container3 p {
+    color: whitesmoke; /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+    /* Additional styling as needed */
+}
+
+.mini-container3 .big-text {
+    font-size: 60px; /* Example size for big text */
+}
+
+.mini-container3 .small-text {
+    font-size: 14px; /* Example size for small text */
+}
+
+.photo-container5 {
+    width: 100vw;
+    height: 80vh;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-color: #2d5083;
+    top: 230vh;
+}
+
+.mini-container4 {
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    left: 10%; 
+    top: 40px;
+    color: white;
+    /* Additional styling as needed */
+}
+
+.mini-container5 {
+    position: absolute;
+    top: 50px;
+    left: 80%; 
+    transform: translateY(-50%);
+    text-align: right;
+    color: white; /* Text color */
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: right;
+}
+
+.mini-container5 p {
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+    align-items: right;
+    left: 40px;
+    top: 40vh;
+
+
+}
+
+.box {
+    width: 45%; /* Adjust width as needed */
+    height: 45%; /* Adjust height as needed */
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.459); /* Semi-transparent black background */
+    color: white;
+    display: flex;
+    /* justify-content: center; */
+    align-items: right;
+    font-size: 24px; /* Adjust font size as needed */
+    border-radius: 10px; /* Optional: add rounded corners */
+    margin-top: 40px;
+
+}
+
+.box img {
+    width: 70px /* Ensure the image fills the circular container */;
+    height: 70px; /* Ensure the image fills the circular container */
+    margin-left: 30px;
+    border-radius: 50%; /* Make the image circular */
+    left: 40vw;
+    align-items: right;
+    margin-top: 10px;
+    background-color: #fff;
+
+}
+
+.mini-container6{
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    left: -25vw; 
+    top: 90px;
+    color: white;
+    align-items: right;
+    text-align: left;
+}
+
+.mini-container7 {
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    left: -5vw; 
+    top: 90px;
+    color: white;
+    text-align: left;
+}
+
+.mini-container6 p,.mini-container7 p{
+    margin-top: 10vh;
+    margin-left: -4.5vw;
+    font-size: 24px;
+}
+
+.photo-container6 {
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-color: #ffffff;
+    top: 310vh;
+}
+
+.photo-container6 p{
+    text-align: center;
+    font-weight: bold;
+    color:  #2d5083;
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+.mini-container8 {
+    position: absolute;
+    top: 50px;
+    left: 80%; 
+    transform: translateY(-50%);
+    text-align: right;
+    color: white; /* Text color */
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: right;
+}
+
+.mini-container8 p {
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+    align-items: center;
+    text-align: center;
+    margin-left: 70px;
+    
+
+
+}
+
+.boxx {
+    width: 45%; /* Adjust width as needed */
+    height: 75%; /* Adjust height as needed */
+    margin: 10px;
+    background-color: rgba(159, 184, 231, 0.459); /* Semi-transparent black background */
+    color: white;
+    display: flex;
+    /* justify-content: center; */
+    align-items: right;
+    font-size: 24px; /* Adjust font size as needed */
+    border-radius: 10px; /* Optional: add rounded corners */
+    margin-top: 40px;
+
+}
+
+.boxx img {
+    width: 70px /* Ensure the image fills the circular container */;
+    height: 70px; /* Ensure the image fills the circular container */
+    margin-left: 30px;
+    border-radius: 50%; /* Make the image circular */
+    left: 40vw;
+    align-items: right;
+    margin-top: 10px;
+    background-color: #fff;
+
+}
+
+.mini-container9{
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    left: -70vw; 
+    top: 90px;
+    color: white;
+    align-items: right;
+    text-align: left;
+}
+
+.mini-container10 {
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    left: -50vw; 
+    top: 90px;
+    color: white;
+    text-align: left;
+}
+.mini-container11{
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    left: -30vw; 
+    top: 90px;
+    color: white;
+    align-items: right;
+    text-align: left;
+}
+.mini-container12{
+    position: absolute;
+    width: 35vw;
+    height: 45vh;
+    left: -10vw; 
+    top: 90px;
+    color: white;
+    align-items: right;
+    text-align: left;
+}
+
+.mini-container9 p,.mini-container10 p, .mini-container11 p, .mini-container12 p{
+    margin-top: 10vh;
+    margin-left: -4.5vw;
+    font-size: 24px;
+}
+
+.photo-container7{
+    background-image: url('/assets/images/Blue and white mental health modern user information brochure (2).png');
+    height: 130vh;
+    width: 100vw;
+    position: absolute;
+    top: 380vh;
+    
+}
+
+.photo-container8 {
+    width: 100vw;
+    height: 73.5vh;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-color: #f0ffdd;
+    top: 510vh;
+}
+
+.mini-container13 {
+    position: absolute;
+    width: 35vw;
+    height: 65vh;
+    left: 10%; 
+    top: 40px;
+    color: white;
+    background-image:url('/assets/images/woman-working-as-doctor.jpg') ;
+    background-size: cover;
+    background-position: center;
+}
+
+.mini-container14{
+    position: absolute;
+    top: 40vh;
+    left: 50%; 
+    transform: translateY(-50%);
+    text-align: center;
+    color: white; /* Text color */
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 70px;
+}
+
+.button1 {
+    background-color: #005c6e; /* Dark teal */
+    color: #ffffff; /* White */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.button1:hover {
+    background-color: #00313b; /* Darker teal on hover */
+}
+
