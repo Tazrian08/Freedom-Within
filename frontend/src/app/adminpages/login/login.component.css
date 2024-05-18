@@ -294,3 +294,6 @@ body {
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+.reg{
+  margin-top: 20px;
+}
