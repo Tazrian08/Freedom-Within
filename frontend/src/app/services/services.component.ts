@@ -16,7 +16,10 @@ export class ServicesComponent {
   auth: boolean=false
   admin: boolean=false
   thera: boolean=false
-
+  serv1:any;
+  serv2:any;
+  serv3:any;
+  serv4:any;
 
 constructor(private http: HttpClient){
 
@@ -28,6 +31,11 @@ constructor(private http: HttpClient){
     {
       this.services=resultData
       console.log(this.services)
+      this.serv1=this.services[0]
+      console.log(this.serv1)
+      this.serv2=this.services[1]
+      this.serv3=this.services[2]
+      this.serv4=this.services[3]
     });
   }
 
