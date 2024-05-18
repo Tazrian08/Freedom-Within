@@ -84,7 +84,7 @@
 
 .big-text {
     font-size: 100px; /* Adjust as needed */
-    font-family: "Arial", sans-serif; /* Replace with your preferred fancy font */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
     margin-bottom: 10px; /* Space between texts */
     text-align: right;
     top: 50%;
@@ -94,7 +94,7 @@
 }
 .big-text1 {
     font-size: 50px; /* Adjust as needed */
-    font-family: "Arial", sans-serif; /* Replace with your preferred fancy font */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
     margin-bottom: 10px; /* Space between texts */
     text-align: right;
     top: 50%;
@@ -139,7 +139,14 @@
     color: #000;
     margin-right: 30px;
 }
+.small-text2 {
+    font-size: 15px; /* Adjust as needed */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
+    text-align: left;
+    color: #000;
+    align-items:left ;
 
+}
 .photo-container2 {
     width: 100vw;
     height: 60vh;
@@ -554,7 +561,7 @@
 .photo-container9 {
     position: absolute;
     width: 100vw; 
-    height: 70vh;
+    height: 80vh;
     top: 583vh;
     overflow: hidden; /* Ensure content does not overflow */
     color: #ffffff;
@@ -602,4 +609,121 @@
 
 .mini-container15 .small-text {
     font-size: 14px; /* Example size for small text */
+}
+
+.photo-container10 {
+    width: 100vw;
+    height: 74vh;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-color: #00313b;
+    top: 660vh;
+    z-index: 1;
+}
+
+.mini-container17 {
+    position: absolute;
+    width: 35vw;
+    height: 65vh;
+    left: 10%; 
+    top: 20vh;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+.mini-container16{
+    position: absolute;
+    margin-top: 37vh;
+    left: 50%; 
+    transform: translateY(-50%);
+    text-align: center;
+    color: white; /* Text color */
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 70px;
+    background-image:url('/assets/images/arrangement-beautiful-bloomed-flowers.jpg') ;
+    width: 35vw;
+    height: 69vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-container11{
+    background-image: url('/assets/images/White Green Clean & Corporate Mental Health Stress Management Health Explainer Social Media Post (3).png');
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 660vh;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.photo-container12{
+    background-color: #f0ffdd;
+    height: 50vh;
+    width: 100vw;
+    position: absolute;
+    top: 720vh;
+    background-size: cover;
+    background-position: center;
+}
+.boxxx {
+    width: 45%; /* Adjust width as needed */
+    height: 45%; /* Adjust height as needed */
+    margin: 10px;
+    /* background-color: rgba(159, 184, 231, 0.459);  */
+    color: black;
+    display: flex;
+    /* justify-content: center; */
+    align-items: right;
+    font-size: 24px; /* Adjust font size as needed */
+    border-radius: 10px; /* Optional: add rounded corners */
+    margin-top: 40px;
+
+}
+.mini-container18{
+    position: absolute;
+    width: 35vw;
+    height: 25vh;
+    left: -70vw; 
+    top: 90px;
+    color: white;
+    align-items: right;
+    text-align: left;
+}
+
+.mini-container19 {
+    position: absolute;
+    width: 35vw;
+    height: 20vh;
+    left: -50vw; 
+    top: 90px;
+    color: white;
+    text-align: left;
+}
+.mini-container20{
+    position: absolute;
+    width: 35vw;
+    height: 25vh;
+    left: -30vw; 
+    top: 90px;
+    color: white;
+    align-items: right;
+    text-align: left;
+}
+.mini-container21{
+    position: absolute;
+    width: 35vw;
+    height: 25vh;
+    left: -10vw; 
+    top: 90px;
+    color: white;
+    align-items: right;
+    text-align: left;
 }
