@@ -1,1 +1,39 @@
-<p>events works!</p>
+<div class="container">
+    <div class="photo-container9">
+        <img src="/assets/images/women-white-shirts-spending-time-together.jpg" alt="Consultation Image">
+    </div>
+    <div class="photo-container10">
+        <div class="mini-container18">
+            <span class="big-text1">Upcoming Events<br>_________</span><br>
+        </div>
+        <div class="mini-container17">       
+            <!-- <span class="big-text1">Upcoming Events<br>_________</span><br><br> -->
+            <span class="small-text" *ngFor="let event of future_events">
+                <div class="event-details">
+                    <p><strong>Name:</strong> {{ event.name }}</p>
+                    <p><strong>Description:</strong> {{ event.description }}</p>
+                    <p><strong>Date:</strong> {{ event.date }}</p>
+                    <p><strong>Time:</strong> {{ event.time }}</p>
+                </div>
+                <br><br>
+            </span>
+
+           
+    </div>
+    <div class="mini-container19">
+        <span class="big-text2">Past Events<br>_________</span><br>
+    </div>
+        <div class="mini-container16">
+            <span class="small-text" *ngFor="let event of past_events">
+                <div class="event-details">
+                    <p><strong>Name:</strong> {{ event.name }}</p>
+                    <p><strong>Description:</strong> {{ event.description }}</p>
+                    <p><strong>Date:</strong> {{ event.date }}</p>
+                    <p><strong>Time:</strong> {{ event.time }}</p>
+                </div>
+                <br><br>
+            </span>
+        </div>
+    </div>
+   
+</div>
