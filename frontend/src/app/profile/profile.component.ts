@@ -57,6 +57,8 @@ export class ProfileComponent {
   show_schedule:boolean=false
   show_app:boolean=false
   new_appointments:any
+  search1=""
+  search2=""
 
 
 
@@ -164,6 +166,35 @@ export class ProfileComponent {
 
   goToappointment(): void {
     this.router.navigate(['index/appointments', this.user.id]);
+
+  }
+
+  con_search(){
+
+
+    let data={"id":this.user.id, "search":this.search2}
+  
+    // Check if the search string is empty
+    if (this.search2 !== "") {
+      this.http.post('http://localhost:8000/api/tappt/search',data).subscribe((resultData: any) => {
+        this.t_app = resultData;
+        this.show_schedule=true
+        console.log("workfing 2")
+      });
+
+    } else {
+      let apiUrl = `http://localhost:8000/api/tappt/${this.user.id}`;
+      this.http.get(apiUrl).subscribe((resultData: any) => {
+        this.t_app = resultData;
+        this.show_schedule=true
+        console.log("workign1")
+      });
+
+    }
+
+
+
+
 
   }
 

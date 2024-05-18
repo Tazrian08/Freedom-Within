@@ -68,6 +68,7 @@ Route::get("/select/{id}", [PatientController::class, "show"]);
 Route::post("/appointment",[AppointmentController::class,"create"]);
 Route::post("/reappointment",[AppointmentController::class,"recreate"]);
 Route::get("/tappt/{id}", [AppointmentController::class, "show"]);
+Route::post("/tappt/search", [AppointmentController::class, "search2"]);
 Route::get("/nappt/{id}", [AppointmentController::class, "show2"]);
 Route::put("/confirmation", [AppointmentController::class, "confirm"]);
 Route::put("/done", [AppointmentController::class, "done"]);
