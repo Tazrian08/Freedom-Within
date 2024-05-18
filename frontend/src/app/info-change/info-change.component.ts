@@ -65,6 +65,35 @@ export class InfoChangeComponent {
   }
 
 
+  selectedFile: any
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+  }
+
+  upload(id:string): void {
+
+    const formData = new FormData();
+    formData.append('id', id);
+
+    // Append the existing form data
+
+
+    if (this.selectedFile) {
+      formData.append('image', this.selectedFile, this.selectedFile.name);
+    }
+
+
+    this.http.post("http://localhost:8000/api/img_change",formData).subscribe((resultData: any)=> 
+    {
+
+        console.log(resultData)
+        // this.router.navigate(['/login'])
+
+    });
+  }
+
+
   name_change(id:string){
 
     let data={"name":this.name,"id":id}

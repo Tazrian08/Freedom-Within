@@ -158,5 +158,37 @@ class UserController extends Controller
     return response()->json($therapists);
 }
 
+public function img_change(Request $request){
+
+
+    $user_id = $request->input('id');
+    $existingProfilePic = Image::where('user_id', $user_id)
+                                    ->first();
+
+    // If an existing profile picture is found, delete its associated image file
+    if ($existingProfilePic) {
+        $existingImagePath = public_path(str_replace(asset(''), '', $existingProfilePic->path));
+        if (file_exists($existingImagePath)) {
+            unlink($existingImagePath);
+        }
+        $existingProfilePic->delete();
+    }
+
+    // Now proceed with uploading the new profile picture
+    $user = User::find($user_id);
+
+    $image = time() . '-' . $user->name . '.' . $request->file('image')->extension();
+    $request->file('image')->move(public_path('images'), $image);
+    $path = asset('images/' . $image);
+
+    $profilepic = Image::create([
+        'user_id' => $user_id,
+        'path' => $path,
+    ]);
+
+    return response()->json(['image' => $path]);
+
+}
+
 
 }
