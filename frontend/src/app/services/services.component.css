@@ -1,10 +1,15 @@
-.container {
-    height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
-    /* overflow: hidden; 
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    position: relative;  */
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .photo-container9 {
@@ -36,148 +41,69 @@
     background-color: rgba(0, 0, 0, 0.8); /* Black color with 50% opacity */
     z-index: 1;
 }
-.big-text {
-    font-size: 100px; /* Adjust as needed */
-    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
-    margin-bottom: 10px; /* Space between texts */
-    text-align: right;
-    top: 50%;
-    right: 10%; 
-    transform: translateY(-50%);
-    
-}
-.big-text1 {
-    font-size: 50px; /* Adjust as needed */
-    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
-    margin-bottom: 10px; /* Space between texts */
-    text-align: right;
-    top: 50%;
-    right: 10%; 
-    transform: translateY(-50%);
-   
-    
-}
 
-.big-text2 {
-    font-size: 50px; /* Adjust as needed */
-    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
-    margin-bottom: 10px; /* Space between texts */
-    text-align: center;
-    top: 50vh;
-    right: 10vw; 
-    transform: translateY(-50%);
-    color: #000;
-    font-weight: bold;
-   
-    
-}
-.big-text3 {
-    font-size: 70px; /* Adjust as needed */
-    font-family: "Arial", sans-serif; /* Replace with your preferred fancy font */
-    margin-bottom: 10px; /* Space between texts */
-    text-align: center;
-    margin-top: 20px;
-    top:30px;
-    transform: translateY(-50%);
-    
-}
-.small-text {
-    font-size: 14px; /* Adjust as needed */
-    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
-    text-align: center;
-    margin-top: 20px;
-}
-.small-text1 {
-    font-size: 15px; /* Adjust as needed */
-    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
-    text-align: center;
-    color: #000;
-    margin-right: 30px;
-}
-.small-text2 {
-    font-size: 15px; /* Adjust as needed */
-    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
-    text-align: left;
-    color: #000;
-    align-items:left ;
-
-}
 .mini-container15 {
     position: absolute;
     top: 10%;
-    left: 40%; 
-    transform: translateY(-50%);
-    text-align: left;
-    color: whitesmoke; /* Text color */
-    margin-right: 10vw;
-    background-color: transparent; /* Ensure background is transparent */
-    z-index: 2;
-}
-.mini-container8 {
-    position: absolute;
-    top: 60vh;
-    left: 8%; 
-    transform: translateY(-50%);
-    text-align: right;
-    color: white; /* Text color */
-    margin-right: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: right;
-    z-index: 2;
-}
-
-.mini-container15 p {
-    color: whitesmoke; /* Text color */
-    font-size: 18px; /* Font size */
-    font-weight: bold; /* Font weight */
-    /* Additional styling as needed */
-}
-
-.mini-container15 .big-text {
-    font-size: 60px; /* Example size for big text */
-}
-
-.mini-container15 .small-text {
-    font-size: 14px; /* Example size for small text */
-}
-.mini-container8 p {
-    color: white; /* Text color */
-    font-size: 18px; /* Font size */
-    font-weight: bold; /* Font weight */
-    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    color: whitesmoke;
     text-align: center;
-    margin-left: 70px;
-    
+    z-index: 2;
+}
+
+.big-text {
+    font-size: 4vw; /* Responsive font size */
+    font-family: "Verdana", sans-serif;
+}
+
+.mini-container8 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 85%;
+    z-index: 2;
 }
 
 .boxx {
-    width: 20vw; /* Adjust width as needed */
-    height: 60vh; /* Adjust height as needed */
-    margin: 10px;
-    background-color: rgba(159, 184, 231, 0.459); /* Semi-transparent background */
+    flex: 1 1 20%; /* Adjust to ensure four cards fit in a row */
+    max-width: 20%;
+    background-color: rgba(159, 184, 231, 0.459);
     color: white;
     display: flex;
-    flex-direction: column; /* Align items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    font-size: 24px; /* Adjust font size as needed */
-    border-radius: 10px; /* Optional: add rounded corners */
-    margin-top: 40px;
-    position: relative; /* Ensure proper positioning for child elements */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 10px;
     text-align: center;
-    left: 5%;
+    min-height: 500px; /* Ensure all cards have the same minimum height */
 }
 
 .boxx img {
-    width: 20vw; /* Ensure the image fills the circular container */
-    height: 30vh; /* Ensure the image fills the circular container */
-    /* border-radius: 50%;  */
-    margin-top: -20vh;
-    background-color: #fff;
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 10px;
 }
-.boxx p{
-    text-align: center;
-    left: 100%;
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.small-text {
+    font-size: 14px;
+    font-family: "Verdana", sans-serif;
+    margin-top: 10px;
 }
