@@ -15,9 +15,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
+        $services = Service::with("image")->get();
 
-        return response()->json($services);
+        return response()->json($services[0]);
     }
 
     /**
