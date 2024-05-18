@@ -17,7 +17,7 @@ class ServiceController extends Controller
     {
         $services = Service::with("image")->get();
 
-        return response()->json($services[0]);
+        return response()->json($services);
     }
 
     /**

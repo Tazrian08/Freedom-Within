@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TimeSeeder::class,
             TherapistSeeder::class,
-            ServiceSeeder::class
+            ServiceSeeder::class,
+            HomeSeeder::class
             // Add other seeders if any
         ]);
     }
