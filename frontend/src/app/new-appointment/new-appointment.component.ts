@@ -76,6 +76,7 @@ export class NewAppointmentComponent {
   
     this.http.post("http://localhost:8000/api/timeslot", formData).subscribe((resultData: any) => {
       this.doctor=resultData["therapist"];
+      this.timeslots=resultData["timeslots"];
       console.log(this.timeslots)
       console.log(this.doctor)
       // this.router.navigate(['admin/login']);
