@@ -1,11 +1,11 @@
+<div style="width: 100%; height: 100%; overflow-x: hidden;">
 <div class="container">
     <div class="photo-container1">
         <nav class="navbar">
             <ul class="navbar-list">
-                        <li class="navbar-item"><a [routerLink]="['/profile']">Profile</a></li>
-                        <li class="navbar-item"><a [routerLink]="['/gitinfo']">GitHub</a></li>
+                        <li class="navbar-item"><a [routerLink]="['/home']">Home</a></li>
+                        <li *ngIf="auth" class="navbar-item"><a [routerLink]="['/profile']">Profile</a></li>
                         <li class="navbar-item"><a [routerLink]="['/chatbox']">Messages</a></li>
-    
                     </ul>
                 </nav>
         <div class="mini-container1">
@@ -188,7 +188,7 @@
         <div class="mini-container22">       
             <span class="big-text4">Our Location</span>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17371.611131759113!2d90.36003689175185!3d23.749831598541363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf98a52b8b4f%3A0x3a470a7da7563907!2sFreedom%20Within!5e0!3m2!1sen!2sbd!4v1716110345165!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe [src]="mapUrl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <!-- <iframe [src]="organization.maplink" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 
     </div>
@@ -217,8 +217,8 @@
                     <span class="small-text2">
                        Sunday-Thursday<br>
                        Time: 10am-8pm<br><br>
-                       Address: 3/7, Block-B, Lalmatia, Dhaka.<br>
-                       Phone: 01931-397333  
+                       Address: {{organization.address}}.<br>
+                       Phone: {{organization.contact}} 
                     </span>
                 </div>
             </div>
@@ -229,11 +229,12 @@
                     </span>
                     
                 </div>
-                <iframe [src]="mapUrl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- <iframe [src]="mapUrl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
                 <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17371.611131759113!2d90.36003689175185!3d23.749831598541363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf98a52b8b4f%3A0x3a470a7da7563907!2sFreedom%20Within!5e0!3m2!1sen!2sbd!4v1716110345165!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
         </div>
         
     </div>
 
-    
 </div>
+</div>
+
