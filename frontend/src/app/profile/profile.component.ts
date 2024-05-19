@@ -103,8 +103,12 @@ export class ProfileComponent {
     this.http.post('http://localhost:8000/api/logout', {}, {withCredentials: true})
       .subscribe(() =>{
         this.auth = false
+        Emitters.adminEmitter.emit(false);
+        Emitters.therapistEmitter.emit(false);
+        Emitters.authEmitter.emit(false);
         this.admin=false
         this.thera=false
+
       } );
       this.router.navigate(['/login'])
   }
