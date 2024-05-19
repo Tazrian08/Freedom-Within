@@ -158,3 +158,45 @@ select.form-control {
         font-size: 16px;
     }
 }
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: rgba(51, 51, 51, 0.8); /* Adjust the opacity as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    z-index: 1000; /* Ensure the navbar appears above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  
+  .navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-item {
+    margin-right: 10px;
+  }
+  
+  .navbar-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px; /* Adjust padding as needed */
+    border-radius: 5px;
+    transition: background-color 0.3s ease !important; /* Smooth transition */
+  }
+  
+  .navbar-item a:hover {
+    background-color: #555 !important; /* Change hover background color as needed */
+  }

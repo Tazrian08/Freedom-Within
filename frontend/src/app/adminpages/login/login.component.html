@@ -1,9 +1,15 @@
-<div class="photo-container">
 
+<div class="photo-container">
+    <nav class="navbar">
+        <ul class="navbar-list">
+                    <li class="navbar-item"><a [routerLink]="['/home']">Home</a></li>
+                    <li *ngIf="auth" class="navbar-item"><a [routerLink]="['/profile']">Profile</a></li>
+                </ul>
+            </nav>
   <div class="container">
       <div class="toggle-container">
           <form>
-              <h1>User Login</h1>
+              <h1>Therapist Login</h1>
 
               <div class="mb-3">
                   <label>Email</label>
@@ -16,10 +22,7 @@
               </div>
 
               <button type="submit" class="btn btn-primary mt-3" (click)="login()">Login</button>
-              <div class="reg">
-                <p style="display: inline; margin-top: -50px;">Not a member?  </p>
-                <a [routerLink]="['/admin/register']" style="display: inline; color: rgb(89, 0, 255);">Register Now</a>
-            </div>
+
           </form>
       </div>
   </div>

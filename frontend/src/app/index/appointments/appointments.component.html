@@ -1,3 +1,11 @@
+<div >
+    <nav class="navbar">
+      <ul class="navbar-list">
+                  <li class="navbar-item"><a [routerLink]="['/home']">Home</a></li>
+                  <li  *ngIf="auth" class="navbar-item"><a [routerLink]="['/profile']">Profile</a></li>
+              </ul>
+          </nav>
+        </div><br><br><br><br>
 <div style="text-align: center;">
 <h1>My Appointments</h1>
     <input type="text" placeholder="Search..." [(ngModel)]="searchTerm">

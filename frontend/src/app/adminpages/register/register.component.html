@@ -1,4 +1,13 @@
+
+    <nav class="navbar">
+      <ul class="navbar-list">
+                  <li class="navbar-item"><a [routerLink]="['/home']">Home</a></li>
+                  <li  *ngIf="auth" class="navbar-item"><a [routerLink]="['/profile']">Profile</a></li>
+              </ul>
+          </nav>
+
 <ngb-carousel>
+
     <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
             <img src="/assets/images/man-talking-therapist.jpg" alt="Random third slide" />

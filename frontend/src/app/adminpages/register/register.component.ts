@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbCarouselConfig, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { Emitters } from 'src/app/emitters/emitters';
 
 
 @Component({
@@ -13,6 +14,42 @@ export class RegisterComponent {
 
   images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
   constructor(private http: HttpClient, private router: Router, private config: NgbCarouselConfig ) {}
+
+  auth:boolean=false
+  admin:boolean=false
+  thera:boolean=false
+  ngOnInit(): void {
+
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (res: any) => {
+        console.log(res)
+        if (res.admin_access==1){
+          Emitters.adminEmitter.emit(true);
+        }
+        if (res.therapist_status==1){
+          Emitters.therapistEmitter.emit(true);
+        }
+        Emitters.authEmitter.emit(true);
+      });
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+      });
+    Emitters.adminEmitter.subscribe(
+      (data: any) => {
+        this.admin= data;
+      });
+    Emitters.authEmitter.subscribe(
+      (data: any) => {
+        this.auth= data;
+      });
+    Emitters.therapistEmitter.subscribe(
+      (data: any) => {
+        this.thera = data;
+      });
+
+  }
+
 
 
   selectedFile: File | null = null;

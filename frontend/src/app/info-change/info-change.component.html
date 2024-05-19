@@ -1,3 +1,11 @@
+<div >
+    <nav class="navbar">
+      <ul class="navbar-list">
+                  <li class="navbar-item"><a [routerLink]="['/home']">Home</a></li>
+                  <li  *ngIf="auth" class="navbar-item"><a [routerLink]="['/profile']">Profile</a></li>
+              </ul>
+          </nav>
+        </div><br><br>
 <div class="container mt-4" >
   <div class="card">
       <h1>Update your Information</h1>
