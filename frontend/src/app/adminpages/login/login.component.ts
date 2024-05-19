@@ -26,6 +26,8 @@ export class LoginComponent {
     {   
         if (resultData!="Login Failed"){
         this.router.navigate(['/profile'])
+      } else {
+        alert("Incorrect username or password")
       }
     });
   
