@@ -17,7 +17,7 @@ class TherapistSeeder extends Seeder
     {
         // Create a new user
         $user = User::create([
-            'name' => 'Dr. Nasima Akter',
+            'name' => 'Nasima Akter',
             'email' => 'msnasimaakter207@gmail.com',
             'password' => Hash::make('123456789'), // Hashed password
             'therapist_status' => 1,
