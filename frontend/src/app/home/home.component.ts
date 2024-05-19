@@ -17,6 +17,7 @@ export class HomeComponent {
   thera:boolean=false
   services:any
   home:any
+  organization:any
 
 
   ngOnInit(): void {
@@ -34,8 +35,10 @@ export class HomeComponent {
   
     .subscribe((resultData: any)=>
     {
-      this.home=resultData
-      console.log(this.home)
+      this.home=resultData[0]
+      this.organization=resultData[1]
+      console.log(this.organization)
+
       
 
     });

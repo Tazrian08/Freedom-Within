@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Organization;
 use App\Http\Requests\StoreHomeRequest;
 use App\Http\Requests\UpdateHomeRequest;
 
@@ -14,7 +15,8 @@ class HomeController extends Controller
     public function index()
     {
         $home=Home::all();
-        return response()->json($home[0]);
+        $organization=Organization::all();
+        return response()->json([$home[0],$organization[0]]);
 
     }
 
