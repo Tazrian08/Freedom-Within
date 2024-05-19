@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\OrganizationSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +23,8 @@ class DatabaseSeeder extends Seeder
             TimeSeeder::class,
             TherapistSeeder::class,
             ServiceSeeder::class,
-            HomeSeeder::class
+            HomeSeeder::class,
+            OrganizationSeeder::class
             // Add other seeders if any
         ]);
     }
