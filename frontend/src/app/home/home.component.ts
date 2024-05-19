@@ -16,6 +16,7 @@ export class HomeComponent {
   admin:boolean=false
   thera:boolean=false
   services:any
+  home:any
 
 
   ngOnInit(): void {
@@ -26,6 +27,16 @@ export class HomeComponent {
     {
       this.services=resultData
       console.log(this.services)
+
+    });
+
+    this.http.get(`http://localhost:8000/api/allhome`)
+  
+    .subscribe((resultData: any)=>
+    {
+      this.home=resultData
+      console.log(this.home)
+      
 
     });
 

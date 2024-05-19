@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TimeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
@@ -39,7 +40,8 @@ Route::post("/create/event", [EventController::class,"create"]);
 Route::get("/allevents",[EventController::class,"index"]);
 
 
-
+#HOME ROUTES
+Route::get("/allhome", [HomeController::class, "index"]);
 
 #THERAPIST ROUTES
 Route::get("/alltherapist",[UserController::class,"therapist_index"]);

@@ -13,7 +13,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        $home=Home::all();
+        return response()->json($home[0]);
+
     }
 
     /**
