@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Emitters } from '../emitters/emitters';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { Emitters } from '../emitters/emitters';
 })
 export class HomeComponent {
 
-  constructor(private http: HttpClient, private router: Router ){}
+  constructor(private http: HttpClient, private router: Router, private sanitizer: DomSanitizer ){}
 
   auth:boolean=false
   admin:boolean=false
@@ -18,6 +19,7 @@ export class HomeComponent {
   services:any
   home:any
   organization:any
+  mapUrl!: SafeResourceUrl;
 
 
   ngOnInit(): void {
@@ -37,7 +39,8 @@ export class HomeComponent {
     {
       this.home=resultData[0]
       this.organization=resultData[1]
-      console.log(this.organization)
+      this.mapUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.organization.maplink)
+      console.log(this.organization.maplink)
 
       
 
