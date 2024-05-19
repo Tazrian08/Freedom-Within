@@ -63,6 +63,7 @@ export class AppointmentComponent {
   apt_type=''
   time_id=""
   message=""
+  doctor:any
 
 
   timeslot_retriever() {
@@ -76,8 +77,10 @@ export class AppointmentComponent {
     formData.append('date', formattedDate);
   
     this.http.post("http://localhost:8000/api/timeslot", formData).subscribe((resultData: any) => {
-      this.timeslots = resultData;
+      this.timeslots = resultData["timeslots"];
+      this.doctor=resultData["therapist"];
       console.log(this.timeslots)
+      console.log(this.doctor)
       // this.router.navigate(['admin/login']);
     });
   }

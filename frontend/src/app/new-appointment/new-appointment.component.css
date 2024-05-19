@@ -8,18 +8,28 @@
     background-position: center;
 }
 
-.container {
+.content-wrapper {
+    display: flex;
     background-color: rgba(255, 255, 255, 0.9); /* White background with some transparency */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 800px;
-    margin-top: 30px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.form-section, .therapist-info {
+    flex: 1;
 }
 
 .card {
     padding: 20px;
+    z-index: 2;
+    background-color: white; /* Ensure background color for card */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card h1 {
@@ -33,15 +43,18 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    z-index: 2;
 }
 
 .form-left, .form-right {
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
 
 .form-group {
     margin-bottom: 20px;
+    z-index: 2;
 }
 
 .form-group label {
@@ -58,6 +71,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    z-index: 2;
 }
 
 .form-control:focus {
@@ -93,14 +107,43 @@ select.form-control {
     background-color: #0056b3;
 }
 
+.therapist-info .card {
+    text-align: center;
+}
+
+.therapist-info img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.therapist-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.therapist-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
+    }
+
+    .therapist-info {
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 576px) {
-    .container {
+    .content-wrapper {
         padding: 20px;
     }
 

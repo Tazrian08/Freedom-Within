@@ -1,81 +1,90 @@
 <div class="photo-container">
- 
-  <div class="container mt-4">
-      <div class="card">
-          <h1>Appointment Form</h1>
-          <form>
-              <div class="form-row">
-                  <div class="form-left">
-                      <div class="form-group">
-                          <label>Name</label>
-                          <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
-                      </div>
-                      <div class="form-group">
-                          <label>Email</label>
-                          <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
-                      </div>
-                      <div class="form-group">
-                          <label>Contact</label>
-                          <input type="text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" class="form-control" id="contact" placeholder="Enter Contact">
-                      </div>
-                      <div class="form-group">
-                          <label>Gender</label>
-                          <select [(ngModel)]="gender" [ngModelOptions]="{standalone: true}" class="form-control" id="gender">
-                              <option value="male">Male</option>
-                              <option value="female">Female</option>
-                              <option value="other">Other</option>
-                          </select>
-                      </div>
-                      <div class="form-group">
-                          <label>Age</label>
-                          <input type="text" [(ngModel)]="age" [ngModelOptions]="{standalone: true}" class="form-control" id="age" placeholder="Enter Age">
-                      </div>
-                      <div class="form-group">
-                          <label>Service</label>
-                          <select [(ngModel)]="service_id" [ngModelOptions]="{standalone: true}" class="form-control" id="service">
-                              <option *ngFor="let service of services" [value]="service.id">{{service.type}}</option>
-                          </select>
-                      </div>
-                      <div class="form-group">
-                        <label>Appointment Type</label>
-                        <select [(ngModel)]="apt_type" [ngModelOptions]="{standalone: true}" class="form-control" id="appointmentType">
-                            <option value="offline">Offline</option>
-                            <option value="online">Online</option>
-                        </select>
+    <div class="content-wrapper">
+        <div class="form-section">
+            <div class="card">
+                <h1>Appointment Form</h1>
+                <form>
+                    <div class="form-row">
+                        <div class="form-left">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
+                            </div>
+                            <div class="form-group">
+                                <label>Contact</label>
+                                <input type="text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" class="form-control" id="contact" placeholder="Enter Contact">
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select [(ngModel)]="gender" [ngModelOptions]="{standalone: true}" class="form-control" id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input type="text" [(ngModel)]="age" [ngModelOptions]="{standalone: true}" class="form-control" id="age" placeholder="Enter Age">
+                            </div>
+                            <div class="form-group">
+                                <label>Service</label>
+                                <select [(ngModel)]="service_id" [ngModelOptions]="{standalone: true}" class="form-control" id="service">
+                                    <option *ngFor="let service of services" [value]="service.id">{{service.type}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Appointment Type</label>
+                                <select [(ngModel)]="apt_type" [ngModelOptions]="{standalone: true}" class="form-control" id="appointmentType">
+                                    <option value="offline">Offline</option>
+                                    <option value="online">Online</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-right">
+                            <div class="form-group">
+                                <label>Date</label>
+                                <ngb-datepicker (click)="timeslot_retriever()"
+                                    [(ngModel)]="date"
+                                    [ngModelOptions]="{ standalone: true }"
+                                    [minDate]="minDate"
+                                    class="form-control"
+                                    id="date">
+                                </ngb-datepicker>
+                            </div>
+                            <div class="form-group">
+                                <label>Therapists</label>
+                                <select [(ngModel)]="user_id" [ngModelOptions]="{standalone: true}" class="form-control" id="therapist">
+                                    <option *ngFor="let therapist of therapists" [value]="therapist.id" (click)="timeslot_retriever()">{{therapist.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Timeslots</label>
+                                <select [(ngModel)]="time_id" [ngModelOptions]="{standalone: true}" class="form-control" id="timeslot">
+                                    <option *ngFor="let timeslot of timeslots" [value]="timeslot.id">{{timeslot.time_slot}}</option>
+                                    <option *ngIf="timeslots == null">Select Date and Therapist first</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Reason for Appointment (in brief)</label>
+                                <textarea type="text" [(ngModel)]="message" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter description"></textarea>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-right">
-                      <div class="form-group">
-                          <label>Date</label>
-                          <ngb-datepicker (click)="timeslot_retriever()"
-                              [(ngModel)]="date"
-                              [ngModelOptions]="{ standalone: true }"
-                              [minDate]="minDate"
-                              class="form-control"
-                              id="date">
-                          </ngb-datepicker>
-                      </div>
-                      <div class="form-group">
-                          <label>Therapists</label>
-                          <select [(ngModel)]="user_id" [ngModelOptions]="{standalone: true}" class="form-control" id="therapist">
-                              <option *ngFor="let therapist of therapists" [value]="therapist.id" (click)="timeslot_retriever()">{{therapist.name}}</option>
-                          </select>
-                      </div>
-                      <div class="form-group">
-                        <label>Timeslots</label>
-                        <select [(ngModel)]="time_id" [ngModelOptions]="{standalone: true}" class="form-control" id="timeslot">
-                            <option *ngFor="let timeslot of timeslots" [value]="timeslot.id">{{timeslot.time_slot}}</option>
-                            <option *ngIf="timeslots == null">Select Date and Therapist first</option>
-                        </select>
-                    </div>
-                      <div class="form-group">
-                          <label>Reason for Appointment (in brief)</label>
-                          <textarea type="text" [(ngModel)]="message" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter description"></textarea>
-                      </div>
-                  </div>
-              </div>
-              <button type="submit" class="btn btn-primary mt-4" (click)="appointment()">Submit</button>
-          </form>
-      </div>
-  </div>
+                    <button type="submit" class="btn btn-primary mt-4" (click)="appointment()">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="therapist-info" *ngIf="doctor">
+            <div class="card">
+                <img [src]="doctor.image.path" alt="Therapist Image" class="therapist-img">
+                <h2>{{ doctor.name }}</h2>
+                <p>{{ doctor.description }}</p>
+                <p>Contact: {{ doctor.contact[0].contact }}</p>
+            </div>
+        </div>
+    </div>
 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Time;
+use App\Models\User;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreTimeRequest;
@@ -70,7 +71,11 @@ class TimeController extends Controller
             }
         }
 
-        return response()->json($timeslots);
+        $therapist=User::where("id",$user_id)
+        ->with("image","contact")
+        ->get();
+
+return response()->json(["timeslots"=>$timeslots, "therapist"=>$therapist[0]]);
     }
  
 }
