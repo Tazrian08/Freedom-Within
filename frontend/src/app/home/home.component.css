@@ -154,6 +154,7 @@
     font-size: 18px; /* Adjust as needed */
     font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
     text-align: right;
+
 }
 .small-text1 {
     font-size: 15px; /* Adjust as needed */
@@ -161,6 +162,7 @@
     text-align: center;
     color: #000;
     margin-right: 30px;
+
 }
 /* .small-text2 {
     font-size: 15px; 
