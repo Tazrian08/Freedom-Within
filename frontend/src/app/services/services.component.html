@@ -7,14 +7,14 @@
     </div>
 </div>
 <div class="mini-container8">
-    <div class="boxx">
-        <img src="/assets/images/full-shot-patient-psychologist.jpg" alt="Consultation Image">
+    <div *ngFor="let service of services" class="boxx">
+        <img [src]="service.image.path" alt="Consultation Image">
         <div class="content">
-            <p>{{ serv1.type }}</p>
-            <span class="small-text">{{ serv1.description }}</span>
+            <p>{{ service.type }}</p>
+            <span class="small-text">{{ service.description }}</span>
         </div>
     </div>
-    <div class="boxx">
+    <!-- <div class="boxx">
         <img src="/assets/images/couple-doing-family-therapy.jpg" alt="Consultation Image">
         <div class="content">
             <p>{{ serv2.type }}</p>
@@ -34,5 +34,5 @@
             <p>{{ serv4.type }}</p>
             <span class="small-text">{{ serv4.description }}</span>
         </div>
-    </div>
+    </div> -->
 </div>

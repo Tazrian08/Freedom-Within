@@ -20,7 +20,7 @@ class ServiceSeeder extends Seeder
         ]);
         Image::create([
             'service_id' => $service1->id,
-            'path' => 'http://localhost:8000/images/individual'
+            'path' => 'http://localhost:8000/images/service1.jpg'
         ]);
 
         $service2=Service::create([
@@ -29,7 +29,7 @@ class ServiceSeeder extends Seeder
         ]);
         Image::create([
             'service_id' => $service2->id,
-            'path' => 'http://localhost:8000/images/individual'
+            'path' => 'http://localhost:8000/images/service2.jpg'
         ]);
         $service3=Service::create([
             'type' => "Family Counseling",
@@ -37,7 +37,7 @@ class ServiceSeeder extends Seeder
         ]);
         Image::create([
             'service_id' => $service3->id,
-            'path' => 'http://localhost:8000/images/individual'
+            'path' => 'http://localhost:8000/images/service3.jpg'
         ]);
 
         $service4=Service::create([
@@ -46,7 +46,7 @@ class ServiceSeeder extends Seeder
         ]);
         Image::create([
             'service_id' => $service4->id,
-            'path' => 'http://localhost:8000/images/individual'
+            'path' => 'http://localhost:8000/images/service4.jpg'
         ]);
     }
 }
