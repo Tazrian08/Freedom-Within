@@ -1,17 +1,19 @@
+
+<div class="photo-container">
 <div>
     <nav class="navbar">
       <ul class="navbar-list">
                   <li class="navbar-item"><a [routerLink]="['/home']">Home</a></li>
                   <li   class="navbar-item"><a [routerLink]="['/re_appointment']">Returning Patient? Click here</a></li>
               </ul>
-          </nav></div>
-<div class="photo-container">
+          </nav></div><br>
     <div class="content-wrapper">
 
         <div class="form-section">
-            
+ 
             <div class="card">
                 <h1>Appointment Form</h1>
+                <label>If you are a returning patient, <a routerLink="/re_appointment">Click here</a></label>
                 <form>
                     <div class="form-row">
                         <div class="form-left">

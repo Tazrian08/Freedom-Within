@@ -6,6 +6,7 @@
                         <li class="navbar-item"><a [routerLink]="['/home']">Home</a></li>
                         <li *ngIf="auth" class="navbar-item"><a [routerLink]="['/profile']">Profile</a></li>
                         <li *ngIf="!auth" class="navbar-item"><a [routerLink]="['/login']">Login</a></li>
+                        <li  class="navbar-item"><a [routerLink]="['/appointment']">Make an appointment</a></li>
                     </ul>
                 </nav>
         <div class="mini-container1">
@@ -151,7 +152,7 @@
                  Contact their offices to schedule a session, considering factors like location, availability, and compatibility. Prepare questions or concerns to discuss during 
                  the appointment.Remember, seeking help is a courageous act towards healing and self-care.</span>
 
-            <button class="button1">Book an Appointment</button>
+            <button class="button1" [routerLink]="['/appointment']">Book an Appointment</button>
         </div>
     </div>
 
