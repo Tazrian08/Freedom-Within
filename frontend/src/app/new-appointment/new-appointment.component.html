@@ -1,69 +1,60 @@
 <div class="photo-container">
-    <div class="container mt-4" >
-    
-        <div class="card">
-            <h1>Appointment Form</h1>
-      
+  <div class="container mt-4">
+    <div class="card">
+      <h1>Appointment Form</h1>
       <form>
-        
-          <div class="form-group">
-            <label>Previously Used Contact Number: </label>
-            <input type="text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Previous Contact Number">
-        
+        <div class="form-row">
+          <div class="form-left">
+            <div class="form-group">
+              <label>Previously Used Contact Number: </label>
+              <input type="text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" class="form-control" id="contact" placeholder="Enter Previous Contact Number">
+            </div>
+            <div class="form-group">
+              <label>Date</label>
+              <ngb-datepicker (click)="timeslot_retriever()"
+                [(ngModel)]="date"
+                [ngModelOptions]="{ standalone: true }"
+                [minDate]="minDate"
+                class="form-control"
+                id="date"
+              ></ngb-datepicker>
+            </div>
+            <div class="form-group">
+              <label>Service</label>
+              <select [(ngModel)]="service_id" [ngModelOptions]="{standalone: true}" class="form-control" id="service">
+                <option *ngFor="let service of services" [value]="service.id">{{service.type}}</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Date</label>
-            <ngb-datepicker (click)="timeslot_retriever()"
-              [(ngModel)]="date"
-              [ngModelOptions]="{ standalone: true }"
-              [minDate]="minDate"
-              class="form-control"
-              id="name"
-            ></ngb-datepicker>
+          <div class="form-right">
+            <div class="form-group">
+              <label>Therapists</label>
+              <select [(ngModel)]="user_id" [ngModelOptions]="{standalone: true}" class="form-control" id="therapist" placeholder="Select Service type">
+                <option *ngFor="let therapist of therapists" [value]="therapist.id" (click)="timeslot_retriever()">{{therapist.name}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Appointment Type</label>
+              <select [(ngModel)]="apt_type" [ngModelOptions]="{standalone: true}" class="form-control" id="appointmentType">
+                <option value="offline">Offline</option>
+                <option value="online">Online</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Reason of Appointment (in brief)</label>
+              <textarea type="text" [(ngModel)]="message" [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter description"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Timeslots</label>
+              <select [(ngModel)]="time_id" [ngModelOptions]="{standalone: true}" class="form-control" id="timeslot" placeholder="Select Service type">
+                <option *ngFor="let timeslot of timeslots" [value]="timeslot.id">{{timeslot.time_slot}}</option>
+                <option *ngIf="timeslots == null">Select Date and Therapist first</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Service</label>
-            <select [(ngModel)]="service_id" [ngModelOptions]="{standalone: true}" class="form-control" id="destination">
-              <option *ngFor="let service of services" [value]="service.id" >{{service.type }}</option>
-            </select>
-          </div>
-          <div>
-            <label>Therapists</label>
-            <select [(ngModel)]="user_id" [ngModelOptions]="{standalone: true}" class="form-control" id="flight" placeholder="Select Service type">
-              <option *ngFor="let therapist of therapists" [value]="therapist.id" (click)="timeslot_retriever()" >{{therapist.name}}</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Appointment Type</label>
-            <select [(ngModel)]="apt_type" [ngModelOptions]="{standalone: true}" class="form-control" id="destination">
-              <option value="offline" >Offline</option>
-              <option value="online" >Online</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Reason of Appointment (in brief)</label>
-            <textarea type="text" [(ngModel)]="message" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter description"></textarea>
-          </div>
-          <div>
-            <label>Timeslots</label>
-            <select [(ngModel)]="time_id" [ngModelOptions]="{standalone: true}" class="form-control" id="flight" placeholder="Select Service type">
-              <option *ngFor="let timeslot of timeslots" [value]="timeslot.id" (click)="timeslot_retriever()" >{{timeslot.time_slot}}</option>
-              <option *ngIf="timeslots ==null">Select Date and Therapist first</option>
-            </select>
-          </div>
-          
-
-
- 
-          
-        
-          <button type="submit" class="btn btn-primary mt-4" (click)="reappointment()" >Submit</button>
-          <!--<p *ngIf="message !== null && message !== undefined">{{message.name}} has been registered</p> -->
-      </form>
         </div>
-      <div>
+        <button type="submit" class="btn btn-primary mt-4" (click)="reappointment()">Submit</button>
+      </form>
     </div>
-      
-      
-      
-    
+  </div>
+</div>
