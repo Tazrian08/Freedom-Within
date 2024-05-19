@@ -139,13 +139,14 @@
     color: #000;
     margin-right: 30px;
 }
-.small-text2 {
-    font-size: 15px; /* Adjust as needed */
-    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
+/* .small-text2 {
+    font-size: 15px; 
+    font-family: "Verdana", sans-serif;
     text-align: left;
     color: #000;
     align-items:left ;
-}
+    left: 30vw;
+} */
 /* .small-text3 {
     font-size: 5px; 
     font-family: "Verdana", sans-serif;
@@ -740,7 +741,7 @@
     z-index: 0;
 }
 
-.photo-container12{
+.photo-container12 {
     background-color: #f0ffdd;
     height: 50vh;
     width: 100vw;
@@ -748,37 +749,62 @@
     top: 720vh;
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.mini-container8 {
+    display: flex;
+    gap: 20px; /* Space between the boxes */
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .boxxx {
-    width: 45%; /* Adjust width as needed */
-    height: 45%; /* Adjust height as needed */
-    margin: 10px;
-    /* background-color: rgba(159, 184, 231, 0.459);  */
+    width: 20vw; /* Adjust width as needed */
+    height: 10vh; /* Adjust height as needed */
+    background-color: rgba(159, 184, 231, 0); /* Semi-transparent background */
     color: black;
     display: flex;
-    /* justify-content: center; */
-    align-items: right;
+    flex-direction: column; /* Align items vertically */
+    justify-content: flex-start; /* Align items at the top */
     font-size: 24px; /* Adjust font size as needed */
     border-radius: 10px; /* Optional: add rounded corners */
-    margin-top: 40px;
-
+    padding: 20px; /* Add padding for better spacing */
+    text-align: center;
 }
+
+.boxxx b {
+    margin-bottom: -50px; /* Space between the heading and text */
+    margin-top: 2vh;
+    left: 90%;
+}
+
+.small-text2 {
+    font-size: 15px; 
+    font-family: "Verdana", sans-serif;
+    color: #000;
+    text-align: center;
+    margin-top: -15px;
+}
+
+
 .mini-container18{
     position: absolute;
     width: 35vw;
     height: 25vh;
-    left: -70vw; 
+    left: -75vw; 
     top: 90px;
     color: white;
     align-items: right;
     text-align: left;
 }
-
 .mini-container19 {
     position: absolute;
     width: 35vw;
-    height: 20vh;
-    left: -50vw; 
+    height: 10vh;
+    left: -53vw; 
     top: 90px;
     color: white;
     text-align: left;
