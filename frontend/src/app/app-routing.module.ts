@@ -17,21 +17,21 @@ import { EventsComponent } from './events/events.component';
 
 
 const routes: Routes = [
-  {path: "admin/register", component: RegisterComponent},
-  {path: "login", component: LoginComponent},
-  {path: "home", component: HomeComponent},
-  {path: "admin/service", component: AddServiceComponent},
-  {path: "appointment", component: AppointmentComponent},
-  {path: "re_appointment", component: NewAppointmentComponent},
-  {path: "admin/event", component: AddEventsComponent},
-  {path: "profile", component: ProfileComponent},
-  {path: "change", component: InfoChangeComponent},
-  {path: "index/therapists", component: TherapistComponent},
-  {path: "index/appointment", component: TherapistComponent},
-  {path: "index/appointments/:id", component: AppointmentsComponent},
-  {path: "index/patients", component: PatientComponent},
-  {path: "services", component: ServicesComponent},
-  {path: "events", component: EventsComponent},
+  {path: "admin/register", component: RegisterComponent,title: "Registration"},
+  {path: "login", component: LoginComponent, title: "Login"},
+  {path: "home", component: HomeComponent,title: "Freedom Within"},
+  {path: "admin/service", component: AddServiceComponent,title: "Add Service"},
+  {path: "appointment", component: AppointmentComponent, title: "Appointment"},
+  {path: "re_appointment", component: NewAppointmentComponent, title: "Returning Patient Appointment"},
+  {path: "admin/event", component: AddEventsComponent,title: "Add Event"},
+  {path: "profile", component: ProfileComponent,title: "Profile"},
+  {path: "change", component: InfoChangeComponent,title: "Update Info"},
+  {path: "index/therapists", component: TherapistComponent,title: "Therapist Index"},
+  {path: "index/appointment", component: TherapistComponent,title: "Appointment History"},
+  {path: "index/appointments/:id", component: AppointmentsComponent,title: "My Appointments"},
+  {path: "index/patients", component: PatientComponent,title: "Patient Index"},
+  {path: "services", component: ServicesComponent,title: "Services"},
+  {path: "events", component: EventsComponent,title: "Events"},
 
 ];
 
