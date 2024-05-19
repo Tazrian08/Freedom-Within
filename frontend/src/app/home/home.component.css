@@ -119,11 +119,11 @@
 }
 .big-text3 {
     font-size: 70px; /* Adjust as needed */
-    font-family: "Arial", sans-serif; /* Replace with your preferred fancy font */
-    margin-bottom: 10px; /* Space between texts */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
+    margin-bottom: 40vh; /* Space between texts */
     text-align: center;
-    margin-top: 20px;
-    top:30px;
+    margin-top: 90vh;
+    top:30vh;
     transform: translateY(-50%);
     
 }
@@ -145,8 +145,15 @@
     text-align: left;
     color: #000;
     align-items:left ;
-
 }
+/* .small-text3 {
+    font-size: 5px; 
+    font-family: "Verdana", sans-serif;
+    text-align: center;
+    color: #000;
+    align-items:center ;
+
+} */
 .photo-container2 {
     width: 100vw;
     height: 60vh;
@@ -406,6 +413,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: right;
+    gap: 20px;
 }
 
 .mini-container8 p {
@@ -420,21 +428,39 @@
 
 }
 
-.boxx {
-    width: 45%; /* Adjust width as needed */
-    height: 75%; /* Adjust height as needed */
-    margin: 10px;
-    background-color: rgba(159, 184, 231, 0.459); /* Semi-transparent black background */
+.boxx1 {
+    width: 18vw; /* Adjust width as needed */
+    height: 45vh; /* Adjust height as needed */
+    background-color: rgba(159, 184, 231, 0.459); /* Semi-transparent background */
     color: white;
     display: flex;
-    /* justify-content: center; */
-    align-items: right;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
     font-size: 24px; /* Adjust font size as needed */
     border-radius: 10px; /* Optional: add rounded corners */
-    margin-top: 40px;
-
+    text-align: center;
+    padding: 20px; /* Add padding to the box */
+    margin: 10px; /* Add margin for spacing around each box */
 }
 
+.boxx1 img {
+    width: 18vw; /* Adjust the width of the image */
+    height: 29vh; /* Adjust the height of the image */
+    /* border-radius: 50%;  */
+    background-color: #fff;
+    margin-bottom: 10px; /* Add space between the image and text */
+    margin-top: -3vh;
+}
+.small-text3 {
+    /* margin-top: 5px; */
+    text-align: center;
+    margin-left: 5vw;
+    color: rgb(255, 255, 255); /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+    top:30vh;
+}
 .boxx img {
     width: 70px /* Ensure the image fills the circular container */;
     height: 70px; /* Ensure the image fills the circular container */
@@ -447,10 +473,60 @@
 
 }
 
+.boxx {
+    width: 25vw; /* Adjust width as needed */
+    height: 70vh; /* Adjust height as needed */
+    margin: 10px;
+    background-color: rgba(159, 184, 231, 0.459); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    font-size: 24px; /* Adjust font size as needed */
+    border-radius: 10px; /* Optional: add rounded corners */
+    margin-top: 40px;
+    position: relative; /* Ensure proper positioning for child elements */
+    text-align: center;
+    left: 5%;
+    /* display: flex ; */
+    /* flex-direction: column; */
+    /* align-items: center;
+    justify-content: center;  */
+}
+
+/* .boxx1 img {
+    width: 20vw; 
+    height: 25vh; 
+    border-radius: 10px; 
+    margin-top: 0vh;
+    background-color: #fff;
+    margin-left: 0.1vw;
+
+} */
+/* .boxx1 p{
+    text-align: center;
+    left: 100%;
+} */
+
+/* .box-description {
+    margin-left: 1vw;
+    margin-top: 20vh;
+    text-align: center;
+    color: white; 
+    font-size: 18px; 
+    font-weight: bold; 
+} */
+.writing{
+    margin-top: 20vh;
+    margin-left: 30vw;
+    text-align: center;
+   
+}
 .mini-container9{
     position: absolute;
-    width: 35vw;
-    height: 45vh;
+    width: 32vw;
+    height: 50vh;
     left: -70vw; 
     top: 90px;
     color: white;
@@ -460,8 +536,8 @@
 
 .mini-container10 {
     position: absolute;
-    width: 35vw;
-    height: 45vh;
+    width: 34vw;
+    height: 50vh;
     left: -50vw; 
     top: 90px;
     color: white;
@@ -469,8 +545,8 @@
 }
 .mini-container11{
     position: absolute;
-    width: 35vw;
-    height: 45vh;
+    width: 34vw;
+    height: 50vh;
     left: -30vw; 
     top: 90px;
     color: white;
@@ -479,8 +555,8 @@
 }
 .mini-container12{
     position: absolute;
-    width: 35vw;
-    height: 45vh;
+    width: 34vw;
+    height: 50vh;
     left: -10vw; 
     top: 90px;
     color: white;
@@ -587,10 +663,10 @@
 }
 .mini-container15 {
     position: absolute;
-    top: 10%;
-    left: 25%; 
+    top: 40%;
+    left: 10%; 
     transform: translateY(-50%);
-    text-align: left;
+    text-align: center;
     color: whitesmoke; /* Text color */
     margin-right: 10vw;
     background-color: transparent; /* Ensure background is transparent */
@@ -726,4 +802,7 @@
     color: white;
     align-items: right;
     text-align: left;
+}
+.reg1{
+      margin-top: -3vh;
 }
