@@ -119,11 +119,11 @@
 }
 .big-text3 {
     font-size: 70px; /* Adjust as needed */
-    font-family: "Arial", sans-serif; /* Replace with your preferred fancy font */
-    margin-bottom: 10px; /* Space between texts */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
+    margin-bottom: 40vh; /* Space between texts */
     text-align: center;
-    margin-top: 20px;
-    top:30px;
+    margin-top: 90vh;
+    top:30vh;
     transform: translateY(-50%);
     
 }
@@ -663,10 +663,10 @@
 }
 .mini-container15 {
     position: absolute;
-    top: 10%;
-    left: 25%; 
+    top: 40%;
+    left: 10%; 
     transform: translateY(-50%);
-    text-align: left;
+    text-align: center;
     color: whitesmoke; /* Text color */
     margin-right: 10vw;
     background-color: transparent; /* Ensure background is transparent */
@@ -802,4 +802,7 @@
     color: white;
     align-items: right;
     text-align: left;
+}
+.reg1{
+      margin-top: -3vh;
 }
