@@ -127,6 +127,29 @@
     transform: translateY(-50%);
     
 }
+.mini-container22 {
+    text-align: center;
+    top: -90vh;
+    right: 20vw; 
+    width: 100vw;
+    height: 2vh;
+    color: #000;
+    font-weight: bold;
+    margin-top: 15vh;
+}
+
+.big-text4 {
+    font-size: 75px; /* Adjust as needed */
+    font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
+    margin-bottom: 20px;
+    text-align: left;
+    top: -20vh;
+    right: 10vw; 
+    margin-top: 50vh;
+    transform: translateY(-50%);
+  
+    
+}
 .small-text {
     font-size: 18px; /* Adjust as needed */
     font-family: "Verdana", sans-serif; /* Replace with your preferred fancy font */
@@ -731,14 +754,21 @@
 }
 
 .photo-container11{
-    background-image: url('/assets/images/White Green Clean & Corporate Mental Health Stress Management Health Explainer Social Media Post (3).png');
+    /* background-image: url('/assets/images/White Green Clean & Corporate Mental Health Stress Management Health Explainer Social Media Post (3).png'); */
     height: 100vh;
     width: 100vw;
     position: absolute;
-    top: 660vh;
+    top: 720vh;
     background-size: cover;
     background-position: center;
     z-index: 0;
+    /* left: -23%; */
+    background-color: #b1ccd1;
+}
+.photo-container11 iframe{
+    margin-top: 15vh;
+    width: 50vw;
+    margin-left: 25vw;
 }
 
 .photo-container12 {
@@ -746,7 +776,7 @@
     height: 50vh;
     width: 100vw;
     position: absolute;
-    top: 720vh;
+    top: 810vh;
     background-size: cover;
     background-position: center;
     display: flex;
