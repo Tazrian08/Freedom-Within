@@ -10,17 +10,20 @@ body, html {
     background-position: center;
     /* background-image: url('/assets/images/antibes-town-surrounded-by-french-riveria-during-evening-france.jpg'); */
     background-color: #eeeeee;
+    position: absolute;
   }
   aside {
-    width: 300px;
-    height: 100%;
+    width: 15vw;
+    height: 95vh;
     background-color: #fafafa;
     color: #fff;
     padding: 20px;
     margin-left: 20px;
+    position: absolute;
     border-radius: 25px;
     text-decoration-color: #555;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    top: 2vh;
   }
   h2, span{
     font-size: 1.4rem;
@@ -58,7 +61,7 @@ body, html {
   }
   .sidebar {
     flex: 1; /* Fill the available space */
-    height:50%;
+    height:50vh;
   }
   .sidebar a {
     display: block;
@@ -156,7 +159,7 @@ body, html {
     font-weight: bold;
   }
   .photo-container2 {
-    width: 55%; 
+    width: 55vw; 
     height: 6vh;
     background-size: cover;
     background-position: center;
@@ -165,20 +168,21 @@ body, html {
     background-color: #fafafa;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     position: fixed;
-    top: 10px; 
-    right: 500px; 
+    top: 1vh; 
+    right: 26vw; 
     border-radius: 15px;
     text-align: center;
+    position: fixed;
     
   }
   .photo-container3 {
-    width: 55%;
+    width: 55vw;
     height: 40vh;
     background-size: cover;
     background-position: center;
     padding: 10px;
     float: left;
-    /* background-image: url('/assets/images/flat-lay-traveling-elements-collection.jpg'); */
+    position: fixed;
     background-color: #fafafa;
     position: fixed;
     top: 80px;
