@@ -18,6 +18,7 @@
             <!-- <span class="big-text1">Upcoming Events<br>_________</span><br><br> -->
             <span class="small-text" *ngFor="let event of future_events">
                 <div class="event-details">
+                    <img [src]="event.image.path" alt="Consultation Image">
                     <p><strong>Name:</strong> {{ event.name }}</p>
                     <p><strong>Description:</strong> {{ event.description }}</p>
                     <p><strong>Date:</strong> {{ event.date }}</p>
