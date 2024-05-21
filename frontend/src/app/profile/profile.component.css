@@ -14,7 +14,8 @@ body, html {
 }
 
 aside {
-  width: 300px;
+  width: 15vw;
+  height: 95vh;
   background-color: #fafafa;
   color: #555;
   padding: 20px;
@@ -27,7 +28,7 @@ aside {
 }
 
 h2, span {
-  font-size: 1.4rem;
+  font-size: 25px;
 }
 
 .logo {
@@ -49,6 +50,7 @@ h2, span {
 .sidebar {
   display: flex;
   flex-direction: column;
+  width: 15vw;
 }
 
 .sidebar a {
@@ -84,8 +86,31 @@ h2, span {
   padding: 20px;
 }
 
-.photo-container2, .photo-container3, .photo-container5 {
-  width: 100%;
+.photo-container2 {
+  width: 50vw;
+  height: 7vh;
+  margin-top: -100vh;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.photo-container3 {
+  width: 50vw;
+  height: 40vh;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.photo-container5 {
+  width: 50vw;
+  height: 40vh;
   background-color: #fafafa;
   margin-bottom: 20px;
   padding: 20px;
@@ -95,26 +120,31 @@ h2, span {
 
 .photo-container4 {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   background-color: #fafafa;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 1vh;
+  left: 72vw;
+  width: 27vw;
 }
 
 .pic {
-  width: 150px;
-  height: 150px;
+  width: 25vw;
+  height: 55vh;
   background-size: cover;
   background-position: center;
-  border-radius: 50%;
-  margin-right: 20px;
+  /* border-radius: 50%;  */
+  margin-bottom: 20px;
 }
 
 .info {
-  flex-grow: 1;
+  text-align: left;
+  width: 100%;
 }
 
 .admin-pic {
@@ -132,6 +162,11 @@ h2, span {
   margin-bottom: 10px;
 }
 
+.logout-button {
+  margin-top: 10px;
+}
+
+
 .container2 {
   width: 100%;
   padding: 20px;
@@ -143,6 +178,8 @@ h2, span {
 
 .attraction-container h2 {
   text-align: center;
+  width: 20vw;
+  height: 5vh;
 }
 
 table {
