@@ -827,7 +827,7 @@
     width: 35vw;
     height: 25vh;
     left: -75vw; 
-    top: 90px;
+    top: 9vh;
     color: white;
     align-items: right;
     text-align: left;
@@ -837,7 +837,7 @@
     width: 35vw;
     height: 10vh;
     left: -53vw; 
-    top: 90px;
+    top: 9vh;
     color: white;
     text-align: left;
 }
@@ -846,7 +846,7 @@
     width: 35vw;
     height: 25vh;
     left: -30vw; 
-    top: 90px;
+    top:9vh;
     color: white;
     align-items: right;
     text-align: left;
@@ -856,7 +856,7 @@
     width: 35vw;
     height: 25vh;
     left: -10vw; 
-    top: 90px;
+    top: 9vh;
     color: white;
     align-items: right;
     text-align: left;
