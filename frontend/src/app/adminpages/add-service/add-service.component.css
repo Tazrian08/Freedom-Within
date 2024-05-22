@@ -9,7 +9,7 @@ body {
     background-size: cover; 
     background-position: center; 
     position: fixed;
-    overflow: auto;
+    overflow: hidden;
     /* background-image: url('/assets/images/picture-frame-model-airplanes.jpg'); */
   }
   .container {
@@ -23,8 +23,9 @@ body {
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 400px;
+    width: 25vw;
     padding: 20px;
+    margin-top: -15vh;
   }
 
   h1 {

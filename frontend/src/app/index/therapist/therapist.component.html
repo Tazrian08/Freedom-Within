@@ -18,7 +18,7 @@
   <div style="text-align: center;">
     <h1>Therapist Index</h1>
     <input type="text" placeholder="Search..." [(ngModel)]="searchTerm">
-    <button (click)="search()">Search</button>
+    <button class="button" (click)="search()">Search</button>
 
     <div class="scrollable-container">
       <div class="scrollable-box">
@@ -44,7 +44,7 @@
               <td *ngIf="therapist.admin_access==0">Disabled</td>
               <td *ngIf="user.admin_access==1 && therapist.id !=user.id">
     
-                <button *ngIf="therapist.id!=1" (click)="tog_admin(therapist.id)">Toggle Admin</button>
+                <button class="button" *ngIf="therapist.id!=1" (click)="tog_admin(therapist.id)">Toggle Admin</button>
               </td>
             </tr>
           </tbody>

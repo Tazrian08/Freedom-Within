@@ -222,12 +222,14 @@
 }
 
 .photo-container3 {
-    position: absolute;
     width: 100vw;
-    height: 100vh; /* Adjust as needed */
-    z-index: 3;
-    top: 112vh;
-    box-sizing: border-box;
+    height: 60vh;
+    background-color: rgb(255, 245, 226);
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    position: absolute; /* Change position to relative */
+    /* z-index: 2; */
+    top: 50vh;
 }
 
 .partition {
@@ -263,7 +265,7 @@
     position: absolute;
     width: 100vw; 
     height: 70vh;
-    top: 160vh;
+    top: 180vh;
     overflow: hidden; /* Ensure content does not overflow */
 }
 
@@ -317,7 +319,7 @@
     background-size: cover;
     background-position: center;
     background-color: #0f2649;
-    top: 230vh;
+    top: 100vh;
 }
 
 .mini-container4 {
@@ -416,7 +418,7 @@
     background-size: cover;
     background-position: center;
     background-color: #ffffff;
-    top: 310vh;
+    top: 250vh;
 }
 
 .photo-container6 p{
@@ -601,7 +603,7 @@
     height: 130vh;
     width: 100vw;
     position: absolute;
-    top: 380vh;
+    top: 330vh;
     
 }
 
@@ -612,7 +614,7 @@
     background-size: cover;
     background-position: center;
     background-color: #f0ffdd;
-    top: 510vh;
+    top: 460vh;
 }
 
 .mini-container13 {
@@ -664,7 +666,7 @@
     position: absolute;
     width: 100vw; 
     height: 80vh;
-    top: 583vh;
+    top: 533vh;
     overflow: hidden; /* Ensure content does not overflow */
     color: #ffffff;
 }
@@ -720,7 +722,7 @@
     background-size: cover;
     background-position: center;
     background-color: #00313b;
-    top: 660vh;
+    top: 610vh;
     z-index: 1;
 }
 
@@ -760,7 +762,7 @@
     height: 100vh;
     width: 100vw;
     position: absolute;
-    top: 720vh;
+    top: 680vh;
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -778,7 +780,7 @@
     height: 50vh;
     width: 100vw;
     position: absolute;
-    top: 810vh;
+    top: 780vh;
     background-size: cover;
     background-position: center;
     display: flex;
