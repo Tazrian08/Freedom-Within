@@ -19,9 +19,13 @@
 
 .mini-container1 {
     position: absolute;
-    width: 5vw;
-    height: 5vh;
-    /* Additional styling as needed */
+    width: 20vw;
+    height: 20vh;
+    top:9%;
+    left: 75%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/assets/images/IMG-20240522-WA0001.jpg');
 }
 
 .mini-container2 {
