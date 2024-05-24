@@ -13,8 +13,9 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patients=Patient::all();
+        $patients = Patient::orderBy('name', 'asc')->get();
         return response()->json($patients);
+        
 
     }
 
