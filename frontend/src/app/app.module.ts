@@ -21,6 +21,7 @@ import { PatientComponent } from './index/patient/patient.component';
 import { AppointmentsComponent } from './index/appointments/appointments.component';
 import { ServicesComponent } from './services/services.component';
 import { EventsComponent } from './events/events.component';
+import { OrganizationEditComponent } from './adminpages/organization-edit/organization-edit.component';
 
 
 
@@ -42,6 +43,7 @@ import { EventsComponent } from './events/events.component';
     AppointmentsComponent,
     ServicesComponent,
     EventsComponent,
+    OrganizationEditComponent,
     
 
 

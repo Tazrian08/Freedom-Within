@@ -14,6 +14,7 @@ import { AppointmentsComponent } from './index/appointments/appointments.compone
 import { PatientComponent } from './index/patient/patient.component';
 import { ServicesComponent } from './services/services.component';
 import { EventsComponent } from './events/events.component';
+import { OrganizationEditComponent } from './adminpages/organization-edit/organization-edit.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: "index/patients", component: PatientComponent,title: "Patient Index"},
   {path: "services", component: ServicesComponent,title: "Services"},
   {path: "events", component: EventsComponent,title: "Events"},
+  {path: "main_edit", component: OrganizationEditComponent,title: "Information Edit"},
 
 ];
 

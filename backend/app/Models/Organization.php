@@ -12,5 +12,6 @@ class Organization extends Model
         'name',
         'address',
         'contact',
+        'maplink',
     ];
 }

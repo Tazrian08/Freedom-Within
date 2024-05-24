@@ -42,6 +42,12 @@ Route::get("/allevents",[EventController::class,"index"]);
 
 #HOME ROUTES
 Route::get("/allhome", [HomeController::class, "index"]);
+Route::put("/title_change", [HomeController::class, "title_change"]);
+Route::put("/homedescription_change", [HomeController::class, "homedescription_change"]);
+Route::put("/orgname_change", [HomeController::class, "orgname_change"]);
+Route::put("/address_change", [HomeController::class, "address_change"]);
+Route::put("/map_change", [HomeController::class, "map_change"]);
+Route::put("/orgcontact_change", [HomeController::class, "contact_change"]);
 
 #THERAPIST ROUTES
 Route::get("/alltherapist",[UserController::class,"therapist_index"]);

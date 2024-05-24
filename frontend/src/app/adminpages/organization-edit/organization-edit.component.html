@@ -1,0 +1,64 @@
+<div >
+    <nav class="navbar">
+      <ul class="navbar-list">
+                  <li class="navbar-item"><a [routerLink]="['/home']">Home</a></li>
+                  <li  *ngIf="auth" class="navbar-item"><a [routerLink]="['/profile']">Profile</a></li>
+              </ul>
+          </nav>
+        </div><br><br>
+<div class="container mt-4" >
+  <div class="card">
+      <h1>Update your Information</h1>
+
+      <form class="form-container">
+          <div class="left-section">
+              <!-- Left section content -->
+              <div class="form-group">
+                  <label>Change Home Screen Title</label>
+                  <input type="text" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+                  <button (click)="title_change(home.id)">Change Title</button>
+              </div>
+
+              <div class="form-group">
+                  <label>Change Home Screen Description</label>
+                  <textarea type="text" [(ngModel)]="home_description" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter Description"></textarea>
+                  <button (click)="home_description_change(home.id)">Change Description</button>
+              </div>
+
+
+
+              <!-- Right section content -->
+
+              
+              <div class="form-group">
+                <label>Change Organization name</label>
+                <input type="text" [(ngModel)]="organization_name" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
+                <button (click)="name_change(organization.id)">Change Name</button>
+            </div>
+
+            <div class="form-group">
+                <label>Change Organization Contact</label>
+                <input type="text" [(ngModel)]="contact" [ngModelOptions]="{standalone: true}" class="form-control" id="password" placeholder="Enter password">
+                <button (click)="contact_change(organization.id)">Change Contact Number</button>
+            </div>
+  
+              <div class="form-group">
+                  <label>Change Organziation Address</label>
+                  <textarea type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Description"></textarea>
+                  <button (click)="address_change(organization.id)">Change Address</button>
+              </div>
+              <div class="form-group">
+                <label>Change Maplink</label>
+                <textarea type="text" [(ngModel)]="mapUrl" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter Description"></textarea>
+                <button (click)="map_change(organization.id)">Change MapLink</button>
+            </div>
+          </div>
+
+
+
+
+          <div class="clearfix"></div>
+          <!-- Add submit button here -->
+      </form>
+  </div>
+</div>
