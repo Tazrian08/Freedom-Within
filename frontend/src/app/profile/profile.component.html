@@ -38,7 +38,7 @@
         <a *ngIf="admin || thera" routerLink="/events">
           <span class="material-icons-sharp">Event Index</span>
         </a>
-        <a routerLink="/main_edit">
+        <a *ngIf="admin" routerLink="/main_edit">
           <span class="material-icons-sharp">Organization Edit</span>
         </a>
       </div>
