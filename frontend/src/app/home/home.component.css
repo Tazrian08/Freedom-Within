@@ -835,7 +835,7 @@
     position: absolute;
     width: 35vw;
     height: 25vh;
-    left: -75vw; 
+    left: -70vw; 
     top: 9vh;
     color: white;
     align-items: right;
@@ -845,7 +845,7 @@
     position: absolute;
     width: 35vw;
     height: 10vh;
-    left: -53vw; 
+    left: -45vw; 
     top: 9vh;
     color: white;
     text-align: left;
@@ -854,7 +854,7 @@
     position: absolute;
     width: 35vw;
     height: 25vh;
-    left: -30vw; 
+    left: -15vw; 
     top:9vh;
     color: white;
     align-items: right;
