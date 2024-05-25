@@ -78,6 +78,15 @@ export class EventsComponent {
 
   delete_event(id: string){
 
+    this.http.delete(`http://localhost:8000/api/delete_event/${id}`)
+    
+      .subscribe((resultData: any)=>
+      {
+        console.log(resultData)
+      });
+
+
+
 
   }
 

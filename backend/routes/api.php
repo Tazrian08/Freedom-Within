@@ -38,6 +38,7 @@ Route::get("/allservice",[ServiceController::class,"index"]);
 #EVENT ROUTES
 Route::post("/create/event", [EventController::class,"create"]);
 Route::get("/allevents",[EventController::class,"index"]);
+Route::delete("/delete_event/{id}",[EventController::class,"destroy"]);
 
 
 #HOME ROUTES

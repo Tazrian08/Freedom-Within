@@ -82,8 +82,18 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
-        //
+        $event=Event::find($id);
+        $image=Image::where('event_id',$id)->first();
+        if ($image) {
+            $imagePath = public_path(str_replace(asset(''), '', $image->path));
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+            $image->delete();
+        }
+        $event->delete();
+        return response()->json("Event Deleted");
     }
 }
