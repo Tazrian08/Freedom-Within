@@ -76,4 +76,9 @@ export class EventsComponent {
   
   }
 
+  delete_event(id: string){
+
+
+  }
+
 }
