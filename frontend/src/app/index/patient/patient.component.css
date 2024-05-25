@@ -87,3 +87,41 @@ tr:nth-child(even) {
     padding: 20px;
     border-radius: 10px;
 }
+
+/* Patient Info Section Style */
+.patient-info {
+    margin-top: 20px; /* Add space at the top */
+  }
+  
+  .patient-info h3 {
+    font-size: 18px; /* Font size for patient details */
+    margin-bottom: 10px; /* Add space below each detail */
+  }
+  
+  .patient-info .scrollable-container {
+    max-height: 300px; /* Maximum height for scrollable container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 20px; /* Add space at the top */
+  }
+  
+  .patient-info .faded-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px; /* Add padding */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .patient-info table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse border spacing */
+  }
+  
+  .patient-info th,
+  .patient-info td {
+    padding: 8px; /* Add padding */
+    border-bottom: 1px solid #ddd; /* Bottom border */
+  }
+  
+  .patient-info tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+  }
+  
