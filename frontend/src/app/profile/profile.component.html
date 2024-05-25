@@ -49,84 +49,85 @@
         <span>User Profile</span>
       </div>
 
-      <div class="photo-container3">
-        <button class="btn btn-dark" (click)="show2()">Show Appointment Requests</button>
-        <div *ngIf="thera" class="container2">
-          <div *ngIf="show_app" class="attraction-container table-container">
-            <h2>Incoming Appointments</h2>
-            <h4>Filter incoming appointments</h4>
-            <input type="text" placeholder="Patient's Name or Number" [(ngModel)]="search1">
-            <button (click)="in_search()">Search</button>
-            <table *ngIf="new_appointments.length > 0">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Number</th>
-                  <th>Service</th>
-                  <th>Appointment Type</th>
-                  <th>Time</th>
-                  <th>Date</th>
-                  <th>Confirmation</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let appointment of new_appointments">
-                  <td>{{ appointment.patient.name }}</td>
-                  <td>{{ appointment.patient.contact }}</td>
-                  <td>{{ appointment.service.type }}</td>
-                  <td>{{ appointment.appointment_type }}</td>
-                  <td>{{ appointment.time.time_slot }}</td>
-                  <td>{{ appointment.date }}</td>
-                  <td><button class="btn btn-dark" (click)="confirm(appointment.id)">Confirm</button></td>
-                  <td><button class="btn btn-dark" (click)="cancel(appointment.id)">Cancel</button></td>
-                </tr>
-              </tbody>
-            </table>
-            <h2 *ngIf="new_appointments.length == 0">No appointment</h2>
+      <div class="center-container">
+        <div class="photo-container3">
+          <button class="btn btn-dark" (click)="show2()">Show Appointment Requests</button>
+          <div *ngIf="thera" class="container2">
+            <div *ngIf="show_app" class="attraction-container table-container">
+              <h2>Incoming Appointments</h2>
+              <h4 style="margin-top: 20px;">Filter incoming appointments</h4>
+              <input type="text" class="search-bar" placeholder="Patient's Name or Number" [(ngModel)]="search1">
+              <button class="search-button" (click)="in_search()">Search</button>
+              <table *ngIf="new_appointments.length > 0">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Service</th>
+                    <th>Appointment Type</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th>Confirmation</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let appointment of new_appointments">
+                    <td>{{ appointment.patient.name }}</td>
+                    <td>{{ appointment.patient.contact }}</td>
+                    <td>{{ appointment.service.type }}</td>
+                    <td>{{ appointment.appointment_type }}</td>
+                    <td>{{ appointment.time.time_slot }}</td>
+                    <td>{{ appointment.date }}</td>
+                    <td><button class="btn btn-dark" (click)="confirm(appointment.id)">Confirm</button></td>
+                    <td><button class="btn btn-dark" (click)="cancel(appointment.id)">Cancel</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h2 style="margin-top: 20px;" *ngIf="new_appointments.length == 0">No appointment</h2>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="photo-container5">
-        <button class="btn btn-dark" (click)="show()">Show Confirmed Appointments</button>
-        <div *ngIf="thera" class="container2">
-          <div *ngIf="show_schedule" class="attraction-container table-container">
-            <h2>Confirmed Appointments</h2>
-            <h4>Filter confirmed appointments</h4>
-            <input type="text" placeholder="Patient's Name or Number" [(ngModel)]="search2">
-            <button (click)="con_search()">Search</button>
-            <table *ngIf="t_app.length > 0">
-              <thead>
-                <tr>
-                  <th>Patient Name</th>
-                  <th>Patient Number</th>
-                  <th>Service</th>
-                  <th>Appointment Type</th>
-                  <th>Time</th>
-                  <th>Session Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let appointment of t_app">
-                  <td>{{ appointment.patient.name }}</td>
-                  <td>{{ appointment.patient.contact }}</td>
-                  <td>{{ appointment.service.type }}</td>
-                  <td>{{ appointment.appointment_type }}</td>
-                  <td>{{ appointment.time.time_slot }}</td>
-                  <td *ngIf="appointment.done == 1">Complete</td>
-                  <td *ngIf="appointment.done == 0"><button class="btn btn-dark" (click)="done(appointment.id)">End</button></td>
-                </tr>
-              </tbody>
-            </table>
-            <h2 *ngIf="t_app.length == 0">No confirmed appointments</h2>
+        <div class="photo-container5">
+          <button class="btn btn-dark" (click)="show()">Show Confirmed Appointments</button>
+          <div *ngIf="thera" class="container2">
+            <div *ngIf="show_schedule" class="attraction-container table-container">
+              <h2>Confirmed Appointments</h2>
+              <h4 style="margin-top: 20px;">Filter confirmed appointments</h4>
+              <input type="text" class="search-bar" placeholder="Patient's Name or Number" [(ngModel)]="search2">
+              <button class="search-button" (click)="con_search()">Search</button>
+              <table *ngIf="t_app.length > 0">
+                <thead>
+                  <tr>
+                    <th>Patient Name</th>
+                    <th>Patient Number</th>
+                    <th>Service</th>
+                    <th>Appointment Type</th>
+                    <th>Time</th>
+                    <th>Session Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let appointment of t_app">
+                    <td>{{ appointment.patient.name }}</td>
+                    <td>{{ appointment.patient.contact }}</td>
+                    <td>{{ appointment.service.type }}</td>
+                    <td>{{ appointment.appointment_type }}</td>
+                    <td>{{ appointment.time.time_slot }}</td>
+                    <td *ngIf="appointment.done == 1">Complete</td>
+                    <td *ngIf="appointment.done == 0"><button class="btn btn-dark" (click)="done(appointment.id)">End</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h2 style="margin-top: 20px;" *ngIf="t_app.length == 0">No confirmed appointments</h2>
+            </div>
           </div>
         </div>
       </div>
     </main>
 
     <div class="photo-container4">
-      
       <img [src]="image" class="pic" alt="">
       <div class="info">
         <div *ngIf="admin">
@@ -140,9 +141,10 @@
         <h2>Email: {{ user.email }}</h2>
         <p>{{ user.description }}</p>
         <button routerLink="/change" class="logout-button">Change Profile Information</button>
-        <button (click)="logout()" class="logout-button">Logout</button>
+        <button (click)="logout()" class="logout-button2">Logout</button>
       </div>
     </div>
+    
   </div>
 </div>
 
