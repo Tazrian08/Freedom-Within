@@ -88,11 +88,13 @@ textarea.form-control {
 
 select.form-control {
     appearance: none; /* Remove default dropdown arrow */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="%23333" d="M2 0L0 2h4z" /%3E%3C/svg%3E');
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path d="M2 5L4 3H0z" fill="%23333"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 10px center;
+    background-position: right 8px center; /* Adjusted background position */
     background-size: 8px 10px;
 }
+
+
 
 .btn-primary {
     width: 100%;
