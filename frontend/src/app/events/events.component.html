@@ -22,7 +22,7 @@
                     <p><strong>Name:</strong> {{ event.name }}</p>
                     <p><strong>Description:</strong> {{ event.description }}</p>
                     <p><strong>Date:</strong> {{ event.date }}</p>
-                    <p><strong>Time:</strong> {{ event.time }}</p>
+                    <p><strong>Time:</strong> {{ event.time }}</p><br>
                     <button class="btn btn-primary" *ngIf="admin" (click)="delete_event(event.id)">Delete</button>
                 </div>
                 <br><br>
@@ -40,7 +40,8 @@
                     <p><strong>Name:</strong> {{ event.name }}</p>
                     <p><strong>Description:</strong> {{ event.description }}</p>
                     <p><strong>Date:</strong> {{ event.date }}</p>
-                    <p><strong>Time:</strong> {{ event.time }}</p>
+                    <p><strong>Time:</strong> {{ event.time }}</p><br>
+                    <button class="btn btn-primary" *ngIf="admin" (click)="delete_event(event.id)">Delete</button>
                 </div>
                 <br><br>
             </span>
