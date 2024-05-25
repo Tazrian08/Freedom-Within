@@ -20,13 +20,16 @@
 .mini-container1 {
     position: absolute;
     width: 20vw;
-    height: 20vh;
-    top:9%;
-    left: 75%;
-    background-size: cover;
+    height: 30vh;
+    top: 5vh;
+    right: 1vw;
+    background-size: contain;
     background-position: center;
-    background-image: url('/assets/images/IMG-20240522-WA0001.jpg');
+    background-image: url('/assets/images/IMG-20240524-WA0000.jpg');
+    background-repeat: no-repeat; /* Prevent looping */
 }
+
+
 
 .mini-container2 {
    position: absolute;

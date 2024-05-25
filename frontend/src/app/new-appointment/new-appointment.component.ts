@@ -113,7 +113,8 @@ export class NewAppointmentComponent {
 
     this.http.post("http://localhost:8000/api/reappointment", formData).subscribe((resultData: any) => {
       console.log(resultData)
-      // this.router.navigate(['admin/login']);
+      alert("Appointment Made. You will be contacted soon for confirmation")
+      this.router.navigate(['home']);
     });
 
 
