@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://your-production-api.com/api' // Production API URL
+  apiBaseUrl: 'https://freedom-within.onrender.com/api' // Production API URL
 };
