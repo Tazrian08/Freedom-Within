@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-appointment',
@@ -10,97 +11,65 @@ import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppointmentComponent {
 
+  private apiBaseUrl = environment.apiBaseUrl;
 
-  constructor(private http: HttpClient, private router: Router, private calendar: NgbCalendar) 
-  {
-
+  constructor(private http: HttpClient, private router: Router, private calendar: NgbCalendar) {
     this.date = this.calendar.getToday();
     this.minDate = this.calendar.getToday();
-    { 
-    
-      this.http.get("http://localhost:8000/api/allservice")
-    
-      .subscribe((resultData: any)=>
-      {
-        this.services=resultData
-        console.log(this.services)
-      });
-    }
 
+    this.http.get(`${this.apiBaseUrl}/allservice`).subscribe((resultData: any) => {
+      this.services = resultData;
+      console.log(this.services);
+    });
 
-  { 
-    
-    this.http.get("http://localhost:8000/api/alltherapist")
-  
-    .subscribe((resultData: any)=>
-    {
-      this.therapists=resultData
-      this.user_id=this.therapists[0].id
-      console.log(this.therapists)
+    this.http.get(`${this.apiBaseUrl}/alltherapist`).subscribe((resultData: any) => {
+      this.therapists = resultData;
+      this.user_id = this.therapists[0].id;
+      console.log(this.therapists);
     });
   }
 
-  }
-
-  
-
-  services:any
-  therapists:any
-  timeslots: any
-  
-  
-
-
-  name=""
-  email=""
-  contact=""
-  gender=""
-  age=""
+  services: any;
+  therapists: any;
+  timeslots: any;
+  name = "";
+  email = "";
+  contact = "";
+  gender = "";
+  age = "";
   date: NgbDateStruct;
   minDate: NgbDateStruct;
-  user_id=""
-  service_id=""
-  apt_type=''
-  time_id=""
-  message=""
-  doctor:any
+  user_id = "";
+  service_id = "";
+  apt_type = '';
+  time_id = "";
+  message = "";
+  doctor: any;
 
-
-  timeslot_retriever() {
+  timeslot_retriever(): void {
     const formData = new FormData();
-  
-    // Add other fields to FormData
     formData.append('user_id', this.user_id);
-  
-    // Convert NgbDateStruct to a string in a specific format
     const formattedDate = this.formatNgbDate(this.date);
     formData.append('date', formattedDate);
-  
-    this.http.post("http://localhost:8000/api/timeslot", formData).subscribe((resultData: any) => {
+
+    this.http.post(`${this.apiBaseUrl}/timeslot`, formData).subscribe((resultData: any) => {
       this.timeslots = resultData["timeslots"];
-      this.doctor=resultData["therapist"];
-      console.log(this.timeslots)
-      console.log(this.doctor)
-      // this.router.navigate(['admin/login']);
+      this.doctor = resultData["therapist"];
+      console.log(this.timeslots);
+      console.log(this.doctor);
     });
   }
-  
-  // Helper function to format NgbDateStruct to a string
+
   private formatNgbDate(date: NgbDateStruct): string {
     if (date) {
-      // Format the date as needed (e.g., YYYY-MM-DD)
       const formattedDate = `${date.year}-${date.month}-${date.day}`;
       return formattedDate;
     }
     return "";
   }
 
-  appointment(){
-
-
+  appointment(): void {
     const formData = new FormData();
-  
-    // Add other fields to FormData
     formData.append('name', this.name);
     formData.append('email', this.email);
     formData.append('contact', this.contact);
@@ -111,19 +80,13 @@ export class AppointmentComponent {
     formData.append('apt_type', this.apt_type);
     formData.append('time_id', this.time_id);
     formData.append('message', this.message);
-  
-    // Convert NgbDateStruct to a string in a specific format
     const formattedDate = this.formatNgbDate(this.date);
     formData.append('date', formattedDate);
 
-    this.http.post("http://localhost:8000/api/appointment", formData).subscribe((resultData: any) => {
-      console.log(resultData)
-      alert("Appointment Made. You will be contacted soon for confirmation")
+    this.http.post(`${this.apiBaseUrl}/appointment`, formData).subscribe((resultData: any) => {
+      console.log(resultData);
+      alert("Appointment Made. You will be contacted soon for confirmation");
       this.router.navigate(['home']);
     });
-
-
   }
-
-
 }

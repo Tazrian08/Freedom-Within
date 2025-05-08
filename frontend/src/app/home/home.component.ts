@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Emitters } from '../emitters/emitters';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  private apiBaseUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient, private router: Router, private sanitizer: DomSanitizer ){}
 
@@ -20,11 +24,12 @@ export class HomeComponent {
   home:any
   organization:any
   mapUrl!: SafeResourceUrl;
+  user: any;
 
 
   ngOnInit(): void {
 
-    this.http.get(`http://localhost:8000/api/allservice`)
+    this.http.get(`${this.apiBaseUrl}/allservice`)
   
     .subscribe((resultData: any)=>
     {
@@ -33,7 +38,7 @@ export class HomeComponent {
 
     });
 
-    this.http.get(`http://localhost:8000/api/allhome`)
+    this.http.get(`${this.apiBaseUrl}/allhome`)
   
     .subscribe((resultData: any)=>
     {
@@ -48,7 +53,7 @@ export class HomeComponent {
 
 
 
-    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+    this.http.get(`${this.apiBaseUrl}/user`, {withCredentials: true}).subscribe(
       (res: any) => {
         console.log(res)
         if (res.admin_access==1){
@@ -58,6 +63,7 @@ export class HomeComponent {
           Emitters.therapistEmitter.emit(true);
         }
         Emitters.authEmitter.emit(true);
+        this.user = res.user;
       });
     Emitters.authEmitter.subscribe(
       (data: any) => {
@@ -79,7 +85,7 @@ export class HomeComponent {
   }
 
   logout(): void {
-    this.http.post('http://localhost:8000/api/logout', {}, {withCredentials: true})
+    this.http.post(`${this.apiBaseUrl}/logout`, {}, {withCredentials: true})
       .subscribe(() =>{
         this.auth = false
         this.admin=false

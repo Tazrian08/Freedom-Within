@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Emitters } from 'src/app/emitters/emitters';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -10,51 +11,44 @@ import { Emitters } from 'src/app/emitters/emitters';
 })
 export class NavbarComponent {
 
-  constructor(private http: HttpClient, private router: Router){}
+  private apiBaseUrl = environment.apiBaseUrl;
 
-  auth:boolean=false
-  admin:boolean=false
-  thera:boolean=false
+  constructor(private http: HttpClient, private router: Router) {}
 
+  auth: boolean = false;
+  admin: boolean = false;
+  thera: boolean = false;
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+    this.http.get(`${this.apiBaseUrl}/user`, { withCredentials: true }).subscribe(
       (res: any) => {
-        console.log(res)
-        if (res.admin_access==1){
+        console.log(res);
+        if (res.admin_access == 1) {
           Emitters.adminEmitter.emit(true);
         }
-        if (res.therapist_status==1){
+        if (res.therapist_status == 1) {
           Emitters.therapistEmitter.emit(true);
         }
         Emitters.authEmitter.emit(true);
       });
-    Emitters.authEmitter.subscribe(
-      (data: any) => {
-        this.auth= data;
-      });
-    Emitters.adminEmitter.subscribe(
-      (data: any) => {
-        this.admin= data;
-      });
-    Emitters.authEmitter.subscribe(
-      (data: any) => {
-        this.auth= data;
-      });
-    Emitters.therapistEmitter.subscribe(
-      (data: any) => {
-        this.thera = data;
-      });
-
+    Emitters.authEmitter.subscribe((data: any) => {
+      this.auth = data;
+    });
+    Emitters.adminEmitter.subscribe((data: any) => {
+      this.admin = data;
+    });
+    Emitters.therapistEmitter.subscribe((data: any) => {
+      this.thera = data;
+    });
   }
 
   logout(): void {
-    this.http.post('http://localhost:8000/api/logout', {}, {withCredentials: true})
-      .subscribe(() =>{
-        this.auth = false
-        this.admin=false
-        this.thera=false
-      } );
-      this.router.navigate(['/login'])
+    this.http.post(`${this.apiBaseUrl}/logout`, {}, { withCredentials: true })
+      .subscribe(() => {
+        this.auth = false;
+        this.admin = false;
+        this.thera = false;
+      });
+    this.router.navigate(['/login']);
   }
 }

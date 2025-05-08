@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Emitters } from '../emitters/emitters';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-info-change',
@@ -10,174 +11,110 @@ import { Emitters } from '../emitters/emitters';
 })
 export class InfoChangeComponent {
 
+  private apiBaseUrl = environment.apiBaseUrl;
 
-  constructor(private http: HttpClient, private router: Router ) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
+  auth: boolean = false;
+  thera: boolean = false;
+  admin: boolean = false;
+  user: any;
+  contacts: any;
 
-  auth:boolean=false
-  thera:boolean=false
-  admin:boolean=false
-  user:any
-  contacts: any
-
-  name=""
-  email=""
-  password=""
-  password1=""
-  description=""
-
+  name = "";
+  email = "";
+  password = "";
+  password1 = "";
+  description = "";
 
   ngOnInit(): void {
-
-    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+    this.http.get(`${this.apiBaseUrl}/user`, { withCredentials: true }).subscribe(
       (res: any) => {
-        console.log(res)
-        this.user=res.user
-        this.name=this.user.name
-        this.email=this.user.email
-        this.description=this.user.description
-        // this.id=res.user.id
-        this.contacts=res.contacts
-        if (res.user.admin_access==1){
+        console.log(res);
+        this.user = res.user;
+        this.name = this.user.name;
+        this.email = this.user.email;
+        this.description = this.user.description;
+        this.contacts = res.contacts;
+        if (res.user.admin_access == 1) {
           Emitters.adminEmitter.emit(true);
         }
-        if (res.user.therapist_status==1){
+        if (res.user.therapist_status == 1) {
           Emitters.therapistEmitter.emit(true);
         }
         Emitters.authEmitter.emit(true);
       });
-    Emitters.authEmitter.subscribe(
-      (data: any) => {
-        this.auth= data;
-      });
-    Emitters.adminEmitter.subscribe(
-      (data: any) => {
-        this.admin= data;
-      });
-    Emitters.authEmitter.subscribe(
-      (data: any) => {
-        this.auth= data;
-      });
-    Emitters.therapistEmitter.subscribe(
-      (data: any) => {
-        this.thera = data;
-      });
+    Emitters.authEmitter.subscribe((data: any) => {
+      this.auth = data;
+    });
+    Emitters.adminEmitter.subscribe((data: any) => {
+      this.admin = data;
+    });
+    Emitters.therapistEmitter.subscribe((data: any) => {
+      this.thera = data;
+    });
   }
 
-
-  selectedFile: any
+  selectedFile: any;
 
   onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0];
   }
 
-  upload(id:string): void {
-
+  upload(id: string): void {
     const formData = new FormData();
     formData.append('id', id);
-
-    // Append the existing form data
-
 
     if (this.selectedFile) {
       formData.append('image', this.selectedFile, this.selectedFile.name);
     }
 
-
-    this.http.post("http://localhost:8000/api/img_change",formData).subscribe((resultData: any)=> 
-    {
-
-        console.log(resultData)
-        // this.router.navigate(['/login'])
-
+    this.http.post(`${this.apiBaseUrl}/img_change`, formData).subscribe((resultData: any) => {
+      console.log(resultData);
     });
   }
 
-
-  name_change(id:string){
-
-    let data={"name":this.name,"id":id}
-
-    this.http.put('http://localhost:8000/api/name_change',data)
-  
-    .subscribe((resultData: any)=>
-    {
-      console.log(resultData)
-      alert("Name changed successfully!")
-
+  name_change(id: string): void {
+    const data = { name: this.name, id };
+    this.http.put(`${this.apiBaseUrl}/name_change`, data).subscribe((resultData: any) => {
+      console.log(resultData);
+      alert("Name changed successfully!");
     });
-
-
-
   }
 
-  email_change(id:string){
-    let data={"email":this.email,"id":id}
-
-    this.http.put('http://localhost:8000/api/email_change',data)
-  
-    .subscribe((resultData: any)=>
-    {
-      console.log(resultData)
-      alert("Email changed successfully!")
-
+  email_change(id: string): void {
+    const data = { email: this.email, id };
+    this.http.put(`${this.apiBaseUrl}/email_change`, data).subscribe((resultData: any) => {
+      console.log(resultData);
+      alert("Email changed successfully!");
     });
-
   }
-  password_change(id:string){
 
-    
-
-    if (this.password==this.password1 && this.password !=""){
-
-      let data={"password":this.password,"id":id}
-      this.http.put('http://localhost:8000/api/password_change',data)
-  
-    .subscribe((resultData: any)=>
-    {
-      console.log(resultData)
-      alert("Password changed successfully!")
-
-    });
-    } else{
-      alert("Passwords doesn't match")
+  password_change(id: string): void {
+    if (this.password == this.password1 && this.password != "") {
+      const data = { password: this.password, id };
+      this.http.put(`${this.apiBaseUrl}/password_change`, data).subscribe((resultData: any) => {
+        console.log(resultData);
+        alert("Password changed successfully!");
+      });
+    } else {
+      alert("Passwords don't match");
     }
-
-
-
   }
 
-  contact_change(id:string,contact:string){
-
-    let data={"contact":contact,"id":id}
-
-    this.http.put('http://localhost:8000/api/contact_change',data)
-  
-    .subscribe((resultData: any)=>
-    {
-      console.log(resultData)
-      alert("Contact changed successfully!")
-
+  contact_change(id: string, contact: string): void {
+    const data = { contact, id };
+    this.http.put(`${this.apiBaseUrl}/contact_change`, data).subscribe((resultData: any) => {
+      console.log(resultData);
+      alert("Contact changed successfully!");
     });
-
-
   }
 
-  description_change(id:string){
-
-    let data={"description":this.description,"id":id}
-
-    this.http.put('http://localhost:8000/api/desc_change',data)
-  
-    .subscribe((resultData: any)=>
-    {
-      console.log(resultData)
-      alert("Description changed successfully!")
-
+  description_change(id: string): void {
+    const data = { description: this.description, id };
+    this.http.put(`${this.apiBaseUrl}/desc_change`, data).subscribe((resultData: any) => {
+      console.log(resultData);
+      alert("Description changed successfully!");
     });
-
-
   }
-
-
 }

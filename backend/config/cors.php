@@ -18,7 +18,9 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [
+        'https://your-production-frontend.com', 'http://localhost:4200'// Add your production frontend URL
+    ],
 
     'allowed_origins_patterns' => [],
 
@@ -28,6 +30,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => true, // Enable cookies and credentials
 
 ];
