@@ -19,7 +19,7 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'https://your-production-frontend.com', 'http://localhost:4200'// Add your production frontend URL
+        'https://freedom-within.vercel.app', 'http://localhost:4200'// Add your production frontend URL
     ],
 
     'allowed_origins_patterns' => [],

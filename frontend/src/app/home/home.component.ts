@@ -67,6 +67,7 @@ export class HomeComponent {
       });
     Emitters.authEmitter.subscribe(
       (data: any) => {
+        console.log(data)
         this.auth= data;
       });
     Emitters.adminEmitter.subscribe(
