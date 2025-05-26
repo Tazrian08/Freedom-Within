@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -185,4 +184,5 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'cookie_domain' => env('COOKIE_DOMAIN', 'localhost'),
 ];

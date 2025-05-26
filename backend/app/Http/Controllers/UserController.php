@@ -56,17 +56,17 @@ class UserController extends Controller
         $cookie = cookie(
             'jwt',
             $token,
-            60 * 24, // 1 day
-            '/',     // path
-            'https://freedomwithin.onrender.com', // domain (change this to your domain)
-            true,    // secure
-            true,    // httpOnly
-            false,   // raw
-            'None'   // sameSite
+            60 * 24,    // 1 day
+            '/',        // path
+            config('app.cookie_domain'), // use configured domain
+            true,       // secure
+            true,       // httpOnly
+            false,      // raw
+            'None'      // sameSite
         );
 
         return response([
-            'message' => $token
+            'message' => 'success'
         ])->withCookie($cookie);
     }
 
