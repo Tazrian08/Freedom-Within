@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Cross-Origin Resource Sharing (CORS) Configuration
@@ -14,12 +13,14 @@ return [
     | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
     |
     */
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*'],
 
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'https://freedom-within.vercel.app', 'http://localhost:4200','https://freedomwithin.onrender.com',// Add your production frontend URL
+        'http://localhost:4200',
+        'https://freedomwithin.onrender.com',
+        // Add any other frontend URLs you need
     ],
 
     'allowed_origins_patterns' => [],
@@ -30,6 +31,7 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => true, // Enable cookies and credentials
+    'supports_credentials' => true,
 
+    'allowed_credentials' => true,
 ];

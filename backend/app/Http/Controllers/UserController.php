@@ -51,10 +51,19 @@ class UserController extends Controller
         }
 
         $user = Auth::user();
-
         $token = $user->createToken('token')->plainTextToken;
 
-        $cookie = cookie('jwt', $token, 60 * 24); // 1 day
+        $cookie = cookie(
+            'jwt',
+            $token,
+            60 * 24, // 1 day
+            '/',     // path
+            'https://freedomwithin.onrender.com', // domain (change this to your domain)
+            true,    // secure
+            true,    // httpOnly
+            false,   // raw
+            'None'   // sameSite
+        );
 
         return response([
             'message' => $token
