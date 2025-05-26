@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Emitters } from '../emitters/emitters';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { environment } from '../../environments/environment';
+import { environment, } from '../../environments/environment';
 
 
 @Component({
@@ -38,7 +38,7 @@ export class HomeComponent {
 
     });
 
-    this.http.get(`https://freedom-within.onrender.com/api/allhome`)
+    this.http.get(`${this.apiBaseUrl}/allhome`)
   
     .subscribe((resultData: any)=>
     {
