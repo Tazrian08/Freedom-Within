@@ -38,7 +38,7 @@ export class HomeComponent {
 
     });
 
-    this.http.get(`${this.apiBaseUrl}/allhome`)
+    this.http.get(`https://freedom-within.onrender.com/api/allhome`)
   
     .subscribe((resultData: any)=>
     {
