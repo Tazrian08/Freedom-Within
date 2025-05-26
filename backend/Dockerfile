@@ -20,10 +20,15 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-
-
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Apache config
 COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
+
+# Copy and set permissions for the startup script
+COPY start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
+# Use the startup script as the entrypoint
+ENTRYPOINT ["/usr/local/bin/start.sh"]
