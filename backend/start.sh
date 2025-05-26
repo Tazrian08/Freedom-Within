@@ -1,11 +1,10 @@
 #!/bin/bash
-set -e
+# Wait for the database to be ready (optional, for safety)
+# You can use a tool like wait-for-it or sleep for a few seconds
+# sleep 10
 
-echo "Running migrations..."
 php artisan migrate --force
+php artisan db:seed --force
 
-echo "Running seeders..."
-php artisan db:seed
-
-echo "Starting Apache..."
+# Start Apache in the foreground
 apache2-foreground
