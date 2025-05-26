@@ -15,6 +15,8 @@ class TherapistSeeder extends Seeder
      */
     public function run(): void
     {
+        $baseUrl = config('app.url');
+
         // Create a new user
         $user = User::create([
             'name' => 'Nasima Akter',
@@ -37,7 +39,7 @@ class TherapistSeeder extends Seeder
         ]);
         Image::create([
             'user_id' => $user->id,
-            'path' => 'http://localhost:8000/images/nasima.png'
+            'path' => $baseUrl . '/images/nasima.png'
         ]);
     }
 
