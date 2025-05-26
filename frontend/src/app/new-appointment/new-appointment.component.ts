@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-new-appointment',
@@ -10,15 +11,15 @@ import { NgbCalendar, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 })
 export class NewAppointmentComponent {
 
+  private apiBaseUrl = environment.apiBaseUrl;
+
   constructor(private http: HttpClient, private router: Router, private calendar: NgbCalendar) 
   {
 
     this.date = this.calendar.getToday();
     this.minDate = this.calendar.getToday();
     { 
-    
-      this.http.get("http://localhost:8000/api/allservice")
-    
+      this.http.get(`${this.apiBaseUrl}/allservice`)
       .subscribe((resultData: any)=>
       {
         this.services=resultData
@@ -26,29 +27,21 @@ export class NewAppointmentComponent {
       });
     }
 
-
-  { 
-    
-    this.http.get("http://localhost:8000/api/alltherapist")
-  
-    .subscribe((resultData: any)=>
-    {
-      this.therapists=resultData
-      this.user_id=this.therapists[0].id
-      console.log(this.therapists)
-    });
-  }
+    { 
+      this.http.get(`${this.apiBaseUrl}/alltherapist`)
+      .subscribe((resultData: any)=>
+      {
+        this.therapists=resultData
+        this.user_id=this.therapists[0].id
+        console.log(this.therapists)
+      });
+    }
 
   }
-
-  
 
   services:any
   therapists:any
   timeslots: any
-  
-  
-
 
   name=""
   email=""
@@ -66,27 +59,21 @@ export class NewAppointmentComponent {
 
   timeslot_retriever() {
     const formData = new FormData();
-  
-    // Add other fields to FormData
     formData.append('user_id', this.user_id);
-  
-    // Convert NgbDateStruct to a string in a specific format
     const formattedDate = this.formatNgbDate(this.date);
     formData.append('date', formattedDate);
-  
-    this.http.post("http://localhost:8000/api/timeslot", formData).subscribe((resultData: any) => {
+
+    this.http.post(`${this.apiBaseUrl}/timeslot`, formData).subscribe((resultData: any) => {
       this.doctor=resultData["therapist"];
       this.timeslots=resultData["timeslots"];
       console.log(this.timeslots)
       console.log(this.doctor)
-      // this.router.navigate(['admin/login']);
     });
   }
-  
+
   // Helper function to format NgbDateStruct to a string
   private formatNgbDate(date: NgbDateStruct): string {
     if (date) {
-      // Format the date as needed (e.g., YYYY-MM-DD)
       const formattedDate = `${date.year}-${date.month}-${date.day}`;
       return formattedDate;
     }
@@ -94,31 +81,20 @@ export class NewAppointmentComponent {
   }
 
   reappointment(){
-
-
     const formData = new FormData();
-  
-    // Add other fields to FormData
-    
     formData.append('contact', this.contact);
     formData.append('user_id', this.user_id);
     formData.append('service_id', this.service_id);
     formData.append('apt_type', this.apt_type);
     formData.append('time_id', this.time_id);
     formData.append('message', this.message);
-  
-    // Convert NgbDateStruct to a string in a specific format
     const formattedDate = this.formatNgbDate(this.date);
     formData.append('date', formattedDate);
 
-    this.http.post("http://localhost:8000/api/reappointment", formData).subscribe((resultData: any) => {
+    this.http.post(`${this.apiBaseUrl}/reappointment`, formData).subscribe((resultData: any) => {
       console.log(resultData)
       alert("Appointment Made. You will be contacted soon for confirmation")
       this.router.navigate(['home']);
     });
-
-
   }
-  
-
 }
