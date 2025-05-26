@@ -20,7 +20,7 @@ import { OrganizationEditComponent } from './adminpages/organization-edit/organi
 const routes: Routes = [
   {path: "admin/register", component: RegisterComponent,title: "Registration"},
   {path: "login", component: LoginComponent, title: "Login"},
-  {path: "home", component: HomeComponent,title: "Freedom Within"},
+  {path: "", component: HomeComponent,title: "Freedom Within"},
   {path: "admin/service", component: AddServiceComponent,title: "Add Service"},
   {path: "appointment", component: AppointmentComponent, title: "Appointment"},
   {path: "re_appointment", component: NewAppointmentComponent, title: "Returning Patient Appointment"},
